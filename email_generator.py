@@ -79,15 +79,11 @@ CRITICAL WRITING RULES:
 14. Write in first person as {SENDER_NAME}
 15. Sound confident but not pushy — helpful, knowledgeable, approachable
 
-EMAIL SIGNATURE (always include at the very end):
+EMAIL SIGNATURE (always end the email with this exact signature):
 Aliyan Munir
 Mahad Impex Team 
 Website: mahadimpex.com
-Call/WhatsApp: +92 300 9657831
-
-COMPLIANCE (always include after signature):
-Faisalabad, Punjab, Pakistan
-To stop receiving these emails, reply with "unsubscribe"."""
+Call/WhatsApp: +92 300 9657831"""
 
 
 def _build_cold_intro_prompt(lead: dict, product: dict) -> str:
@@ -295,10 +291,6 @@ def generate_email(lead: dict, email_type: str = "cold_intro",
                     # Retry with modified prompt
                     time.sleep(1)
                     continue
-
-            # Ensure compliance footer is present
-            if "unsubscribe" not in body.lower():
-                body += get_unsubscribe_footer()
 
             return {
                 "subject": subject,

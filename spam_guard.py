@@ -210,12 +210,13 @@ def check_email(subject: str, body: str) -> dict:
 
 
 def get_unsubscribe_footer() -> str:
-    """Generate the unsubscribe / compliance footer."""
+    """Generate the unsubscribe / compliance footer if enabled."""
+    if not INCLUDE_UNSUBSCRIBE and not INCLUDE_PHYSICAL_ADDRESS:
+        return ""
     footer = (
         f"\n\n---\n"
         f"{COMPANY_ADDRESS}\n"
-        f"If you'd prefer not to hear from us, simply reply with "
-        f"\"unsubscribe\" and we'll remove you from our list right away."
+        f"To stop receiving these emails, reply with \"unsubscribe\"."
     )
     return footer
 
@@ -240,10 +241,11 @@ def sanitize_email_content(subject: str, body: str) -> tuple:
     while "!!" in clean_body:
         clean_body = clean_body.replace("!!", "!")
 
-    # Ensure unsubscribe footer
-    has_unsub = any(phrase in clean_body.lower() for phrase in
-                    ["unsubscribe", "opt out", "opt-out"])
-    if not has_unsub:
-        clean_body += get_unsubscribe_footer()
+    # Ensure unsubscribe footer only if enabled
+    if INCLUDE_UNSUBSCRIBE:
+        has_unsub = any(phrase in clean_body.lower() for phrase in
+                        ["unsubscribe", "opt out", "opt-out"])
+        if not has_unsub:
+            clean_body += get_unsubscribe_footer()
 
     return clean_subject, clean_body
