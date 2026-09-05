@@ -1,0 +1,55 @@
+name: Mahad Impex Daily Email Campaign
+
+on:
+  schedule:
+    # Runs every day at 5:00 AM UTC = 10:00 AM PKT (UTC+5)
+    - cron: '0 5 * * 1-5'   # Monday to Friday only
+
+  # Allows you to manually trigger from GitHub website
+  workflow_dispatch:
+
+jobs:
+  run-campaign:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run daily campaign
+        env:
+          # Credentials from GitHub Secrets
+          SMTP_HOST: mail.mahadimpex.com
+          SMTP_PORT: "465"
+          SMTP_USER: aliyanmunir@mahadimpex.com
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          IMAP_HOST: mail.mahadimpex.com
+          IMAP_PORT: "993"
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          WARMUP_START_DATE: "2026-09-05"
+
+          # Optimized delays for cloud (saves free minutes)
+          MIN_DELAY_SECONDS: "45"
+          MAX_DELAY_SECONDS: "90"
+        run: python main.py run
+
+      - name: Save campaign results
+        if: always()
+        run: |
+          git config user.name "Mahad Impex Bot"
+          git config user.email "aliyanmunir@mahadimpex.com"
+          git add data/ -f
+          git diff --cached --quiet || git commit -m "Campaign run $(date +%Y-%m-%d)"
+          git push

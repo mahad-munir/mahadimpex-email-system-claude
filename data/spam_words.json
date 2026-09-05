@@ -1,0 +1,53 @@
+{
+  "high_risk": [
+    "act now", "apply now", "buy now", "call now", "click here",
+    "click below", "do it today", "don't delete", "don't hesitate",
+    "exclusive deal", "expire", "free", "free access", "free gift",
+    "free trial", "get it now", "great offer", "guarantee",
+    "guaranteed", "hurry", "immediately", "instant", "limited time",
+    "no cost", "no fees", "no obligation", "no purchase necessary",
+    "offer expires", "once in a lifetime", "order now",
+    "please read", "risk free", "special promotion", "take action",
+    "this isn't spam", "urgent", "what are you waiting for",
+    "while supplies last", "winner", "you have been selected",
+    "you're a winner", "100% free", "100% satisfied", "0% risk",
+    "act immediately", "all new", "as seen on", "bargain",
+    "be your own boss", "big bucks", "billion", "bonus",
+    "cash bonus", "casino", "cheap", "compare rates",
+    "congratulations", "credit card", "discount", "double your",
+    "earn extra cash", "easy terms", "eliminate debt",
+    "extra income", "fantastic deal", "fast cash",
+    "financial freedom", "for free", "get out of debt",
+    "get paid", "gift card", "giving away", "income from home",
+    "incredible deal", "insurance", "investment", "join millions",
+    "loan", "lottery", "lowest price", "luxury", "make money",
+    "million dollars", "miracle", "money back", "no catch",
+    "no credit check", "no experience", "no strings attached",
+    "obligation", "offshore", "opt in", "pre-approved",
+    "prize", "profit", "promise", "pure profit",
+    "refinance", "remove", "save big", "save up to",
+    "score", "serious cash", "spam", "strong buy",
+    "supplies are limited", "the best price", "trial",
+    "unlimited", "unsubscribe", "unsolicited", "weight loss",
+    "win big", "work from home"
+  ],
+  "medium_risk": [
+    "affordable", "amazing", "best price", "bonus",
+    "clearance", "deal", "drastically", "enormous",
+    "exceptional", "exciting", "fantastic", "fortune",
+    "huge", "incredible", "initial", "instant access",
+    "lowest", "massive", "mind blowing", "miracle",
+    "offer", "opportunity", "outstanding", "phenomenal",
+    "remarkable", "revolutionary", "satisfaction",
+    "savings", "shocking", "stunning", "superb",
+    "tremendous", "unbeatable", "unbelievable",
+    "wonderful"
+  ],
+  "formatting_issues": [
+    "ALL_CAPS_WORDS",
+    "MULTIPLE!!!EXCLAMATION!!!MARKS",
+    "$$DOLLAR_SIGNS$$",
+    "###HASH_SYMBOLS",
+    "***ASTERISKS***"
+  ]
+}

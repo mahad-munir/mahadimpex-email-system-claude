@@ -1,0 +1,19 @@
+# Mahad Impex Email Marketing System — Dependencies
+# Install: pip install -r requirements.txt
+
+# Core
+python-dotenv>=1.0.0
+google-genai>=1.0.0
+
+# Web scraping / lead finding
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+duckduckgo-search>=6.0.0
+
+# Email handling
+dnspython>=2.6.0
+
+# Utilities
+rich>=13.7.0
+schedule>=1.2.0

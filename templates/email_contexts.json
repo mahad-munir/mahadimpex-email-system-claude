@@ -1,0 +1,90 @@
+{
+  "company_profile": {
+    "name": "Mahad Impex",
+    "type": "Textile sourcing company & buying house",
+    "location": "Faisalabad, Punjab, Pakistan",
+    "specialization": "Connecting global B2B buyers with certified manufacturing partners for premium home textiles",
+    "certifications": ["OEKO-TEX Standard 100", "GOTS (Global Organic Textile Standard)", "ISO 9001"],
+    "key_strengths": [
+      "Direct factory access in Pakistan's textile hub (Faisalabad)",
+      "End-to-end quality control and inspection",
+      "Competitive pricing with flexible MOQs",
+      "Full logistics and documentation support",
+      "Custom branding, packaging, and labeling"
+    ],
+    "why_pakistan": [
+      "World's 3rd largest bed linen exporter",
+      "World's largest terry towel exporter",
+      "Premium long-staple cotton grown domestically",
+      "Competitive manufacturing costs",
+      "Decades of textile export expertise"
+    ]
+  },
+  "greeting_styles": [
+    "Hi {first_name},",
+    "Hello {first_name},",
+    "Good day {first_name},",
+    "Hi there {first_name},",
+    "Dear {first_name},"
+  ],
+  "signoff_styles": [
+    "Best regards,",
+    "Kind regards,",
+    "Warm regards,",
+    "Thanks,",
+    "Regards,",
+    "Looking forward to hearing from you,",
+    "All the best,"
+  ],
+  "cold_intro_angles": [
+    {
+      "angle": "direct_sourcing",
+      "theme": "Introduce direct factory sourcing from Pakistan to reduce costs",
+      "hook": "Many buyers are switching from middlemen to direct sourcing partners in Pakistan's textile hub."
+    },
+    {
+      "angle": "quality_assurance",
+      "theme": "Highlight certified manufacturing and rigorous quality control",
+      "hook": "Every shipment goes through 4-stage quality inspection before it leaves the factory floor."
+    },
+    {
+      "angle": "market_insight",
+      "theme": "Share a relevant market trend or data point about their product category",
+      "hook": "With cotton prices stabilizing, now is an excellent time to lock in competitive rates."
+    },
+    {
+      "angle": "problem_solution",
+      "theme": "Address common pain points in textile sourcing",
+      "hook": "Late deliveries and inconsistent quality are the two biggest sourcing headaches — and exactly what we built our process to prevent."
+    },
+    {
+      "angle": "capability_showcase",
+      "theme": "Show specific production capability relevant to their business",
+      "hook": "We recently fulfilled a 40,000-piece bed linen order for a European retailer in under 25 days."
+    }
+  ],
+  "followup_angles": {
+    "followup_1": {
+      "theme": "Gentle reminder with a specific product highlight",
+      "tone": "Friendly, brief, adds new value (specific product detail or case study)"
+    },
+    "followup_2": {
+      "theme": "Value-add with market insight or pricing transparency",
+      "tone": "Helpful, consultative, no pressure"
+    },
+    "followup_3": {
+      "theme": "Final touch — leave the door open gracefully",
+      "tone": "Respectful, brief, 'no hard feelings' energy, offers future availability"
+    }
+  },
+  "subject_line_patterns": [
+    "Quick question about {company}'s textile sourcing",
+    "{product_line} sourcing from Pakistan — for {company}",
+    "Idea for {company}'s {product_line} supply chain",
+    "Connecting on {product_line} sourcing",
+    "Pakistan textile sourcing — {company}",
+    "{first_name}, a thought on your {product_line} supply",
+    "Re: {product_line} sourcing options",
+    "Direct sourcing partner in Pakistan — {company}"
+  ]
+}
