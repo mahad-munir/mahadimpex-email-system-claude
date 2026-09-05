@@ -253,15 +253,23 @@ def generate_email(lead: dict, email_type: str = "cold_intro",
 
     system_prompt = _build_system_prompt()
 
+    # Candidate models to try with automatic fallback
+    models_to_try = [GEMINI_MODEL, "gemini-3.6-flash", "gemini-flash-latest", "gemini-3.5-flash"]
+    candidate_models = []
+    for m in models_to_try:
+        if m and m not in candidate_models:
+            candidate_models.append(m)
+
     for attempt in range(max_retries):
+        model_name = candidate_models[attempt % len(candidate_models)]
         try:
             response = client.models.generate_content(
-                model=GEMINI_MODEL,
+                model=model_name,
                 contents=user_prompt,
                 config={
                     "system_instruction": system_prompt,
                     "temperature": 0.9 + random.uniform(-0.1, 0.1),
-                    "max_output_tokens": 800,
+                    "max_output_tokens": 3000,
                 },
             )
 

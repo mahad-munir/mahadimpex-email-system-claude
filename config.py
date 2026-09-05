@@ -33,7 +33,7 @@ IMAP_PORT = int(os.getenv("IMAP_PORT", "993"))
 
 # ── Gemini AI ────────────────────────────────────────────────
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 
 # ── Sender Identity ─────────────────────────────────────────
 SENDER_NAME = "Aliyan Munir"
