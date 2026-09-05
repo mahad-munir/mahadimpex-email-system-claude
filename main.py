@@ -211,6 +211,29 @@ def cmd_stats():
     print(f"{'='*40}\n")
 
 
+def cmd_view_emails():
+    """View recent drafted and sent emails with full details."""
+    import database as db
+    emails = db.get_recent_sent_emails(limit=10)
+    if not emails:
+        print("\n📭 No emails have been sent yet.\n")
+        return
+
+    print(f"\n{'='*65}")
+    print(f"  RECENT SENT EMAILS ({len(emails)})")
+    print(f"{'='*65}")
+    for idx, em in enumerate(emails, 1):
+        company = em.get("company_name") or "Unknown Company"
+        country = em.get("country") or "Unknown"
+        print(f"\n[{idx}] To: {em['to_email']} ({company}, {country})")
+        print(f"    Date:    {em.get('sent_at', '')}")
+        print(f"    Type:    {em.get('email_type', '')}")
+        print(f"    Subject: {em.get('subject', '')}")
+        print(f"    Body snippet:\n    " + em.get('body', '').replace('\n', '\n    ')[:300] + "...")
+        print(f"{'-'*65}")
+    print()
+
+
 def cmd_help():
     """Show help message."""
     print(f"""
@@ -222,10 +245,11 @@ def cmd_help():
 ║    python main.py run           Full daily cycle     ║
 ║    python main.py find-leads    Discover new leads   ║
 ║    python main.py dashboard     View dashboard       ║
+║    python main.py sent          View sent emails     ║
+║    python main.py preview       Preview AI email     ║
 ║    python main.py send-test     Test email delivery  ║
 ║    python main.py check-dns     Check SPF/DKIM/DMARC ║
 ║    python main.py warmup-status Warm-up progress     ║
-║    python main.py preview       Preview AI email     ║
 ║    python main.py stats         Quick statistics     ║
 ║    python main.py help          This help message    ║
 ║                                                      ║
@@ -240,6 +264,8 @@ COMMANDS = {
     "run": cmd_run,
     "find-leads": cmd_find_leads,
     "dashboard": cmd_dashboard,
+    "sent": cmd_view_emails,
+    "emails": cmd_view_emails,
     "send-test": cmd_send_test,
     "check-dns": cmd_check_dns,
     "warmup-status": cmd_warmup_status,

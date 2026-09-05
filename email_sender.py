@@ -62,6 +62,26 @@ class EmailSender:
 
         return self._connect()
 
+    def _save_to_sent_folder(self, msg):
+        """Save a copy of the outgoing email to IMAP 'Sent' folder."""
+        try:
+            imap = imaplib.IMAP4_SSL(IMAP_HOST, IMAP_PORT, timeout=10)
+            imap.login(SMTP_USER, SMTP_PASSWORD)
+            for folder in ["Sent", "INBOX.Sent", "Sent Items", "Sent Messages"]:
+                try:
+                    status, _ = imap.append(
+                        folder, "\\Seen",
+                        imaplib.Time2Internaldate(time.time()),
+                        msg.as_bytes()
+                    )
+                    if status == "OK":
+                        break
+                except Exception:
+                    continue
+            imap.logout()
+        except Exception as e:
+            logger.debug(f"Could not copy to Sent folder: {e}")
+
     def _build_message(self, to_email: str, subject: str, body: str,
                        reply_to: str = None) -> EmailMessage:
         """
@@ -127,6 +147,9 @@ class EmailSender:
             result["success"] = True
             result["message_id"] = message_id
             self._send_count += 1
+
+            # Save copy to IMAP Sent folder so it appears in webmail
+            self._save_to_sent_folder(msg)
 
             # Log to database
             if lead_id:

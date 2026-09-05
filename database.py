@@ -325,6 +325,23 @@ def get_emails_sent_count(days=30):
         conn.close()
 
 
+def get_recent_sent_emails(limit=10):
+    """Get the most recent sent emails with lead info and message bodies."""
+    conn = get_connection()
+    try:
+        rows = conn.execute(
+            """SELECT es.*, l.company_name, l.country
+               FROM emails_sent es
+               LEFT JOIN leads l ON es.lead_id = l.id
+               ORDER BY es.sent_at DESC
+               LIMIT ?""",
+            (limit,)
+        ).fetchall()
+        return [dict(r) for r in rows]
+    finally:
+        conn.close()
+
+
 # ── Unsubscribe Operations ──────────────────────────────────
 
 def add_unsubscribe(email, reason=""):
