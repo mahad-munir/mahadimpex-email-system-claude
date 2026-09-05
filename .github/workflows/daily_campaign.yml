@@ -60,5 +60,8 @@ jobs:
           git config user.name "Mahad Impex Bot"
           git config user.email "aliyanmunir@mahadimpex.com"
           git add data/ -f
-          git diff --cached --quiet || git commit -m "Campaign run $(date +%Y-%m-%d)"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Campaign run $(date +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push origin main
+          fi
