@@ -42,8 +42,9 @@ BLACKLIST_PREFIX_KEYWORDS = {
     # System & automated
     "noreply", "no-reply", "donotreply", "mailer-daemon", "postmaster", "webmaster", "abuse", "bounce",
     "root", "admin", "tech", "web", "sysadmin", "dev",
-    # Marketing & Subscription
+    # Marketing, Advertising & Media/Blog
     "newsletter", "unsubscribe", "subscribe", "promo", "affiliate", "marketing", "ads",
+    "advertise", "advertising", "community", "editor", "editorial", "blog", "author", "submit",
 }
 
 # Domains to completely ignore (registrars, tech giants, social platforms, invalid services)
@@ -186,19 +187,34 @@ def _calculate_relevance(email: str, page_text: str, country: str) -> int:
 
 
 def _guess_first_name(email: str, contact_person: str) -> str:
-    """Try to extract a first name from email or contact person."""
+    """Extract a legitimate human first name only when clearly identifiable."""
     if contact_person:
-        return contact_person.split()[0].title()
-    prefix = email.split("@")[0]
-    # Patterns like john.smith, john_smith, jsmith
-    for sep in [".", "_", "-"]:
+        parts = contact_person.strip().split()
+        if len(parts) > 0 and len(parts[0]) > 1:
+            return parts[0].title()
+
+    prefix = email.split("@")[0].lower()
+
+    non_names = {
+        "info", "sales", "contact", "support", "help", "admin", "office",
+        "service", "services", "team", "mail", "hello", "general", "inquiry",
+        "enquiry", "orders", "marketing", "customercare", "customerservice",
+        "sourcing", "purchasing", "procurement", "buyer", "buying", "import",
+        "imports", "export", "exports", "trade", "commercial", "feedback",
+        "community", "advertise", "advertising", "press", "media", "pr", "hr",
+        "editorial", "editor", "webmaster", "postmaster", "careers", "jobs",
+        "billing", "accounts", "finance", "blog", "news", "guest", "business"
+    }
+
+    # Only treat as a personal name if clearly formatted as first.last or first_last (e.g. john.smith@)
+    for sep in [".", "_"]:
         if sep in prefix:
             parts = prefix.split(sep)
-            if len(parts[0]) > 1:
-                return parts[0].title()
-    # If prefix is a name-like word
-    if prefix.isalpha() and len(prefix) > 2 and prefix not in B2B_PREFIXES:
-        return prefix.title()
+            candidate = parts[0]
+            if candidate.isalpha() and 2 <= len(candidate) <= 15 and candidate not in non_names:
+                return candidate.title()
+
+    # Generic or role-based addresses have no first name
     return ""
 
 

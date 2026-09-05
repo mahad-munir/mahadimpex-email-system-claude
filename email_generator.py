@@ -96,17 +96,18 @@ def _build_cold_intro_prompt(lead: dict, product: dict) -> str:
     }
 
     greeting_styles = _contexts.get("greeting_styles", ["Hi {first_name},"])
-    greeting = random.choice(greeting_styles)
     if lead.get("first_name"):
-        greeting = greeting.format(first_name=lead["first_name"])
+        greeting = random.choice(greeting_styles).format(first_name=lead["first_name"])
     else:
-        greeting = greeting.replace(" {first_name}", "").replace("{first_name}", "there")
+        greeting = random.choice(["Hi there,", "Hello,", "Good day,"])
+
+    contact_name_display = lead.get('first_name') or 'Not specified (address the company or team)'
 
     return f"""Write a cold outreach email to a potential textile buyer.
 
 RECIPIENT INFO:
 - Company: {lead.get('company_name', 'their company')}
-- Contact name: {lead.get('first_name', '')}
+- Contact name: {contact_name_display}
 - Country: {lead.get('country', '')}
 - Their likely interest: {lead.get('product_interest', product['name'])}
 
@@ -130,7 +131,7 @@ REQUIREMENTS:
 FORMAT YOUR RESPONSE EXACTLY AS:
 SUBJECT: [your subject line]
 BODY:
-[your email body including signature and compliance footer]"""
+[your email body ending with the exact signature]"""
 
 
 def _build_followup_prompt(lead: dict, product: dict,
@@ -161,17 +162,18 @@ def _build_followup_prompt(lead: dict, product: dict,
         )
 
     greeting_styles = _contexts.get("greeting_styles", ["Hi {first_name},"])
-    greeting = random.choice(greeting_styles)
     if lead.get("first_name"):
-        greeting = greeting.format(first_name=lead["first_name"])
+        greeting = random.choice(greeting_styles).format(first_name=lead["first_name"])
     else:
-        greeting = greeting.replace(" {first_name}", "").replace("{first_name}", "there")
+        greeting = random.choice(["Hi there,", "Hello,", "Good day,"])
+
+    contact_name_display = lead.get('first_name') or 'Not specified (address the company or team)'
 
     return f"""Write follow-up #{followup_num} to a textile buyer who hasn't replied.
 
 RECIPIENT INFO:
 - Company: {lead.get('company_name', 'their company')}
-- Contact name: {lead.get('first_name', '')}
+- Contact name: {contact_name_display}
 - Country: {lead.get('country', '')}
 - Product interest: {lead.get('product_interest', product['name'])}
 - Previous subject line: {previous_subject}
@@ -190,7 +192,7 @@ START WITH: {greeting}
 FORMAT YOUR RESPONSE EXACTLY AS:
 SUBJECT: [subject line — can reference the thread naturally]
 BODY:
-[email body including signature and compliance footer]"""
+[your email body ending with the exact signature]"""
 
 
 def _parse_ai_response(response_text: str) -> tuple:
