@@ -123,11 +123,84 @@ def init_database():
 
 # ── Lead Operations ──────────────────────────────────────────
 
+def domain_exists(domain: str) -> bool:
+    """Check if any lead with this company domain already exists."""
+    if not domain:
+        return False
+    if "@" in domain:
+        domain = domain.split("@")[-1]
+    domain = domain.lower().strip()
+    if not domain:
+        return False
+    conn = get_connection()
+    try:
+        row = conn.execute(
+            "SELECT 1 FROM leads WHERE email LIKE ? LIMIT 1",
+            (f"%@{domain}",)
+        ).fetchone()
+        return row is not None
+    finally:
+        conn.close()
+
+
+def clean_database():
+    """
+    Purge duplicate company domains (keeping only the single best lead per company),
+    and remove any blacklisted emails (careers, help, shareholder, etc.).
+    """
+    conn = get_connection()
+    try:
+        # 1. Delete blacklisted patterns
+        blacklisted_patterns = [
+            "%career%", "%job%", "%recruitment%", "%hiring%", "%talent%",
+            "%help@%", "%support@%", "%customercare%", "%customerservice%",
+            "%shareholder%", "%investor%", "%press@%", "%media@%",
+            "%privacy@%", "%legal@%", "%compliance@%", "%security@%",
+            "%billing@%", "%invoice%", "%accounting%", "%finance@%",
+            "%noreply%", "%donotreply%", "%newsletter%", "%unsubscribe%"
+        ]
+        for pat in blacklisted_patterns:
+            conn.execute("DELETE FROM leads WHERE email LIKE ?", (pat,))
+
+        # 2. For each domain, keep only the single lead with highest relevance_score
+        rows = conn.execute(
+            "SELECT id, email, relevance_score FROM leads ORDER BY relevance_score DESC, id ASC"
+        ).fetchall()
+        seen_domains = set()
+        ids_to_keep = set()
+        for r in rows:
+            dom = r["email"].split("@")[-1].lower()
+            if dom not in seen_domains:
+                seen_domains.add(dom)
+                ids_to_keep.add(r["id"])
+
+        if rows and ids_to_keep:
+            placeholders = ",".join("?" * len(ids_to_keep))
+            conn.execute(f"DELETE FROM leads WHERE id NOT IN ({placeholders})", list(ids_to_keep))
+
+        conn.commit()
+    finally:
+        conn.close()
+
+
 def add_lead(email, company_name="", contact_person="", first_name="",
              country="", country_code="", industry="textiles",
              product_interest="", source="", source_url="",
              relevance_score=50):
-    """Add a new lead. Returns lead id or None if duplicate."""
+    """
+    Add a new lead.
+    STRICT DEDUPLICATION: Rejects duplicate emails AND duplicate company domains!
+    Only 1 contact person/email per company is ever allowed.
+    """
+    email = email.lower().strip()
+    if "@" not in email:
+        return None
+    domain = email.split("@")[1]
+
+    # Don't add if this company domain already has a contact in the database
+    if domain_exists(domain):
+        return None
+
     conn = get_connection()
     try:
         cursor = conn.execute(
@@ -136,7 +209,7 @@ def add_lead(email, company_name="", contact_person="", first_name="",
                 country_code, industry, product_interest, source, source_url,
                 relevance_score)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (email.lower().strip(), company_name, contact_person, first_name,
+            (email, company_name, contact_person, first_name,
              country, country_code, industry, product_interest, source,
              source_url, relevance_score)
         )

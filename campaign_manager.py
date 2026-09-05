@@ -75,11 +75,14 @@ def step_check_inbox():
 def step_find_leads(min_leads_threshold: int = 50):
     """Step 2: Discover new leads if we're running low."""
     logger.info("\n" + "="*55)
-    logger.info("  STEP 2: Lead Discovery")
+    logger.info("  STEP 2: Lead Discovery & Quality Filter")
     logger.info("="*55)
 
+    # Purge any blacklisted department emails or duplicate domains first
+    db.clean_database()
+
     new_leads_count = db.get_leads_by_status("new")
-    logger.info(f"  Available new leads: {new_leads_count}")
+    logger.info(f"  Available verified leads: {new_leads_count}")
 
     if new_leads_count >= min_leads_threshold:
         logger.info(f"  Sufficient leads available — skipping discovery")

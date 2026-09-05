@@ -103,21 +103,15 @@ PRODUCT_LINES = [
 
 # ── Lead Search Queries ──────────────────────────────────────
 SEARCH_QUERIES = [
-    # Buyer-focused queries
-    '"{product}" importer {country} email contact',
-    '"{product}" wholesale buyer {country}',
-    '"{product}" sourcing company {country} contact',
-    '"{product}" distributor {country} email',
-    'buy "{product}" bulk {country}',
-    '"home textiles" buyer {country} purchasing email',
-    '"textile importer" {country} contact',
-    '"bed linen" OR "towels" OR "home textiles" importer {country}',
-    # Retail/hospitality
-    '"hotel supplier" "{product}" {country}',
-    'hospitality linen supplier {country} email',
-    # Niche
-    '"private label" "{product}" {country}',
-    '"white label" home textiles {country}',
+    # B2B textile importers and wholesale buyers
+    'textile importer distributor {country} "contact" OR "about" email',
+    '{product} wholesale distributor {country} contact email',
+    'home textiles buying house sourcing {country} email',
+    '{product} procurement sourcing agent {country} email',
+    'commercial linen hospitality supplier {country} contact email',
+    'institutional textiles distributor {country} email',
+    '{product} B2B wholesale import {country} email',
+    'hotel linen wholesale supplier {country} contact email',
 ]
 
 # ── Warm-Up Schedule ────────────────────────────────────────

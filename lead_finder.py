@@ -27,11 +27,31 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
 ]
 
-# Emails to skip (generic / role-based that won't convert)
-SKIP_EMAILS = {
-    "noreply@", "no-reply@", "donotreply@", "mailer-daemon@",
-    "postmaster@", "webmaster@", "admin@", "support@", "abuse@",
-    "privacy@", "compliance@", "legal@", "unsubscribe@",
+# Blacklisted prefix keywords (departments that should NEVER be emailed)
+BLACKLIST_PREFIX_KEYWORDS = {
+    # Careers & HR
+    "career", "careers", "job", "jobs", "hiring", "recruitment", "recruiting", "talent", "hr",
+    # Customer service & consumer support
+    "help", "support", "customercare", "customerservice", "feedback", "survey", "care", "service",
+    # PR, IR, Media, Stock
+    "shareholder", "investor", "investors", "press", "media", "pr", "ir", "news",
+    # Legal, Compliance, Privacy
+    "privacy", "legal", "compliance", "security", "gdpr", "dmca", "copyright", "terms", "law",
+    # Financial & Billing
+    "billing", "invoice", "invoices", "accounting", "account", "accounts", "finance", "payment", "payments",
+    # System & automated
+    "noreply", "no-reply", "donotreply", "mailer-daemon", "postmaster", "webmaster", "abuse", "bounce",
+    "root", "admin", "tech", "web", "sysadmin", "dev",
+    # Marketing & Subscription
+    "newsletter", "unsubscribe", "subscribe", "promo", "affiliate", "marketing", "ads",
+}
+
+# Domains to completely ignore (registrars, tech giants, social platforms, invalid services)
+BLACKLIST_DOMAINS = {
+    "computershare.com", "google.com", "microsoft.com", "apple.com", "w3.org", "schema.org",
+    "sentry.io", "cloudflare.com", "github.com", "gitlab.com", "example.com", "domain.com",
+    "wordpress.com", "shopify.com", "facebook.com", "twitter.com", "instagram.com", "linkedin.com",
+    "pinterest.com", "youtube.com", "tiktok.com", "trustpilot.com", "yelp.com", "wikipedia.org",
 }
 
 # Common B2B-friendly email prefixes (higher relevance)
@@ -46,6 +66,58 @@ B2B_PREFIXES = {
 EMAIL_REGEX = re.compile(
     r"[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
 )
+
+
+def is_blacklisted_email(email: str) -> bool:
+    """Check if an email belongs to an irrelevant department or blacklisted domain."""
+    email = email.lower().strip()
+    if "@" not in email:
+        return True
+    prefix, domain = email.split("@", 1)
+
+    # Check blacklisted domains or self domain
+    if domain in BLACKLIST_DOMAINS or "mahadimpex.com" in domain:
+        return True
+
+    # Check exact short department abbreviations
+    if prefix in ("ir", "pr", "hr", "it", "ap", "ar", "ad", "ads", "faq", "jobs", "care"):
+        return True
+
+    # Check if any blacklisted keyword is inside the username prefix
+    for kw in BLACKLIST_PREFIX_KEYWORDS:
+        if kw in prefix:
+            return True
+
+    return False
+
+
+def _score_email_priority(email: str) -> int:
+    """Score an email for B2B buyer relevance to select the single best contact per company."""
+    prefix = email.split("@")[0].lower()
+
+    # Priority 1: Direct sourcing / purchasing / procurement (Best)
+    tier1 = {"sourcing", "purchasing", "purchase", "procurement", "buyer", "buying", "import", "imports", "supplychain"}
+    for kw in tier1:
+        if kw in prefix:
+            return 100
+
+    # Priority 2: Commercial / trade / sales
+    tier2 = {"trade", "commercial", "export", "sales"}
+    for kw in tier2:
+        if kw in prefix:
+            return 75
+
+    # Priority 3: Named individual (e.g. john.smith@company.com)
+    if ("." in prefix or "_" in prefix) and len(prefix) > 5 and prefix not in B2B_PREFIXES:
+        return 60
+
+    # Priority 4: General business contact
+    tier4 = {"info", "contact", "enquiry", "enquiries", "inquiry", "office", "hello"}
+    for kw in tier4:
+        if kw in prefix:
+            return 40
+
+    return 20
 
 
 def _get_session():
@@ -74,11 +146,8 @@ def _extract_emails_from_text(text: str) -> set:
         # Skip image file extensions mistakenly captured
         if any(email.endswith(ext) for ext in (".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".css", ".js")):
             continue
-        # Skip our own domain
-        if "mahadimpex.com" in email:
-            continue
-        # Skip generic no-reply addresses
-        if any(email.startswith(skip) for skip in SKIP_EMAILS):
+        # Skip blacklisted / irrelevant department emails
+        if is_blacklisted_email(email):
             continue
         cleaned.add(email)
     return cleaned
@@ -317,26 +386,44 @@ def discover_leads_for_market(country_name: str, country_code: str,
             company = page_data["company_name"] or _extract_company_from_domain(domain)
             page_text = page_data["page_text"]
 
+            # Group discovered emails by their company domain
+            domain_groups = {}
             for email in all_emails:
-                # Quick format check
+                if is_blacklisted_email(email):
+                    continue
                 if not re.match(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$", email):
                     continue
+                dom = email.split("@")[1].lower()
+                domain_groups.setdefault(dom, []).append(email)
+
+            for dom, emails_in_dom in domain_groups.items():
+                if new_leads >= max_leads:
+                    break
+
+                # Check if this company domain already has a contact in our database
+                if db.domain_exists(dom):
+                    logger.debug(f"Skipping domain {dom} — company already exists in database")
+                    continue
+
+                # Sort by B2B relevance priority and pick ONLY the single best email
+                emails_in_dom.sort(key=_score_email_priority, reverse=True)
+                best_email = emails_in_dom[0]
 
                 # Verify email (MX check only — fast)
-                verification = verify_email(email, deep_check=False)
+                verification = verify_email(best_email, deep_check=False)
                 if not verification["valid"]:
-                    logger.debug(f"Skipped invalid email: {email} — {verification['reason']}")
+                    logger.debug(f"Skipped invalid email: {best_email} — {verification['reason']}")
                     continue
 
                 # Calculate relevance
-                relevance = _calculate_relevance(email, page_text, country_name)
+                relevance = _calculate_relevance(best_email, page_text, country_name)
 
                 # Try to get a first name
-                first_name = _guess_first_name(email, "")
+                first_name = _guess_first_name(best_email, "")
 
-                # Store lead
+                # Store lead (guaranteed 1 contact per company domain)
                 lead_id = db.add_lead(
-                    email=email,
+                    email=best_email,
                     company_name=company,
                     contact_person="",
                     first_name=first_name,
@@ -351,7 +438,7 @@ def discover_leads_for_market(country_name: str, country_code: str,
 
                 if lead_id:
                     new_leads += 1
-                    logger.info(f"  ✓ New lead: {email} ({company}, {country_name}) score={relevance}")
+                    logger.info(f"  ✓ New buyer lead: {best_email} ({company}, {country_name}) score={relevance}")
 
             _polite_delay()
 
