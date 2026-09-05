@@ -80,14 +80,13 @@ CRITICAL WRITING RULES:
 15. Sound confident but not pushy — helpful, knowledgeable, approachable
 
 EMAIL SIGNATURE (always include at the very end):
-{SENDER_NAME}
-{SENDER_TITLE}
-{COMPANY_NAME} — {COMPANY_TAGLINE}
-{COMPANY_WEBSITE}
-{COMPANY_PHONE}
+Aliyan Munir
+Mahad Impex Team 
+Website: mahadimpex.com
+Call/WhatsApp: +92 300 9657831
 
 COMPLIANCE (always include after signature):
-{COMPANY_ADDRESS}
+Faisalabad, Punjab, Pakistan
 To stop receiving these emails, reply with "unsubscribe"."""
 
 

@@ -274,7 +274,12 @@ class EmailSender:
             f"Server: {SMTP_HOST}:{SMTP_PORT}\n"
             f"From: {SENDER_EMAIL}\n\n"
             f"---\n"
-            f"{SENDER_NAME}\n{COMPANY_NAME}\n{COMPANY_WEBSITE}"
+            f"Aliyan Munir\n"
+            f"Mahad Impex Team\n"
+            f"Website: mahadimpex.com\n"
+            f"Call/WhatsApp: +92 300 9657831\n\n"
+            f"Faisalabad, Punjab, Pakistan\n"
+            f"To stop receiving these emails, reply with \"unsubscribe\"."
         )
 
         return self.send_email(to_email, subject, body)
