@@ -7,6 +7,12 @@ on:
 
   # Allows you to manually trigger from GitHub website
   workflow_dispatch:
+    inputs:
+      force_send:
+        description: 'Force send even on weekends (bypass weekend pause)'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   run-campaign:
@@ -45,6 +51,7 @@ jobs:
           # Optimized delays for cloud (saves free minutes)
           MIN_DELAY_SECONDS: "45"
           MAX_DELAY_SECONDS: "90"
+          FORCE_SEND: ${{ inputs.force_send || 'false' }}
         run: python main.py run
 
       - name: Save campaign results

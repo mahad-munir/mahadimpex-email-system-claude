@@ -145,7 +145,8 @@ def should_send_today() -> tuple:
 
     # Check if it's weekend
     from config import SEND_ON_WEEKENDS
-    if not SEND_ON_WEEKENDS and date.today().weekday() >= 5:
+    force = os.getenv("FORCE_SEND", "false").lower() in ("true", "1", "yes")
+    if not force and not SEND_ON_WEEKENDS and date.today().weekday() >= 5:
         return False, "Weekend — sending is paused"
 
     return True, f"OK — {remaining} emails remaining today"
