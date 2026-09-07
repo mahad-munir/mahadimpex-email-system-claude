@@ -409,3 +409,11 @@
 2026-09-07 22:20:06 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
 2026-09-07 22:20:07 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&source=web 429
 2026-09-07 22:20:08 [INFO] primp: response: https://www.google.com/wml/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:21:07 [INFO] lead_finder: Searching: Terry Towels & Bath Linen wholesale distributor Netherlands contact email
+2026-09-07 22:21:07 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email&limit=1 502
+2026-09-07 22:21:07 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20wholesale%20distributor%20Netherlands%20contact%20email 200
+2026-09-07 22:21:08 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email 403
+2026-09-07 22:21:09 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-07 22:21:09 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=PK&bi=Nayatel+%28Pvt%29&be=68593f8c0ebdfdefe4cf6914df4e5bbb&bds_t=1788801668T53f707fc3cfdc0e4d79ae23012b9cecdd65294ce2a9937e434f02a0defe9192d&bds_s=39c67a59269e4b359c908570b2f9bf74&t=device&abd=0&qadf=moderate&qsr=en_US&sc=&abe=0&language=english&segment=organic&abp=1&lui=english&query=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email&cat=web&cmd=gen_page 200
+2026-09-07 22:21:12 [INFO] primp: response: https://www.google.com/wml/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:21:45 [INFO] lead_finder:   ✓ New buyer lead: info@polanitex.com (Polani Textiles, Netherlands) score=75
