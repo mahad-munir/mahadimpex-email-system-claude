@@ -110,18 +110,21 @@ def step_find_leads(min_leads_threshold: int = None):
         return 0
 
 
-def step_send_cold_intros(sender: EmailSender, max_count: int = None):
+def step_send_cold_intros(sender: EmailSender, account: dict = None, max_count: int = None):
     """Step 3: Send cold intro emails to new leads."""
+    acc_name = sender.sender_name
+    acc_email = sender.sender_email
+
     logger.info("\n" + "="*55)
-    logger.info("  STEP 3: Sending Cold Intro Emails")
+    logger.info(f"  STEP 3: Sending Cold Intros for {acc_name} <{acc_email}>")
     logger.info("="*55)
 
-    remaining = get_remaining_today()
+    remaining = get_remaining_today(account)
     if max_count:
         remaining = min(remaining, max_count)
 
     if remaining <= 0:
-        logger.info("  No sending capacity remaining today")
+        logger.info(f"  No sending capacity remaining today for {acc_email}")
         return 0
 
     # Allocate 100% to cold intros if follow-ups are disabled, otherwise 60/40 split
@@ -133,18 +136,18 @@ def step_send_cold_intros(sender: EmailSender, max_count: int = None):
         logger.info("  No new leads to email")
         return 0
 
-    logger.info(f"  Generating & sending {len(leads)} cold intros...")
+    logger.info(f"  Generating & sending {len(leads)} cold intros as {acc_name}...")
     sent = 0
     bounces = 0
 
     for lead in leads:
         # Check remaining capacity
-        if get_remaining_today() <= 0:
-            logger.info("  Daily limit reached — stopping")
+        if get_remaining_today(account) <= 0:
+            logger.info(f"  Daily limit reached for {acc_email} — stopping")
             break
 
-        # Generate personalized email
-        email_data = generate_email(lead, email_type="cold_intro")
+        # Generate personalized email with account persona and signature
+        email_data = generate_email(lead, email_type="cold_intro", account=account)
         if not email_data["success"]:
             logger.warning(f"  Skipped {lead['email']} — generation failed")
             continue
@@ -176,17 +179,21 @@ def step_send_cold_intros(sender: EmailSender, max_count: int = None):
         logger.info(f"  Pausing {delay:.0f}s...")
         time.sleep(delay)
 
-    logger.info(f"  Cold intros sent: {sent}, bounces: {bounces}")
+    logger.info(f"  Cold intros sent for {acc_name}: {sent}, bounces: {bounces}")
     return sent
 
 
 def step_send_followups(sender: EmailSender):
     """Step 4: Send follow-up emails to leads that haven't replied."""
+    from config import MAX_FOLLOWUPS
+    if MAX_FOLLOWUPS <= 0:
+        return 0
+
     logger.info("\n" + "="*55)
     logger.info("  STEP 4: Sending Follow-Up Emails")
     logger.info("="*55)
 
-    remaining = get_remaining_today()
+    remaining = get_remaining_today(sender.account)
     if remaining <= 0:
         logger.info("  No sending capacity remaining today")
         return 0
@@ -194,12 +201,12 @@ def step_send_followups(sender: EmailSender):
     total_sent = 0
 
     for followup_num in range(1, MAX_FOLLOWUPS + 1):
-        if get_remaining_today() <= 0:
+        if get_remaining_today(sender.account) <= 0:
             break
 
         email_type = f"followup_{followup_num}"
         leads = db.get_leads_for_emailing(
-            limit=min(5, get_remaining_today()),
+            limit=min(5, get_remaining_today(sender.account)),
             email_type=email_type,
         )
 
@@ -209,29 +216,19 @@ def step_send_followups(sender: EmailSender):
         logger.info(f"  Follow-up #{followup_num}: {len(leads)} leads ready")
 
         for lead in leads:
-            if get_remaining_today() <= 0:
+            if get_remaining_today(sender.account) <= 0:
                 break
 
-            # Get the previous email subject for context
-            conn = db.get_connection()
-            prev = conn.execute(
-                """SELECT subject FROM emails_sent
-                   WHERE lead_id = ? ORDER BY sent_at DESC LIMIT 1""",
-                (lead["id"],)
-            ).fetchone()
-            conn.close()
-            prev_subject = prev["subject"] if prev else ""
+            prev_emails = db.get_emails_for_lead(lead["id"])
+            prev_subject = prev_emails[0]["subject"] if prev_emails else ""
 
-            # Generate follow-up
             email_data = generate_email(
-                lead, email_type=email_type,
+                lead,
+                email_type=email_type,
                 previous_subject=prev_subject,
+                account=sender.account,
             )
-
             if not email_data["success"]:
-                continue
-
-            if email_data["spam_check"].get("total_score", 0) > 30:
                 continue
 
             result = sender.send_email(
@@ -246,6 +243,7 @@ def step_send_followups(sender: EmailSender):
                 total_sent += 1
 
             delay = random.uniform(MIN_DELAY_SECONDS, MAX_DELAY_SECONDS)
+            logger.info(f"  Pausing {delay:.0f}s...")
             time.sleep(delay)
 
     logger.info(f"  Follow-ups sent: {total_sent}")
@@ -254,75 +252,86 @@ def step_send_followups(sender: EmailSender):
 
 def run_daily_campaign():
     """
-    Execute the full daily campaign cycle.
+    Execute the full daily campaign cycle across all configured sender accounts.
     This is the main entry point for automated runs.
     """
     _setup_logging()
     start_time = datetime.now()
 
     logger.info("\n" + "#"*55)
-    logger.info(f"  MAHAD IMPEX — DAILY CAMPAIGN RUN")
+    logger.info(f"  MAHAD IMPEX — MULTI-ACCOUNT DAILY CAMPAIGN")
     logger.info(f"  {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
     logger.info("#"*55)
 
-    # Pre-flight check
-    can_send, reason = should_send_today()
-    warmup = get_warmup_status()
+    from config import ACCOUNTS, MAX_FOLLOWUPS
 
-    logger.info(f"\n  Phase:      {warmup['phase']} (Week {warmup['week']})")
-    logger.info(f"  Limit:      {warmup['daily_limit']} emails/day")
-    logger.info(f"  Health:     {warmup['health']}")
-    logger.info(f"  Can send:   {reason}")
+    # Pre-flight check across all accounts
+    total_remaining = get_remaining_today()
+    logger.info(f"\n  Total Senders:    {len(ACCOUNTS)}")
+    logger.info(f"  Total Remaining:  {total_remaining} emails today")
 
-    if not can_send:
-        logger.info("\n  Campaign paused — not sending today")
-        db.add_daily_log("campaign_skipped", reason)
+    if total_remaining <= 0:
+        logger.info("\n  All sender daily limits reached — not sending today")
+        db.add_daily_log("campaign_skipped", "All accounts at limit")
         return
 
-    # Initialize sender
-    sender = EmailSender()
-
     try:
-        # Step 1: Check inbox
+        # Step 1: Check inboxes across all accounts for replies/bounces
         inbox = step_check_inbox()
 
-        # Step 2: Find leads
-        step_find_leads()
+        # Step 2: Ensure sufficient verified leads are in database
+        step_find_leads(min_leads_threshold=max(10, total_remaining))
 
-        # Step 3: Send cold intros
-        cold_sent = step_send_cold_intros(sender)
+        total_cold_sent = 0
+        total_followup_sent = 0
 
-        # Step 4: Send follow-ups
-        followup_sent = step_send_followups(sender)
+        # Step 3: Run sending cycle for each account in sequence
+        for account in ACCOUNTS:
+            acc_name = account["name"]
+            acc_email = account["email"]
+            logger.info(f"\n>>> Starting outreach for: {acc_name} <{acc_email}>")
 
-        # Log daily metrics
-        total_sent = cold_sent + followup_sent
-        log_today_metrics(
-            emails_sent=total_sent,
-            bounces=inbox.get("bounces", 0),
-            notes=f"Cold: {cold_sent}, Followups: {followup_sent}",
-        )
+            can_send, reason = should_send_today(account)
+            if not can_send:
+                logger.info(f"  Skipping {acc_email}: {reason}")
+                continue
+
+            sender = EmailSender(account)
+            try:
+                cold_sent = step_send_cold_intros(sender, account=account)
+                followup_sent = step_send_followups(sender) if MAX_FOLLOWUPS > 0 else 0
+
+                total_cold_sent += cold_sent
+                total_followup_sent += followup_sent
+
+                log_today_metrics(
+                    emails_sent=cold_sent + followup_sent,
+                    bounces=0,
+                    notes=f"Sender: {acc_email}, Cold: {cold_sent}, Followups: {followup_sent}",
+                    account=account,
+                )
+            finally:
+                sender.close()
 
         elapsed = (datetime.now() - start_time).total_seconds()
+        total_sent = total_cold_sent + total_followup_sent
 
         logger.info("\n" + "#"*55)
         logger.info(f"  DAILY RUN COMPLETE")
-        logger.info(f"  Emails sent:     {total_sent}")
-        logger.info(f"  Cold intros:     {cold_sent}")
-        logger.info(f"  Follow-ups:      {followup_sent}")
-        logger.info(f"  Replies today:   {inbox.get('replies', 0)}")
-        logger.info(f"  Bounces today:   {inbox.get('bounces', 0)}")
-        logger.info(f"  Duration:        {elapsed:.0f}s")
+        logger.info(f"  Total emails sent: {total_sent}")
+        logger.info(f"  Cold intros:       {total_cold_sent}")
+        logger.info(f"  Follow-ups:        {total_followup_sent}")
+        logger.info(f"  Replies today:     {inbox.get('replies', 0)}")
+        logger.info(f"  Bounces today:     {inbox.get('bounces', 0)}")
+        logger.info(f"  Duration:          {elapsed:.0f}s")
         logger.info("#"*55 + "\n")
 
         db.add_daily_log("campaign_completed",
-                         f"Sent {total_sent} (cold={cold_sent}, fu={followup_sent})")
+                         f"Sent {total_sent} across {len(ACCOUNTS)} accounts")
 
     except Exception as e:
         logger.error(f"\nCampaign run failed: {e}", exc_info=True)
         db.add_daily_log("campaign_error", str(e))
-    finally:
-        sender.close()
 
 
 if __name__ == "__main__":

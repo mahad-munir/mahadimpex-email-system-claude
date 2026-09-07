@@ -45,6 +45,8 @@ jobs:
           SMTP_PORT: "465"
           SMTP_USER: aliyanmunir@mahadimpex.com
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_USER_MUNIR: munir@mahadimpex.com
+          SMTP_PASSWORD_MUNIR: ${{ secrets.SMTP_PASSWORD_MUNIR || secrets.SMTP_PASSWORD }}
           IMAP_HOST: mail.mahadimpex.com
           IMAP_PORT: "993"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

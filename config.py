@@ -35,15 +35,58 @@ IMAP_PORT = int(os.getenv("IMAP_PORT", "993"))
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 
-# ── Sender Identity ─────────────────────────────────────────
-SENDER_NAME = "Aliyan Munir"
-SENDER_TITLE = "Sourcing Specialist"
-SENDER_EMAIL = SMTP_USER
+# ── Sender Identity & Accounts ──────────────────────────────
 COMPANY_NAME = "Mahad Impex"
 COMPANY_WEBSITE = "https://mahadimpex.com"
 COMPANY_PHONE = "+92 300 9657831"
 COMPANY_ADDRESS = "Faisalabad, Punjab, Pakistan"
 COMPANY_TAGLINE = "Textile Sourcing & Buying House"
+
+# Account 1: Muhammad Munir (Already warmed up — 45 emails/day)
+ACCOUNT_MUNIR = {
+    "id": "munir",
+    "name": "Muhammad Munir",
+    "title": "Marketing Director",
+    "email": os.getenv("SMTP_USER_MUNIR", "munir@mahadimpex.com"),
+    "password": os.getenv("SMTP_PASSWORD_MUNIR", os.getenv("SMTP_PASSWORD", "")),
+    "smtp_host": SMTP_HOST,
+    "smtp_port": SMTP_PORT,
+    "imap_host": IMAP_HOST,
+    "imap_port": IMAP_PORT,
+    "is_warmed_up": True,
+    "daily_limit": int(os.getenv("MUNIR_DAILY_LIMIT", "45")),
+    "signature": """Muhammad Munir
+Mahad Impex Team 
+Website: mahadimpex.com
+Call/WhatsApp: +92 300 9657831""",
+}
+
+# Account 2: Aliyan Munir (In warm-up schedule — currently 5 emails/day)
+ACCOUNT_ALIYAN = {
+    "id": "aliyan",
+    "name": "Aliyan Munir",
+    "title": "Head of International Sourcing",
+    "email": os.getenv("SMTP_USER", "aliyanmunir@mahadimpex.com"),
+    "password": os.getenv("SMTP_PASSWORD", ""),
+    "smtp_host": SMTP_HOST,
+    "smtp_port": SMTP_PORT,
+    "imap_host": IMAP_HOST,
+    "imap_port": IMAP_PORT,
+    "is_warmed_up": False,
+    "daily_limit": None,  # Calculated dynamically from warmup schedule
+    "signature": """Aliyan Munir
+Mahad Impex Team 
+Website: mahadimpex.com
+Call/WhatsApp: +92 300 9657831""",
+}
+
+# Active accounts in campaign sending order
+ACCOUNTS = [ACCOUNT_MUNIR, ACCOUNT_ALIYAN]
+
+# Default identity (for backward compatibility)
+SENDER_NAME = ACCOUNT_ALIYAN["name"]
+SENDER_TITLE = ACCOUNT_ALIYAN["title"]
+SENDER_EMAIL = ACCOUNT_ALIYAN["email"]
 
 # ── Target Markets (ordered by priority) ─────────────────────
 # Pakistan's hottest textile export destinations (2025-2026)

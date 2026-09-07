@@ -20,7 +20,7 @@ import dns.resolver
 
 from config import (
     SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD,
-    GEMINI_API_KEY, SENDER_EMAIL, COMPANY_WEBSITE,
+    GEMINI_API_KEY, SENDER_EMAIL, COMPANY_WEBSITE, ACCOUNTS,
 )
 
 
@@ -47,30 +47,57 @@ def cmd_dashboard():
 
 
 def cmd_send_test():
-    """Send a test email to yourself."""
+    """Send a test email to verify SMTP and IMAP for active accounts."""
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s [%(levelname)s] %(message)s")
     from email_sender import EmailSender
 
-    if not SMTP_PASSWORD:
-        print("\n⚠️  SMTP_PASSWORD is not set in .env file!")
-        print("   Edit .env and add your email password.\n")
+    filter_account = None
+    custom_to_email = None
+
+    for arg in sys.argv[2:]:
+        arg_l = arg.lower()
+        if "munir" in arg_l and "aliyan" not in arg_l:
+            filter_account = "munir"
+        elif "aliyan" in arg_l:
+            filter_account = "aliyan"
+        elif "@" in arg:
+            custom_to_email = arg
+
+    target_accounts = []
+    for acc in ACCOUNTS:
+        if filter_account == "munir":
+            if acc["email"].lower().startswith("munir@") or "muhammad" in acc["name"].lower():
+                target_accounts.append(acc)
+        elif filter_account == "aliyan":
+            if "aliyan" in acc["email"].lower() or "aliyan" in acc["name"].lower():
+                target_accounts.append(acc)
+        else:
+            target_accounts.append(acc)
+
+    if not target_accounts:
+        print(f"\n⚠️  No matching accounts found for '{filter_account}'!\n")
         return
 
-    print(f"\n📧 Sending test email to {SENDER_EMAIL}...")
-    sender = EmailSender()
-    result = sender.send_test()
-    sender.close()
+    for acc in target_accounts:
+        to_addr = custom_to_email if custom_to_email else acc["email"]
+        print(f"\n📧 Sending test email from {acc['name']} ({acc['email']}) to {to_addr}...")
+        if not acc.get("password"):
+            print(f"⚠️  Password missing for {acc['email']} in .env!")
+            continue
 
-    if result["success"]:
-        print(f"\n✓ Test email sent successfully!")
-        print(f"  Check your inbox at {SENDER_EMAIL}")
-        print(f"  Message ID: {result['message_id']}")
-        print(f"\n  Next step: Check if it landed in Inbox (not Spam)")
-        print(f"  Also test at: https://www.mail-tester.com\n")
-    else:
-        print(f"\n✗ Test email failed: {result['error']}")
-        print(f"  Check your SMTP settings in .env\n")
+        sender = EmailSender(account=acc)
+        result = sender.send_test(to_email=to_addr)
+        sender.close()
+
+        if result["success"]:
+            print(f"  ✓ Test email sent successfully for {acc['name']}!")
+            print(f"  Check inbox at: {to_addr}")
+            print(f"  Message ID: {result['message_id']}")
+            print(f"  Saved to IMAP Sent folder: ✓")
+        else:
+            print(f"  ✗ Test email failed for {acc['name']}: {result['error']}")
+    print()
 
 
 def cmd_check_dns():
@@ -154,7 +181,7 @@ def cmd_warmup_status():
 
 
 def cmd_generate_preview():
-    """Generate and preview an email without sending."""
+    """Generate and preview emails for configured accounts without sending."""
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s [%(levelname)s] %(message)s")
     from email_generator import generate_email
@@ -163,7 +190,6 @@ def cmd_generate_preview():
         print("\n⚠️  GEMINI_API_KEY is not set in .env file!\n")
         return
 
-    # Create a sample lead
     sample_lead = {
         "id": 0,
         "email": "buyer@example.com",
@@ -174,41 +200,68 @@ def cmd_generate_preview():
         "product_interest": "Bed Linen & Bed Sets",
     }
 
-    print("\n📝 Generating sample email with AI...\n")
-    result = generate_email(sample_lead, email_type="cold_intro")
+    filter_account = None
+    for arg in sys.argv[2:]:
+        arg_l = arg.lower()
+        if "munir" in arg_l and "aliyan" not in arg_l:
+            filter_account = "munir"
+        elif "aliyan" in arg_l:
+            filter_account = "aliyan"
 
-    if result["success"]:
-        print(f"{'='*55}")
-        print(f"  SUBJECT: {result['subject']}")
-        print(f"{'='*55}")
-        print(result["body"])
-        print(f"{'='*55}")
-        print(f"  Spam Score: {result['spam_check'].get('total_score', 'N/A')}")
-        print(f"  Verdict:    {result['spam_check'].get('verdict', 'N/A')}")
-        if result["spam_check"].get("issues"):
-            print(f"  Issues:     {result['spam_check']['issues']}")
-        print(f"{'='*55}\n")
-    else:
-        print(f"\n✗ Generation failed: {result.get('error', 'unknown')}\n")
+    target_accounts = []
+    for acc in ACCOUNTS:
+        if filter_account == "munir":
+            if acc["email"].lower().startswith("munir@") or "muhammad" in acc["name"].lower():
+                target_accounts.append(acc)
+        elif filter_account == "aliyan":
+            if "aliyan" in acc["email"].lower() or "aliyan" in acc["name"].lower():
+                target_accounts.append(acc)
+        else:
+            target_accounts.append(acc)
+
+    for acc in target_accounts:
+        print(f"\n📝 Generating sample email for {acc['name']} ({acc['title']})...\n")
+        result = generate_email(sample_lead, email_type="cold_intro", account=acc)
+
+        if result["success"]:
+            print(f"{'='*60}")
+            print(f"  PREVIEW FOR: {acc['name']} — {acc['title']}")
+            print(f"  FROM:        {acc['name']} <{acc['email']}>")
+            print(f"  SUBJECT:     {result['subject']}")
+            print(f"{'='*60}")
+            print(result["body"])
+            print(f"{'='*60}")
+            print(f"  Spam Score: {result['spam_check'].get('total_score', 'N/A')}")
+            print(f"  Verdict:    {result['spam_check'].get('verdict', 'N/A')}")
+            if result["spam_check"].get("issues"):
+                print(f"  Issues:     {result['spam_check']['issues']}")
+            print(f"{'='*60}\n")
+        else:
+            print(f"\n✗ Generation failed for {acc['name']}: {result.get('error', 'unknown')}\n")
 
 
 def cmd_stats():
-    """Quick stats overview."""
+    """Quick stats overview with per-sender breakdown."""
     import database as db
     stats = db.get_dashboard_stats()
 
-    print(f"\n{'='*40}")
-    print(f"  Quick Stats")
-    print(f"{'='*40}")
-    print(f"  Total Leads:    {stats['total_leads']}")
-    print(f"  New:            {stats['new_leads']}")
-    print(f"  Emailed:        {stats['emailed']}")
-    print(f"  Replied:        {stats['replied']}")
-    print(f"  Bounced:        {stats['bounced']}")
-    print(f"  Sent Today:     {stats['sent_today']}")
-    print(f"  Sent This Week: {stats['sent_week']}")
-    print(f"  Bounce Rate:    {stats['bounce_rate']:.1%}")
-    print(f"{'='*40}\n")
+    print(f"\n{'='*55}")
+    print(f"  Quick Stats — Mahad Impex Outreach System")
+    print(f"{'='*55}")
+    print(f"  Total Leads in Database: {stats['total_leads']}")
+    print(f"  New (Uncontacted):       {stats['new_leads']}")
+    print(f"  Total Contacted:         {stats['emailed']}")
+    print(f"  Replies Received:        {stats['replied']}")
+    print(f"  Bounced:                 {stats['bounced']}")
+    print(f"  Bounce Rate:             {stats['bounce_rate']:.1%}")
+    print(f"{'-'*55}")
+    print(f"  Today's Sends (Combined): {stats['sent_today']}")
+    for acc in ACCOUNTS:
+        sent_acc_today = db.get_emails_sent_today_by_sender(acc["email"])
+        limit_str = f"Max {acc.get('daily_limit')} / day" if acc.get("is_warmed_up") else "Warmup limit"
+        print(f"    • {acc['name']} ({acc['email']}): {sent_acc_today} sent today [{limit_str}]")
+    print(f"  Sent This Week:           {stats['sent_week']}")
+    print(f"{'='*55}\n")
 
 
 def cmd_view_emails():
@@ -225,10 +278,12 @@ def cmd_view_emails():
     for idx, em in enumerate(emails, 1):
         company = em.get("company_name") or "Unknown Company"
         country = em.get("country") or "Unknown"
-        print(f"\n[{idx}] To: {em['to_email']} ({company}, {country})")
-        print(f"    Date:    {em.get('sent_at', '')}")
-        print(f"    Type:    {em.get('email_type', '')}")
-        print(f"    Subject: {em.get('subject', '')}")
+        from_acc = em.get("from_email") or "Unknown sender"
+        print(f"\n[{idx}] To:   {em['to_email']} ({company}, {country})")
+        print(f"    From: {from_acc}")
+        print(f"    Date: {em.get('sent_at', '')}")
+        print(f"    Type: {em.get('email_type', '')}")
+        print(f"    Subj: {em.get('subject', '')}")
         print(f"    Body snippet:\n    " + em.get('body', '').replace('\n', '\n    ')[:300] + "...")
         print(f"{'-'*65}")
     print()
@@ -241,20 +296,29 @@ def cmd_help():
 ║   MAHAD IMPEX — Email Marketing System              ║
 ╠══════════════════════════════════════════════════════╣
 ║                                                      ║
+║  Accounts Configured:                                ║
+║    1. Muhammad Munir (Marketing Director)            ║
+║       munir@mahadimpex.com [Warmed up: ~45/day]      ║
+║    2. Aliyan Munir (Head of International Sourcing)  ║
+║       aliyanmunir@mahadimpex.com [Warmup schedule]   ║
+║                                                      ║
 ║  Commands:                                           ║
 ║    python main.py run           Full daily cycle     ║
 ║    python main.py find-leads    Discover new leads   ║
 ║    python main.py dashboard     View dashboard       ║
 ║    python main.py sent          View sent emails     ║
-║    python main.py preview       Preview AI email     ║
+║    python main.py preview       Preview AI emails    ║
 ║    python main.py send-test     Test email delivery  ║
 ║    python main.py check-dns     Check SPF/DKIM/DMARC ║
 ║    python main.py warmup-status Warm-up progress     ║
 ║    python main.py stats         Quick statistics     ║
 ║    python main.py help          This help message    ║
 ║                                                      ║
-║  Automated Daily Run:                                ║
-║    python setup_scheduler.py    Setup Task Scheduler ║
+║  Options for preview & send-test:                    ║
+║    python main.py preview munir                      ║
+║    python main.py preview aliyan                     ║
+║    python main.py send-test munir                    ║
+║    python main.py send-test aliyan                   ║
 ║                                                      ║
 ╚══════════════════════════════════════════════════════╝
 """)

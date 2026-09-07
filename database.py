@@ -380,16 +380,29 @@ def mark_email_bounced(email_id, reason=""):
         conn.close()
 
 
-def get_emails_sent_today():
-    """Count emails sent today."""
+def get_emails_sent_today(from_email: str = None):
+    """Count emails sent today, optionally filtered by sender email."""
     conn = get_connection()
     try:
-        return conn.execute(
-            """SELECT COUNT(*) FROM emails_sent
-               WHERE date(sent_at) = date('now')"""
-        ).fetchone()[0]
+        if from_email:
+            return conn.execute(
+                """SELECT COUNT(*) FROM emails_sent
+                   WHERE date(sent_at) = date('now')
+                     AND lower(from_email) = ?""",
+                (from_email.lower().strip(),)
+            ).fetchone()[0]
+        else:
+            return conn.execute(
+                """SELECT COUNT(*) FROM emails_sent
+                   WHERE date(sent_at) = date('now')"""
+            ).fetchone()[0]
     finally:
         conn.close()
+
+
+def get_emails_sent_today_by_sender(from_email: str) -> int:
+    """Convenience helper to get today's sends for a specific sender."""
+    return get_emails_sent_today(from_email)
 
 
 def get_emails_sent_count(days=30):

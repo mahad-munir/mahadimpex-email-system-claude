@@ -47,13 +47,20 @@ def _pick_product_context(product_interest: str = "") -> dict:
     return random.choice(PRODUCT_LINES)
 
 
-def _build_system_prompt() -> str:
+def _build_system_prompt(account: dict = None) -> str:
     """Build the system prompt that instructs Gemini how to write emails."""
     company = _contexts.get("company_profile", {})
     strengths = company.get("key_strengths", [])
     why_pakistan = company.get("why_pakistan", [])
 
-    return f"""You are writing business emails as {SENDER_NAME}, {SENDER_TITLE} at {COMPANY_NAME}.
+    sender_name = account.get("name", SENDER_NAME) if account else SENDER_NAME
+    sender_title = account.get("title", SENDER_TITLE) if account else SENDER_TITLE
+    signature = account.get("signature") if account else f"""Aliyan Munir
+Mahad Impex Team 
+Website: mahadimpex.com
+Call/WhatsApp: +92 300 9657831"""
+
+    return f"""You are writing business emails as {sender_name}, {sender_title} at {COMPANY_NAME}.
 
 ABOUT THE COMPANY:
 - {COMPANY_NAME} is a {company.get('type', 'textile sourcing company')} based in {company.get('location', 'Faisalabad, Pakistan')}
@@ -76,14 +83,11 @@ CRITICAL WRITING RULES:
 11. Be specific about products/capabilities relevant to the recipient
 12. End with a soft, low-pressure call to action (ask a question, suggest a brief chat)
 13. NEVER promise prices, discounts, or specific numbers unless given
-14. Write in first person as {SENDER_NAME}
+14. Write in first person as {sender_name}
 15. Sound confident but not pushy — helpful, knowledgeable, approachable
 
 EMAIL SIGNATURE (always end the email with this exact signature):
-Aliyan Munir
-Mahad Impex Team 
-Website: mahadimpex.com
-Call/WhatsApp: +92 300 9657831"""
+{signature}"""
 
 
 def _build_cold_intro_prompt(lead: dict, product: dict) -> str:
@@ -230,6 +234,7 @@ def _parse_ai_response(response_text: str) -> tuple:
 
 def generate_email(lead: dict, email_type: str = "cold_intro",
                    previous_subject: str = "",
+                   account: dict = None,
                    max_retries: int = 3) -> dict:
     """
     Generate a personalized email for a lead using Gemini AI.
@@ -248,7 +253,7 @@ def generate_email(lead: dict, email_type: str = "cold_intro",
     else:
         user_prompt = _build_cold_intro_prompt(lead, product)
 
-    system_prompt = _build_system_prompt()
+    system_prompt = _build_system_prompt(account=account)
 
     # Candidate models to try with automatic fallback
     models_to_try = [GEMINI_MODEL, "gemini-3.6-flash", "gemini-flash-latest", "gemini-3.5-flash"]

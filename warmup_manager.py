@@ -76,34 +76,66 @@ def get_daily_limit() -> int:
     return base_limit
 
 
-def get_remaining_today() -> int:
-    """How many more emails can we send today?"""
-    limit = get_daily_limit()
-    sent = db.get_emails_sent_today()
-    remaining = max(0, limit - sent)
-    return remaining
+def get_daily_limit(account: dict = None) -> int:
+    """
+    Get the allowed daily sending limit.
+    If an account is already warmed up (like munir@mahadimpex.com), returns its fixed limit.
+    Otherwise returns the dynamic warm-up limit based on domain age and reputation.
+    """
+    if account and account.get("is_warmed_up"):
+        return account.get("daily_limit", 45)
 
-
-def get_warmup_status() -> dict:
-    """Get comprehensive warm-up status report."""
     week = get_current_week()
-    daily_limit = get_daily_limit()
-    sent_today = db.get_emails_sent_today()
+    base_limit = WARMUP_SCHEDULE.get(week, MAX_DAILY_SENDS)
+    if week > max(WARMUP_SCHEDULE.keys()):
+        base_limit = MAX_DAILY_SENDS
+
+    bounce_rate = db.get_bounce_rate(days=7)
+    if bounce_rate > MAX_BOUNCE_RATE:
+        return max(3, base_limit // 3)
+    if bounce_rate > MAX_BOUNCE_RATE / 2:
+        return max(5, int(base_limit * 0.6))
+
+    return base_limit
+
+
+def get_remaining_today(account: dict = None) -> int:
+    """How many more emails can we send today for an account or in total across accounts?"""
+    if account is not None:
+        limit = get_daily_limit(account)
+        sent = db.get_emails_sent_today_by_sender(account.get("email"))
+        return max(0, limit - sent)
+    else:
+        from config import ACCOUNTS
+        return sum(get_remaining_today(acc) for acc in ACCOUNTS)
+
+
+def get_warmup_status(account: dict = None) -> dict:
+    """Get comprehensive warm-up status report for an account or system."""
+    from config import ACCOUNT_ALIYAN
+    acc = account or ACCOUNT_ALIYAN
+
+    week = get_current_week()
+    daily_limit = get_daily_limit(acc)
+    sent_today = db.get_emails_sent_today_by_sender(acc.get("email"))
     remaining = max(0, daily_limit - sent_today)
     bounce_rate = db.get_bounce_rate(days=7)
     recent_stats = db.get_warmup_stats(days=14)
 
-    # Calculate phase
-    max_week = max(WARMUP_SCHEDULE.keys())
-    if week >= max_week:
-        phase = "Full Operation"
+    if acc.get("is_warmed_up"):
+        phase = "Already Warmed Up (Full Speed)"
         phase_emoji = "🟢"
-    elif week >= max_week - 1:
-        phase = "Almost There"
-        phase_emoji = "🟡"
     else:
-        phase = "Warming Up"
-        phase_emoji = "🔶"
+        max_week = max(WARMUP_SCHEDULE.keys())
+        if week >= max_week:
+            phase = "Full Operation"
+            phase_emoji = "🟢"
+        elif week >= max_week - 1:
+            phase = "Almost There"
+            phase_emoji = "🟡"
+        else:
+            phase = "Warming Up"
+            phase_emoji = "🔶"
 
     # Health assessment
     if bounce_rate > MAX_BOUNCE_RATE:
@@ -114,6 +146,8 @@ def get_warmup_status() -> dict:
         health = "🟢 HEALTHY — reputation looks good"
 
     return {
+        "account": acc.get("email"),
+        "sender_name": acc.get("name"),
         "week": week,
         "phase": phase,
         "phase_emoji": phase_emoji,
@@ -129,15 +163,16 @@ def get_warmup_status() -> dict:
     }
 
 
-def should_send_today() -> tuple:
+def should_send_today(account: dict = None) -> tuple:
     """
     Check if we should send emails today.
     Returns (should_send: bool, reason: str).
     """
-    remaining = get_remaining_today()
+    remaining = get_remaining_today(account)
 
     if remaining <= 0:
-        return False, "Daily sending limit reached"
+        acc_name = f" for {account.get('email')}" if account else ""
+        return False, f"Daily sending limit reached{acc_name}"
 
     bounce_rate = db.get_bounce_rate(days=3)
     if bounce_rate > MAX_BOUNCE_RATE * 1.5:
@@ -153,9 +188,10 @@ def should_send_today() -> tuple:
 
 
 def log_today_metrics(emails_sent: int, bounces: int = 0,
-                       complaints: int = 0, notes: str = ""):
+                       complaints: int = 0, notes: str = "",
+                       account: dict = None):
     """Log today's warm-up metrics."""
-    daily_limit = get_daily_limit()
+    daily_limit = get_daily_limit(account)
     db.log_warmup_day(
         emails_sent=emails_sent,
         bounces=bounces,
@@ -166,23 +202,26 @@ def log_today_metrics(emails_sent: int, bounces: int = 0,
 
 
 def print_warmup_report():
-    """Print a formatted warm-up status report to console."""
-    status = get_warmup_status()
+    """Print a formatted warm-up status report for all active accounts."""
+    from config import ACCOUNTS
+    print(f"\n{'='*60}")
+    print("  MAHAD IMPEX — SENDER ACCOUNTS & WARM-UP STATUS")
+    print(f"{'='*60}")
 
-    print(f"\n{'='*55}")
-    print(f"  {status['phase_emoji']} DOMAIN WARM-UP STATUS")
-    print(f"{'='*55}")
-    print(f"  Domain created:  {status['domain_created']}")
-    print(f"  Domain age:      {status['domain_age_days']} days")
-    print(f"  Current week:    Week {status['week']}")
-    print(f"  Phase:           {status['phase']}")
-    print(f"  Daily limit:     {status['daily_limit']} emails")
-    print(f"  Sent today:      {status['sent_today']}")
-    print(f"  Remaining:       {status['remaining_today']}")
-    print(f"  Bounce rate (7d):{status['bounce_rate_7d']:.1%}")
-    print(f"  Health:          {status['health']}")
-    print(f"\n  Warm-Up Schedule:")
-    for wk, limit in sorted(status["warmup_schedule"].items()):
-        marker = " ◀ current" if wk == status["week"] else ""
-        print(f"    Week {wk}: {limit:>3} emails/day{marker}")
-    print(f"{'='*55}\n")
+    for acc in ACCOUNTS:
+        st = get_warmup_status(acc)
+        print(f"\n  {st['phase_emoji']} {st['sender_name']} <{st['account']}>")
+        print(f"     Status:      {st['phase']}")
+        print(f"     Daily Limit: {st['daily_limit']} emails/day")
+        print(f"     Sent Today:  {st['sent_today']}")
+        print(f"     Remaining:   {st['remaining_today']}")
+        print(f"     Health:      {st['health']}")
+
+    print(f"\n  Global Health:")
+    print(f"     Bounce rate (7d): {db.get_bounce_rate(days=7):.1%}")
+    print(f"     Total Senders:    {len(ACCOUNTS)}")
+    total_capacity = sum(get_daily_limit(acc) for acc in ACCOUNTS)
+    total_remaining = sum(get_remaining_today(acc) for acc in ACCOUNTS)
+    print(f"     Total Capacity:   {total_capacity} emails/day")
+    print(f"     Total Remaining:  {total_remaining} emails today")
+    print(f"{'='*60}\n")
