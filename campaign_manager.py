@@ -72,8 +72,11 @@ def step_check_inbox():
         return {"replies": 0, "bounces": 0, "unsubscribes": 0}
 
 
-def step_find_leads(min_leads_threshold: int = 50):
+def step_find_leads(min_leads_threshold: int = None):
     """Step 2: Discover new leads if we're running low."""
+    if min_leads_threshold is None:
+        min_leads_threshold = max(5, get_remaining_today())
+
     logger.info("\n" + "="*55)
     logger.info("  STEP 2: Lead Discovery & Quality Filter")
     logger.info("="*55)
@@ -121,8 +124,9 @@ def step_send_cold_intros(sender: EmailSender, max_count: int = None):
         logger.info("  No sending capacity remaining today")
         return 0
 
-    # Allocate 60% of capacity to cold intros, 40% to follow-ups
-    cold_capacity = max(1, int(remaining * 0.6))
+    # Allocate 100% to cold intros if follow-ups are disabled, otherwise 60/40 split
+    from config import MAX_FOLLOWUPS
+    cold_capacity = remaining if MAX_FOLLOWUPS == 0 else max(1, int(remaining * 0.6))
 
     leads = db.get_leads_for_emailing(limit=cold_capacity, email_type="cold_intro")
     if not leads:

@@ -48,9 +48,11 @@ BLACKLIST_PREFIX_KEYWORDS = {
     # Real estate, academic, rentals & unrelated
     "rental", "rentals", "realtor", "leasing", "tenant", "faculty", "student", "alumni",
     "admission", "admissions", "registrar", "library", "patient", "clinic", "hospital",
+    # Customer returns / warranty (not buyers)
+    "return", "returns", "refund", "refunds", "warranty", "claims", "repair", "repairs",
 }
 
-# Domains to completely ignore (registrars, tech giants, social platforms, research journals, real estate)
+# Domains to completely ignore (registrars, tech giants, social platforms, research journals, real estate, law firms)
 BLACKLIST_DOMAINS = {
     "computershare.com", "google.com", "microsoft.com", "apple.com", "w3.org", "schema.org",
     "sentry.io", "cloudflare.com", "github.com", "gitlab.com", "example.com", "domain.com",
@@ -58,6 +60,7 @@ BLACKLIST_DOMAINS = {
     "pinterest.com", "youtube.com", "tiktok.com", "trustpilot.com", "yelp.com", "wikipedia.org",
     "frontiersin.org", "nih.gov", "ncbi.nlm.nih.gov", "realtor.com", "move.com", "zillow.com",
     "redfin.com", "booking.com", "airbnb.com", "tripadvisor.com", "nameberry.com", "babycenter.com",
+    "wiley.law", "findlaw.com", "justia.com", "lawyers.com",
 }
 
 # Common B2B-friendly email prefixes (higher relevance)
@@ -81,8 +84,8 @@ def is_blacklisted_email(email: str) -> bool:
         return True
     prefix, domain = email.split("@", 1)
 
-    # Check academic, governmental, or educational TLDs
-    if any(domain.endswith(tld) for tld in (".edu", ".gov", ".mil", ".ac.uk", ".edu.pk", ".gov.uk")):
+    # Check academic, governmental, legal, or educational TLDs
+    if any(domain.endswith(tld) for tld in (".edu", ".gov", ".mil", ".ac.uk", ".edu.pk", ".gov.uk", ".law", ".legal")):
         return True
 
     # Check blacklisted domains or self domain
@@ -249,7 +252,10 @@ def search_duckduckgo(query: str, max_results: int = 15) -> list:
     """
     results = []
     try:
-        from duckduckgo_search import DDGS
+        try:
+            from ddgs import DDGS
+        except ImportError:
+            from duckduckgo_search import DDGS
         with DDGS() as ddgs:
             for r in ddgs.text(query, max_results=max_results):
                 results.append({
