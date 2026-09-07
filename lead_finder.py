@@ -45,14 +45,19 @@ BLACKLIST_PREFIX_KEYWORDS = {
     # Marketing, Advertising & Media/Blog
     "newsletter", "unsubscribe", "subscribe", "promo", "affiliate", "marketing", "ads",
     "advertise", "advertising", "community", "editor", "editorial", "blog", "author", "submit",
+    # Real estate, academic, rentals & unrelated
+    "rental", "rentals", "realtor", "leasing", "tenant", "faculty", "student", "alumni",
+    "admission", "admissions", "registrar", "library", "patient", "clinic", "hospital",
 }
 
-# Domains to completely ignore (registrars, tech giants, social platforms, invalid services)
+# Domains to completely ignore (registrars, tech giants, social platforms, research journals, real estate)
 BLACKLIST_DOMAINS = {
     "computershare.com", "google.com", "microsoft.com", "apple.com", "w3.org", "schema.org",
     "sentry.io", "cloudflare.com", "github.com", "gitlab.com", "example.com", "domain.com",
     "wordpress.com", "shopify.com", "facebook.com", "twitter.com", "instagram.com", "linkedin.com",
     "pinterest.com", "youtube.com", "tiktok.com", "trustpilot.com", "yelp.com", "wikipedia.org",
+    "frontiersin.org", "nih.gov", "ncbi.nlm.nih.gov", "realtor.com", "move.com", "zillow.com",
+    "redfin.com", "booking.com", "airbnb.com", "tripadvisor.com", "nameberry.com", "babycenter.com",
 }
 
 # Common B2B-friendly email prefixes (higher relevance)
@@ -75,6 +80,10 @@ def is_blacklisted_email(email: str) -> bool:
     if "@" not in email:
         return True
     prefix, domain = email.split("@", 1)
+
+    # Check academic, governmental, or educational TLDs
+    if any(domain.endswith(tld) for tld in (".edu", ".gov", ".mil", ".ac.uk", ".edu.pk", ".gov.uk")):
+        return True
 
     # Check blacklisted domains or self domain
     if domain in BLACKLIST_DOMAINS or "mahadimpex.com" in domain:
@@ -154,9 +163,25 @@ def _extract_emails_from_text(text: str) -> set:
     return cleaned
 
 
-def _calculate_relevance(email: str, page_text: str, country: str) -> int:
-    """Score lead relevance 0-100 based on context clues."""
-    score = 40  # Base score
+def _calculate_relevance(email: str, page_text: str, country: str) -> tuple:
+    """Score lead relevance 0-100 based on context clues. Returns (score, keyword_hits)."""
+    page_lower = page_text.lower()
+
+    # Textile industry keywords
+    textile_keywords = [
+        "textile", "textiles", "fabric", "fabrics", "linen", "linens", "towel", "towels",
+        "bedding", "cotton", "garment", "garments", "apparel", "home textile",
+        "home textiles", "bed sheet", "bed sheets", "duvet", "duvets",
+        "importer", "distributor", "wholesaler", "hospitality linen",
+        "sourcing", "procurement", "supply chain", "bath linen"
+    ]
+    keyword_hits = sum(1 for kw in textile_keywords if kw in page_lower)
+
+    # Must have at least 1 textile keyword on the page
+    if keyword_hits == 0:
+        return 0, 0
+
+    score = 30  # Base score for genuine textile contexts
 
     prefix = email.split("@")[0].lower()
 
@@ -167,23 +192,13 @@ def _calculate_relevance(email: str, page_text: str, country: str) -> int:
     elif "." in prefix and len(prefix) > 5:
         score += 20
 
-    page_lower = page_text.lower()
-
-    # Textile industry keywords
-    textile_keywords = [
-        "textile", "fabric", "linen", "towel", "bedding", "cotton",
-        "garment", "apparel", "home textile", "bed sheet", "duvet",
-        "importer", "distributor", "wholesaler", "retail", "hospitality",
-        "sourcing", "procurement", "supply chain", "manufacturer",
-    ]
-    keyword_hits = sum(1 for kw in textile_keywords if kw in page_lower)
-    score += min(keyword_hits * 5, 25)
+    score += min(keyword_hits * 5, 30)
 
     # Country match bonus
     if country.lower() in page_lower:
         score += 5
 
-    return min(score, 100)
+    return min(score, 100), keyword_hits
 
 
 def _guess_first_name(email: str, contact_person: str) -> str:
@@ -431,8 +446,11 @@ def discover_leads_for_market(country_name: str, country_code: str,
                     logger.debug(f"Skipped invalid email: {best_email} — {verification['reason']}")
                     continue
 
-                # Calculate relevance
-                relevance = _calculate_relevance(best_email, page_text, country_name)
+                # Calculate relevance (must have actual textile keywords on page)
+                relevance, keyword_hits = _calculate_relevance(best_email, page_text, country_name)
+                if relevance < 45 or keyword_hits < 1:
+                    logger.debug(f"Skipping non-textile/low-relevance lead: {best_email} (score={relevance}, hits={keyword_hits})")
+                    continue
 
                 # Try to get a first name
                 first_name = _guess_first_name(best_email, "")

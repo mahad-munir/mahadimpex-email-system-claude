@@ -134,7 +134,8 @@ SEND_WINDOW_START = 9       # 9 AM (recipient local time)
 SEND_WINDOW_END = 17        # 5 PM (recipient local time)
 SEND_ON_WEEKENDS = False    # Skip Sat/Sun
 MAX_BOUNCE_RATE = 0.03      # Pause if > 3% bounces
-MAX_FOLLOWUPS = 3           # Follow-up attempts per lead
+ENABLE_FOLLOWUPS = os.getenv("ENABLE_FOLLOWUPS", "false").lower() in ("true", "1", "yes")
+MAX_FOLLOWUPS = int(os.getenv("MAX_FOLLOWUPS", "3")) if ENABLE_FOLLOWUPS else 0
 FOLLOWUP_DELAYS_DAYS = [3, 7, 14]  # Days between follow-ups
 RE_ENGAGE_AFTER_DAYS = 60   # Re-engagement email after N days
 

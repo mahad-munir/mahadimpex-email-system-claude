@@ -2,8 +2,10 @@ name: Mahad Impex Daily Email Campaign
 
 on:
   schedule:
-    # Runs every day at 5:00 AM UTC = 10:00 AM PKT (UTC+5)
-    - cron: '0 5 * * 1-5'   # Monday to Friday only
+    # Primary run: 5:25 AM UTC = 10:25 AM PKT (Monday to Friday, off-peak minute avoids GitHub delays)
+    - cron: '25 5 * * 1-5'
+    # Backup run: 7:35 AM UTC = 12:35 PM PKT (safely skips if daily limit was already reached)
+    - cron: '35 7 * * 1-5'
 
   # Allows you to manually trigger from GitHub website
   workflow_dispatch:

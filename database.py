@@ -146,37 +146,44 @@ def domain_exists(domain: str) -> bool:
 def clean_database():
     """
     Purge duplicate company domains (keeping only the single best lead per company),
-    and remove any blacklisted emails (careers, help, shareholder, etc.).
+    delete any new leads matching blacklists or low relevance, and ensure companies
+    already emailed in the past never have duplicate new leads added.
     """
+    try:
+        from lead_finder import is_blacklisted_email
+    except ImportError:
+        is_blacklisted_email = None
+
     conn = get_connection()
     try:
-        # 1. Delete blacklisted patterns
-        blacklisted_patterns = [
-            "%career%", "%job%", "%recruitment%", "%hiring%", "%talent%",
-            "%help@%", "%support@%", "%customercare%", "%customerservice%",
-            "%shareholder%", "%investor%", "%press@%", "%media@%",
-            "%privacy@%", "%legal@%", "%compliance@%", "%security@%",
-            "%billing@%", "%invoice%", "%accounting%", "%finance@%",
-            "%noreply%", "%donotreply%", "%newsletter%", "%unsubscribe%"
-        ]
-        for pat in blacklisted_patterns:
-            conn.execute("DELETE FROM leads WHERE email LIKE ?", (pat,))
-
-        # 2. For each domain, keep only the single lead with highest relevance_score
-        rows = conn.execute(
-            "SELECT id, email, relevance_score FROM leads ORDER BY relevance_score DESC, id ASC"
-        ).fetchall()
-        seen_domains = set()
-        ids_to_keep = set()
+        # 1. Delete blacklisted emails or low-relevance leads among NEW leads
+        rows = conn.execute("SELECT id, email, relevance_score FROM leads WHERE status = 'new'").fetchall()
         for r in rows:
+            email = r["email"]
+            if is_blacklisted_email and is_blacklisted_email(email):
+                conn.execute("DELETE FROM leads WHERE id = ?", (r["id"],))
+            elif (r["relevance_score"] or 0) < 45:
+                conn.execute("DELETE FROM leads WHERE id = ?", (r["id"],))
+
+        # 2. Prevent re-contacting any company domain that was already emailed in the past
+        emailed_rows = conn.execute("SELECT email FROM leads WHERE status != 'new'").fetchall()
+        emailed_domains = {r["email"].split("@")[-1].lower() for r in emailed_rows if "@" in r["email"]}
+
+        # 3. For each company domain among new leads, keep only the single best contact
+        new_rows = conn.execute(
+            "SELECT id, email, relevance_score FROM leads WHERE status = 'new' ORDER BY relevance_score DESC, id ASC"
+        ).fetchall()
+        seen_domains = set(emailed_domains)
+        ids_to_keep = set()
+        for r in new_rows:
             dom = r["email"].split("@")[-1].lower()
             if dom not in seen_domains:
                 seen_domains.add(dom)
                 ids_to_keep.add(r["id"])
 
-        if rows and ids_to_keep:
-            placeholders = ",".join("?" * len(ids_to_keep))
-            conn.execute(f"DELETE FROM leads WHERE id NOT IN ({placeholders})", list(ids_to_keep))
+        for r in new_rows:
+            if r["id"] not in ids_to_keep:
+                conn.execute("DELETE FROM leads WHERE id = ?", (r["id"],))
 
         conn.commit()
     finally:
