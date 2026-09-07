@@ -9,36 +9,40 @@ import os
 from pathlib import Path
 from config import BASE_DIR
 
+# Fix Windows console encoding
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 
 def create_scheduled_task():
     """
     Create a Windows Task Scheduler task that runs the campaign daily at 10 AM PKT.
-    The task runs 'python main.py run' from the project directory.
+    The task runs 'run_daily.bat' from the project directory.
     """
     python_path = sys.executable
     script_path = str(BASE_DIR / "main.py")
     working_dir = str(BASE_DIR)
     task_name = "MahadImpex_EmailCampaign"
     log_file = str(BASE_DIR / "data" / "logs" / "scheduler.log")
+    bat_path = str(BASE_DIR / "run_daily.bat")
 
-    # Build the command that Task Scheduler will execute
-    # Redirects output to a log file for debugging
-    action = (
-        f'cmd /c ""{python_path}" "{script_path}" run '
-        f'>> "{log_file}" 2>&1"'
-    )
+    # Ensure run_daily.bat exists
+    with open(bat_path, "w", encoding="utf-8") as f:
+        f.write(f'@echo off\ncd /d "{working_dir}"\n"{python_path}" "{script_path}" run >> "{log_file}" 2>&1\n')
 
     # Create the scheduled task using schtasks
     # Runs daily at 10:00 AM
     cmd = [
         "schtasks", "/Create",
         "/TN", task_name,
-        "/TR", action,
+        "/TR", f'"{bat_path}"',
         "/SC", "DAILY",
         "/ST", "10:00",
-        "/F",  # Force overwrite if exists
-        "/RL", "HIGHEST",
-        "/NP",  # No password prompt (runs whether logged in or not)
+        "/F",
     ]
 
     print(f"\n{'='*55}")
@@ -46,6 +50,7 @@ def create_scheduled_task():
     print(f"{'='*55}")
     print(f"\n  Task name:    {task_name}")
     print(f"  Schedule:     Daily at 10:00 AM")
+    print(f"  Batch file:   {bat_path}")
     print(f"  Python:       {python_path}")
     print(f"  Script:       {script_path}")
     print(f"  Working dir:  {working_dir}")
@@ -53,7 +58,7 @@ def create_scheduled_task():
 
     try:
         result = subprocess.run(
-            cmd, capture_output=True, text=True, shell=True
+            cmd, capture_output=True, text=True
         )
 
         if result.returncode == 0:
