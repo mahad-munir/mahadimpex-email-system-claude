@@ -339,3 +339,73 @@
 2026-09-07 22:10:30 [INFO] primp: response: https://search.yahoo.com/search;_ylt=cKLtunK03RjiDws2cfymcDl_;_ylu=8SBYCmFGmc37PCxCyo0F1FmnHyJpQAcT1ZIFfW-6OM1Vjew?p=commercial+linen+hospitality+supplier+Germany+contact+email 200
 2026-09-07 22:10:30 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
 2026-09-07 22:10:31 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+Germany+contact+email&source=web 200
+2026-09-07 22:13:27 [INFO] lead_finder:   ✓ New buyer lead: info8@eliyalinen.com (ELIYA Linen, Germany) score=60
+2026-09-07 22:13:31 [INFO] lead_finder: Searching: institutional textiles distributor Germany email
+2026-09-07 22:13:32 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20Germany%20email 200
+2026-09-07 22:13:33 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+Germany+email&limit=1 502
+2026-09-07 22:13:34 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-07 22:13:35 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-07 22:13:37 [INFO] primp: response: https://search.yahoo.com/search;_ylt=8jE9vWUqGWmFCTi-2SEoMCOK;_ylu=1AsgZQ6qElqZ0lUzEsgZPtbqKx1yNiRFM36xQBjwji6MCbs?p=institutional+textiles+distributor+Germany+email 200
+2026-09-07 22:13:39 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+Germany+email 403
+2026-09-07 22:13:40 [INFO] primp: response: https://www.google.com/wml/search?q=institutional+textiles+distributor+Germany+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:13:57 [INFO] lead_finder:   ✓ New buyer lead: info@hellmann-textil.de (Hellmann Textiles, Germany) score=80
+2026-09-07 22:13:59 [INFO] lead_finder:   Found 7 new leads for Terry Towels & Bath Linen in Germany
+2026-09-07 22:14:04 [INFO] lead_finder: 
+============================================================
+  Searching: Bed Linen & Bed Sets → Netherlands
+============================================================
+2026-09-07 22:14:04 [INFO] lead_finder: Searching: textile importer distributor Netherlands "contact" OR "about" email
+2026-09-07 22:14:05 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&limit=1 502
+2026-09-07 22:14:05 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20Netherlands%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-07 22:14:06 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-07 22:14:06 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-07 22:14:07 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email 503
+2026-09-07 22:14:09 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-07 22:14:09 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-07 22:14:11 [INFO] primp: response: https://www.google.com/wml/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:14:47 [INFO] lead_finder:   ✓ New buyer lead: sales@globalbuyersonline.com (globalbuyersonline.com, Netherlands) score=75
+2026-09-07 22:15:23 [INFO] lead_finder:   ✓ New buyer lead: contact@oziant.com (OZIANT, Netherlands) score=80
+2026-09-07 22:15:49 [INFO] lead_finder: Searching: Bed Linen & Bed Sets wholesale distributor Netherlands contact email
+2026-09-07 22:15:50 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email&limit=1 502
+2026-09-07 22:15:50 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20wholesale%20distributor%20Netherlands%20contact%20email 200
+2026-09-07 22:15:52 [INFO] primp: response: https://search.yahoo.com/search;_ylt=-HU1tbOY5Mdw0p36vRe7aLUo;_ylu=eXHHBGLVcNr09SOEQBcaBKWQueDgZZghUH8BAJ9J4ol8hdg?p=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email 200
+2026-09-07 22:15:53 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email&source=web 429
+2026-09-07 22:15:53 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
+2026-09-07 22:15:54 [INFO] primp: response: https://www.mojeek.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email 403
+2026-09-07 22:15:56 [INFO] primp: response: https://www.google.com/wml/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:16:52 [INFO] lead_finder:   ✓ New buyer lead: info@wings2fashion.com (Premium Linen Bed Sheets Manufacturer in Netherlands, Netherlands) score=80
+2026-09-07 22:17:10 [INFO] lead_finder:   ✓ New buyer lead: team@pigletinbed.com (Piglet in Bed UK, Netherlands) score=65
+2026-09-07 22:17:31 [INFO] lead_finder: Searching: home textiles buying house sourcing Netherlands email
+2026-09-07 22:17:32 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+Netherlands+email&limit=1 200
+2026-09-07 22:17:32 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20Netherlands%20email 200
+2026-09-07 22:17:32 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-07 22:17:34 [INFO] primp: response: https://search.yahoo.com/search;_ylt=QvJr6DVgv3AHG9p91ug7Vlqh;_ylu=uiaEaVlEkZnHFTVmmEe9p8n2zQGqokf0xQtEDiLFreg8AJ8?p=home+textiles+buying+house+sourcing+Netherlands+email 200
+2026-09-07 22:17:36 [INFO] primp: response: https://www.google.com/wml/search?q=home+textiles+buying+house+sourcing+Netherlands+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:18:31 [INFO] lead_finder: Searching: Bed Linen & Bed Sets procurement sourcing agent Netherlands email
+2026-09-07 22:18:32 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20procurement%20sourcing%20agent%20Netherlands%20email 200
+2026-09-07 22:18:32 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Netherlands+email&limit=1 502
+2026-09-07 22:18:33 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Netherlands+email&source=web 200
+2026-09-07 22:19:12 [INFO] lead_finder:   ✓ New buyer lead: info@serenlinn.nl (https://serenlinn.nl/, Netherlands) score=80
+2026-09-07 22:19:39 [INFO] lead_finder:   ✓ New buyer lead: joanna@casacomodo.nl (Casa Comodo, Netherlands) score=65
+2026-09-07 22:19:42 [INFO] lead_finder: Searching: commercial linen hospitality supplier Netherlands contact email
+2026-09-07 22:19:42 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20Netherlands%20contact%20email 200
+2026-09-07 22:19:43 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+Netherlands+contact+email&limit=1 200
+2026-09-07 22:19:43 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
+2026-09-07 22:19:44 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email 403
+2026-09-07 22:19:45 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email&source=web 429
+2026-09-07 22:19:46 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-07 22:19:46 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-07 22:19:48 [INFO] primp: response: https://search.yahoo.com/search;_ylt=4Z3ZHpl0YAYF_XWFZ6hmjplX;_ylu=dHLWx9ShAM6PYWt4zOZo8qSg4VyjMIYw3PGIPOfy4W0BGFg?p=commercial+linen+hospitality+supplier+Netherlands+contact+email 200
+2026-09-07 22:19:49 [INFO] primp: response: https://www.google.com/wml/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:19:57 [INFO] lead_finder:   ✓ New buyer lead: bienvenue@blycolin.com (blycolin.com, Netherlands) score=60
+2026-09-07 22:20:00 [INFO] lead_finder:   Found 7 new leads for Bed Linen & Bed Sets in Netherlands
+2026-09-07 22:20:05 [INFO] lead_finder: 
+============================================================
+  Searching: Terry Towels & Bath Linen → Netherlands
+============================================================
+2026-09-07 22:20:05 [INFO] lead_finder: Searching: textile importer distributor Netherlands "contact" OR "about" email
+2026-09-07 22:20:05 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20Netherlands%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-07 22:20:06 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&limit=1 200
+2026-09-07 22:20:06 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-07 22:20:07 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-07 22:20:08 [INFO] primp: response: https://www.google.com/wml/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200

@@ -256,10 +256,12 @@ def cmd_stats():
     print(f"  Bounce Rate:             {stats['bounce_rate']:.1%}")
     print(f"{'-'*55}")
     print(f"  Today's Sends (Combined): {stats['sent_today']}")
+    from warmup_manager import get_daily_limit
     for acc in ACCOUNTS:
         sent_acc_today = db.get_emails_sent_today_by_sender(acc["email"])
-        limit_str = f"Max {acc.get('daily_limit')} / day" if acc.get("is_warmed_up") else "Warmup limit"
-        print(f"    • {acc['name']} ({acc['email']}): {sent_acc_today} sent today [{limit_str}]")
+        lim = get_daily_limit(acc)
+        type_str = "Warmed up" if acc.get("is_warmed_up") else "Warmup"
+        print(f"    • {acc['name']} ({acc['email']}): {sent_acc_today}/{lim} sent today [{type_str}]")
     print(f"  Sent This Week:           {stats['sent_week']}")
     print(f"{'='*55}\n")
 

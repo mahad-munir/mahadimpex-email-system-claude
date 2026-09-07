@@ -42,7 +42,7 @@ COMPANY_PHONE = "+92 300 9657831"
 COMPANY_ADDRESS = "Faisalabad, Punjab, Pakistan"
 COMPANY_TAGLINE = "Textile Sourcing & Buying House"
 
-# Account 1: Muhammad Munir (Already warmed up — 45 emails/day)
+# Account 1: Muhammad Munir (Warmed up with ~260 prior sends — dynamically scaled 35->45/day)
 ACCOUNT_MUNIR = {
     "id": "munir",
     "name": "Muhammad Munir",
@@ -54,7 +54,7 @@ ACCOUNT_MUNIR = {
     "imap_host": IMAP_HOST,
     "imap_port": IMAP_PORT,
     "is_warmed_up": True,
-    "daily_limit": int(os.getenv("MUNIR_DAILY_LIMIT", "45")),
+    "daily_limit": int(os.getenv("MUNIR_DAILY_LIMIT")) if os.getenv("MUNIR_DAILY_LIMIT") else None,
     "signature": """Muhammad Munir
 Mahad Impex Team 
 Website: mahadimpex.com

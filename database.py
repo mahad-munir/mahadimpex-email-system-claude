@@ -405,6 +405,21 @@ def get_emails_sent_today_by_sender(from_email: str) -> int:
     return get_emails_sent_today(from_email)
 
 
+def get_total_emails_sent_by_sender(from_email: str = None) -> int:
+    """Count all-time emails sent, optionally filtered by sender."""
+    conn = get_connection()
+    try:
+        if from_email:
+            return conn.execute(
+                "SELECT COUNT(*) FROM emails_sent WHERE lower(from_email) = ?",
+                (from_email.lower().strip(),)
+            ).fetchone()[0]
+        else:
+            return conn.execute("SELECT COUNT(*) FROM emails_sent").fetchone()[0]
+    finally:
+        conn.close()
+
+
 def get_emails_sent_count(days=30):
     """Count emails sent in the last N days."""
     conn = get_connection()

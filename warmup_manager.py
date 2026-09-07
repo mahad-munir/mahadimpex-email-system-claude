@@ -79,11 +79,40 @@ def get_daily_limit() -> int:
 def get_daily_limit(account: dict = None) -> int:
     """
     Get the allowed daily sending limit.
-    If an account is already warmed up (like munir@mahadimpex.com), returns its fixed limit.
-    Otherwise returns the dynamic warm-up limit based on domain age and reputation.
+    If an account is marked is_warmed_up (e.g. Muhammad Munir with ~260 prior sends):
+      - If explicitly set via MUNIR_DAILY_LIMIT env, uses that.
+      - Otherwise, dynamically calculates optimal limit based on accumulated volume:
+          * < 350 total sends: 35 emails/day (safe automated cadence)
+          * 350 - 500 total sends: 40 emails/day
+          * 500+ total sends: 45 emails/day (standard cold email inbox ceiling)
+      - Enforces bounce rate throttling if bounces exceed threshold.
+    If an account is in standard warmup (e.g. Aliyan Munir):
+      - Follows WARMUP_SCHEDULE by domain age and enforces bounce rate throttling.
     """
     if account and account.get("is_warmed_up"):
-        return account.get("daily_limit", 45)
+        custom_limit = account.get("daily_limit")
+        if custom_limit is not None:
+            base_limit = custom_limit
+        else:
+            past_sends = 260
+            db_sends = db.get_total_emails_sent_by_sender(account.get("email"))
+            total_history = past_sends + db_sends
+
+            if total_history < 350:
+                base_limit = 35
+            elif total_history < 500:
+                base_limit = 40
+            else:
+                base_limit = 45
+
+        # Protection: reduce limit if bounce rate is elevated
+        bounce_rate = db.get_bounce_rate(days=7)
+        if bounce_rate > MAX_BOUNCE_RATE:
+            return max(5, base_limit // 2)
+        if bounce_rate > MAX_BOUNCE_RATE / 2:
+            return max(10, int(base_limit * 0.7))
+
+        return base_limit
 
     week = get_current_week()
     base_limit = WARMUP_SCHEDULE.get(week, MAX_DAILY_SENDS)
@@ -123,7 +152,10 @@ def get_warmup_status(account: dict = None) -> dict:
     recent_stats = db.get_warmup_stats(days=14)
 
     if acc.get("is_warmed_up"):
-        phase = "Already Warmed Up (Full Speed)"
+        past_sends = 260
+        db_sends = db.get_total_emails_sent_by_sender(acc.get("email"))
+        total_hist = past_sends + db_sends
+        phase = f"Warmed Up (Smart Ramp: {daily_limit}/day | ~{total_hist} total sent)"
         phase_emoji = "🟢"
     else:
         max_week = max(WARMUP_SCHEDULE.keys())
