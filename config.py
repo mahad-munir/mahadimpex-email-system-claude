@@ -33,7 +33,7 @@ IMAP_PORT = int(os.getenv("IMAP_PORT", "993"))
 
 # ── Gemini AI ────────────────────────────────────────────────
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
 
 # ── Sender Identity & Accounts ──────────────────────────────
 COMPANY_NAME = "Mahad Impex"
@@ -109,38 +109,35 @@ TARGET_MARKETS = [
 PRODUCT_LINES = [
     {
         "name": "Bed Linen & Bed Sets",
+        "short_keyword": "bed linen",
         "keywords": ["bed linen", "bed sheets", "duvet covers", "bedding",
                      "bed sets", "pillowcases", "fitted sheets"],
-        "description": "Premium combed-cotton bed sets, duvets, fitted sheets, "
-                       "and pillowcases — woven for comfort and durability at scale.",
-        "usp": "Pakistan is the world's 3rd largest bed linen exporter. "
-               "Our manufacturing partners hold OEKO-TEX and GOTS certifications.",
+        "description": "100% combed cotton 144TC to 800TC percales and lustrous sateens — duvet sets, fitted sheets, flat sheets, and pillowcases for wholesale and institutional supply.",
+        "usp": "Direct mill-gate FOB pricing with OEKO-TEX Standard 100 & GOTS certifications. 4-stage in-line weaving and AQL 2.5 final inspection.",
     },
     {
         "name": "Terry Towels & Bath Linen",
+        "short_keyword": "towel",
         "keywords": ["towels", "bath towels", "terry towels", "bath linen",
                      "hand towels", "bath robes", "hotel towels"],
-        "description": "Absorbent terry towels, robes, and bath linen — "
-                       "widely supplied to hospitality chains and retailers.",
-        "usp": "Pakistan is the world's largest terry towel exporter. "
-               "We offer 400-700 GSM options in ring-spun and zero-twist.",
+        "description": "400 to 700 GSM ring-spun and zero-twist 100% cotton bath towels, bath sheets, hand towels, and bathrobes with vat-dyed commercial colorfastness.",
+        "usp": "Faisalabad is the world's #1 terry towel export hub. Double-stitched institutional hems with high-absorbency zero-twist yarn.",
     },
     {
         "name": "Knitted Garments",
+        "short_keyword": "apparel",
         "keywords": ["t-shirts", "polo shirts", "hoodies", "activewear",
                      "sweatshirts", "knitted garments", "casual wear"],
-        "description": "Custom knitted apparel — T-shirts, polos, hoodies, "
-                       "and activewear with full branding and packaging options.",
-        "usp": "Competitive pricing with 20-30 day lead times. "
-               "MOQ as low as 500 pieces per style.",
+        "description": "Custom knitted apparel — 160 to 320 GSM single jersey, pique, and French terry T-shirts, polos, and fleece hoodies with custom Pantone dyeing.",
+        "usp": "Competitive FOB pricing with 20-30 day lead times and agile MOQs from 500 pieces per style.",
     },
     {
         "name": "Kitchen & Table Linen",
+        "short_keyword": "table linen",
         "keywords": ["kitchen towels", "aprons", "table cloths", "napkins",
                      "oven mitts", "kitchen linen", "table linen"],
-        "description": "Kitchen towels, aprons, tablecloths, and napkins — "
-                       "durable weaves for everyday use and hospitality.",
-        "usp": "Full custom printing and embroidery capabilities.",
+        "description": "Yarn-dyed jacquard kitchen towels, heavy waffle weaves, restaurant-grade tablecloths, and napkins built for heavy commercial laundering.",
+        "usp": "High-durability commercial constructions with custom yarn-dyed checks, stripes, and embroidery options.",
     },
 ]
 

@@ -1,90 +1,102 @@
 {
   "company_profile": {
     "name": "Mahad Impex",
-    "type": "Textile sourcing company & buying house",
+    "type": "Direct textile buying house & sourcing management",
     "location": "Faisalabad, Punjab, Pakistan",
-    "specialization": "Connecting global B2B buyers with certified manufacturing partners for premium home textiles",
-    "certifications": ["OEKO-TEX Standard 100", "GOTS (Global Organic Textile Standard)", "ISO 9001"],
+    "specialization": "Connecting overseas distributors and wholesale brands directly with audited Pakistani mills for premium home textiles",
+    "certifications": ["OEKO-TEX Standard 100", "GOTS (Global Organic Textile Standard)", "BSCI / Sedex audited partner mills"],
     "key_strengths": [
-      "Direct factory access in Pakistan's textile hub (Faisalabad)",
-      "End-to-end quality control and inspection",
-      "Competitive pricing with flexible MOQs",
-      "Full logistics and documentation support",
-      "Custom branding, packaging, and labeling"
+      "Direct mill-gate FOB pricing with zero trading company markups",
+      "On-site 4-stage quality control (raw yarn, in-line weaving, dyeing/printing, final AQL 2.5 packing)",
+      "Fast sampling: 4-day lab dips and 7-day custom pre-production strike-offs",
+      "Flexible commercial MOQs starting from 500 pieces per colorway",
+      "Full export logistics management, container consolidation, and customs documentation"
     ],
     "why_pakistan": [
-      "World's 3rd largest bed linen exporter",
-      "World's largest terry towel exporter",
-      "Premium long-staple cotton grown domestically",
-      "Competitive manufacturing costs",
-      "Decades of textile export expertise"
+      "World's 3rd largest bed linen exporter and #1 terry towel producer",
+      "Abundant domestic long-staple cotton offering superior tensile strength and hand-feel",
+      "Significant tariff and cost advantage over regional competitors",
+      "Established vertically integrated mills with decades of global export compliance"
     ]
   },
   "greeting_styles": [
     "Hi {first_name},",
     "Hello {first_name},",
-    "Good day {first_name},",
-    "Hi there {first_name},",
-    "Dear {first_name},"
+    "Hi {company} team,",
+    "Hello {company} team,"
   ],
-  "signoff_styles": [
-    "Best regards,",
-    "Kind regards,",
-    "Warm regards,",
-    "Thanks,",
-    "Regards,",
-    "Looking forward to hearing from you,",
-    "All the best,"
-  ],
-  "cold_intro_angles": [
-    {
-      "angle": "direct_sourcing",
-      "theme": "Introduce direct factory sourcing from Pakistan to reduce costs",
-      "hook": "Many buyers are switching from middlemen to direct sourcing partners in Pakistan's textile hub."
+  "persona_strategies": {
+    "munir": {
+      "role": "Commercial & Margins Specialist",
+      "focus": "FOB Pricing, Margin Protection, Mill-Direct Economics",
+      "angles": [
+        {
+          "name": "mill_gate_margin",
+          "theme": "Cutting out middleman trading markups to improve buyer gross margins",
+          "hook_instruction": "Mention reaching out directly from Faisalabad where we work at the mill gate, typically cutting 12-18% off landed FOB costs compared to European/US trading intermediaries.",
+          "cta": "Can I send over our current Q3/Q4 FOB rate card for you to compare against your existing landed costs?"
+        },
+        {
+          "name": "cotton_price_stabilization",
+          "theme": "Current cotton price window to lock in advantageous contract pricing",
+          "hook_instruction": "Highlight that raw cotton prices in South Asia have stabilized, making this the ideal quarter for wholesale distributors to benchmark their upcoming replenishment rates.",
+          "cta": "Would you be open to reviewing a quick FOB benchmark quote on your primary volume lines?"
+        },
+        {
+          "name": "supply_chain_diversification",
+          "theme": "Adding a competitive, reliable Pakistani mill partner to balance supply risks",
+          "hook_instruction": "Notice they distribute high-volume textile lines and mention how we help overseas importers establish direct, reliable mill allocations without broker friction.",
+          "cta": "Worth sending across our 2026 FOB price sheet, or are you completely locked in with existing suppliers right now?"
+        },
+        {
+          "name": "direct_volume_capacity",
+          "theme": "High-volume container replenishment with on-time delivery guarantees",
+          "hook_instruction": "Reference our network of audited composite mills in Faisalabad capable of handling steady 20ft/40ft container programs with predictable 25-35 day lead times.",
+          "cta": "Can I share our FOB price comparison and container lead-time schedule for your procurement team?"
+        }
+      ]
     },
-    {
-      "angle": "quality_assurance",
-      "theme": "Highlight certified manufacturing and rigorous quality control",
-      "hook": "Every shipment goes through 4-stage quality inspection before it leaves the factory floor."
-    },
-    {
-      "angle": "market_insight",
-      "theme": "Share a relevant market trend or data point about their product category",
-      "hook": "With cotton prices stabilizing, now is an excellent time to lock in competitive rates."
-    },
-    {
-      "angle": "problem_solution",
-      "theme": "Address common pain points in textile sourcing",
-      "hook": "Late deliveries and inconsistent quality are the two biggest sourcing headaches — and exactly what we built our process to prevent."
-    },
-    {
-      "angle": "capability_showcase",
-      "theme": "Show specific production capability relevant to their business",
-      "hook": "We recently fulfilled a 40,000-piece bed linen order for a European retailer in under 25 days."
-    }
-  ],
-  "followup_angles": {
-    "followup_1": {
-      "theme": "Gentle reminder with a specific product highlight",
-      "tone": "Friendly, brief, adds new value (specific product detail or case study)"
-    },
-    "followup_2": {
-      "theme": "Value-add with market insight or pricing transparency",
-      "tone": "Helpful, consultative, no pressure"
-    },
-    "followup_3": {
-      "theme": "Final touch — leave the door open gracefully",
-      "tone": "Respectful, brief, 'no hard feelings' energy, offers future availability"
+    "aliyan": {
+      "role": "Technical Sourcing, Specs & Sampling Specialist",
+      "focus": "Fabric Quality, Yarn Specs, Quality Inspection, Physical Swatches",
+      "angles": [
+        {
+          "name": "fabric_swatch_offer",
+          "theme": "Sending free physical fabric swatch cards directly to their office",
+          "hook_instruction": "Mention you oversee product development and quality on the ground in Faisalabad, working with combed cotton weaves (200TC to 600TC percales/sateens) and plush ring-spun terry (450-650 GSM).",
+          "cta": "Can I mail a free physical swatch book with our current fabric constructions directly to your desk?"
+        },
+        {
+          "name": "on_site_quality_control",
+          "theme": "Eliminating delivery surprises through 4-stage on-site mill inspections",
+          "hook_instruction": "Explain that unlike overseas agents who only inspect finished goods, our on-ground team tests yarn count, verifies weaving density, and runs AQL 2.5 final inspections before containers seal.",
+          "cta": "Would it be helpful if I sent over a sample inspection report and spec sheet for review?"
+        },
+        {
+          "name": "rapid_custom_sampling",
+          "theme": "Low MOQ custom sampling and fast lab dip turnarounds",
+          "hook_instruction": "Highlight our agile sample development: 4-day lab dips and 7-day custom strike-offs with flexible trial MOQs from 500 pcs per style.",
+          "cta": "Are you developing any new specs or colorways for upcoming seasons that you'd like us to develop a quick sample for?"
+        },
+        {
+          "name": "certified_mill_allocation",
+          "theme": "Strict OEKO-TEX Standard 100, GOTS, and social compliance",
+          "hook_instruction": "Highlight that all our manufacturing partners in Faisalabad are OEKO-TEX Standard 100 and BSCI/Sedex certified, ensuring clean European and US retail compliance.",
+          "cta": "Would you like me to share our certified mill portfolio and fabric spec guide?"
+        }
+      ]
     }
   },
-  "subject_line_patterns": [
-    "Quick question about {company}'s textile sourcing",
-    "{product_line} sourcing from Pakistan — for {company}",
-    "Idea for {company}'s {product_line} supply chain",
-    "Connecting on {product_line} sourcing",
-    "Pakistan textile sourcing — {company}",
-    "{first_name}, a thought on your {product_line} supply",
-    "Re: {product_line} sourcing options",
-    "Direct sourcing partner in Pakistan — {company}"
+  "subject_line_formulas": [
+    "quick question re: {product_keyword} specs",
+    "faisalabad mill pricing / {company}",
+    "{product_keyword} specs / {company}",
+    "samples for {company}",
+    "{product_keyword} pricing inquiry",
+    "direct mill pricing / {company}",
+    "quick question, {first_name}",
+    "swatch card for {company}",
+    "{product_keyword} supplier for {company}?",
+    "{company} + mahad impex"
   ]
 }

@@ -48,10 +48,9 @@ def _pick_product_context(product_interest: str = "") -> dict:
 
 
 def _build_system_prompt(account: dict = None) -> str:
-    """Build the system prompt that instructs Gemini how to write emails."""
+    """Build the system prompt instructing Gemini on voice, persona, and constraints."""
     company = _contexts.get("company_profile", {})
-    strengths = company.get("key_strengths", [])
-    why_pakistan = company.get("why_pakistan", [])
+    account_id = "munir" if (account and "munir" in account.get("id", "").lower()) else "aliyan"
 
     sender_name = account.get("name", SENDER_NAME) if account else SENDER_NAME
     sender_title = account.get("title", SENDER_TITLE) if account else SENDER_TITLE
@@ -60,82 +59,107 @@ Mahad Impex Team
 Website: mahadimpex.com
 Call/WhatsApp: +92 300 9657831"""
 
-    return f"""You are writing business emails as {sender_name}, {sender_title} at {COMPANY_NAME}.
+    if account_id == "munir":
+        persona_brief = (
+            f"You are writing as {sender_name}, {sender_title} at {COMPANY_NAME}.\n"
+            "YOUR ROLE & STRATEGY: Commercial & Margins Specialist. You talk directly to B2B procurement "
+            "directors and wholesale buyers about FOB mill-gate pricing, margin optimization, eliminating middleman "
+            "trading markups (12-18% savings), and transparent FOB price benchmarking against their current landed costs."
+        )
+    else:
+        persona_brief = (
+            f"You are writing as {sender_name}, {sender_title} at {COMPANY_NAME}.\n"
+            "YOUR ROLE & STRATEGY: Head of Sourcing & Product Quality on the ground in Faisalabad. "
+            "You talk to buyers about technical fabric constructions (percales, sateens, GSM weights, yarn counts), "
+            "on-site 4-stage AQL 2.5 mill inspections, rapid sampling (4-day lab dips), and offering free physical fabric swatch hangers."
+        )
 
-ABOUT THE COMPANY:
-- {COMPANY_NAME} is a {company.get('type', 'textile sourcing company')} based in {company.get('location', 'Faisalabad, Pakistan')}
-- Specialization: {company.get('specialization', '')}
-- Key strengths: {'; '.join(strengths[:3])}
-- Why Pakistan: {'; '.join(why_pakistan[:3])}
-- Website: {COMPANY_WEBSITE}
+    return f"""{persona_brief}
+
+COMPANY BACKGROUND:
+- {COMPANY_NAME} is a direct textile buying house based in Faisalabad, Pakistan (the world's textile manufacturing hub).
+- Website: {COMPANY_WEBSITE} | Phone/WhatsApp: +92 300 9657831
+- Mill partners hold OEKO-TEX Standard 100, GOTS, and BSCI/Sedex certifications.
 
 CRITICAL WRITING RULES:
-1. Write like a real human professional — NOT like a marketing template or AI
-2. Keep emails SHORT (80-150 words for cold intros, 50-100 for follow-ups)
-3. Use natural, conversational business English — not overly polished or formal
-4. Vary your sentence length naturally — mix short punchy sentences with longer ones
-5. NEVER use these spam trigger words: free, guaranteed, limited time, act now, buy now, exclusive deal, hurry, urgent, special offer, no obligation, risk free, incredible, amazing, unbelievable, phenomenal
-6. NEVER use ALL CAPS for emphasis
-7. Use maximum 1 exclamation mark per email (preferably zero)
-8. Do NOT include any HTML, bullet points, or heavy formatting — plain text only
-9. Do NOT start with "I hope this email finds you well" or similar clichés
-10. Make each email feel unique — vary greetings, openings, angles, and sign-offs
-11. Be specific about products/capabilities relevant to the recipient
-12. End with a soft, low-pressure call to action (ask a question, suggest a brief chat)
-13. NEVER promise prices, discounts, or specific numbers unless given
-14. Write in first person as {sender_name}
-15. Sound confident but not pushy — helpful, knowledgeable, approachable
+1. Write like an experienced textile professional emailing a colleague — NOT like an AI, an agency copywriter, or a brochure.
+2. Keep emails ULTRA-SHORT: 65 to 95 words maximum (excluding signature).
+3. Structure: Exactly 3 brief paragraphs (1-2 sentences each). Lots of white space, fast to scan on a phone in 10 seconds.
+4. NO CORPORATE CLICHÉS: NEVER say "I hope this email finds you well", "Good day", "Late deliveries and inconsistent quality...", "Every shipment goes through...", "We recently fulfilled a 40,000-piece order...", "With cotton prices stabilizing...".
+5. SPAM SHIELD: NEVER use: free, guaranteed, limited time, act now, exclusive deal, urgent, risk free, incredible, best price, cheap, revolutionary.
+6. Plain text only — NO bullet points, NO markdown bolding (* or **), NO HTML.
+7. End with ONE single, low-friction question or CTA (offering FOB benchmark comparison or free fabric swatches).
+8. Always end with the EXACT provided signature.
 
-EMAIL SIGNATURE (always end the email with this exact signature):
+EMAIL SIGNATURE:
 {signature}"""
 
 
-def _build_cold_intro_prompt(lead: dict, product: dict) -> str:
-    """Build the prompt for a cold introduction email."""
-    angles = _contexts.get("cold_intro_angles", [])
-    angle = random.choice(angles) if angles else {
-        "angle": "direct_sourcing",
-        "theme": "Introduce direct sourcing",
-        "hook": "",
+def _build_cold_intro_prompt(lead: dict, product: dict, account: dict = None) -> str:
+    """Build the prompt for a high-converting cold introduction email."""
+    account_id = "munir" if (account and "munir" in account.get("id", "").lower()) else "aliyan"
+    persona_data = _contexts.get("persona_strategies", {}).get(account_id, {})
+    angles = persona_data.get("angles", [])
+    selected_angle = random.choice(angles) if angles else {
+        "theme": "Direct mill-gate sourcing advantage from Pakistan",
+        "hook_instruction": "Mention reaching out directly from Faisalabad where we connect overseas distributors with audited mills.",
+        "cta": "Would you be open to reviewing our current FOB price sheet for comparison against your current landed costs?"
     }
 
-    greeting_styles = _contexts.get("greeting_styles", ["Hi {first_name},"])
-    if lead.get("first_name"):
-        greeting = random.choice(greeting_styles).format(first_name=lead["first_name"])
+    first_name = lead.get("first_name")
+    company_name = lead.get("company_name", "your company")
+    short_company = company_name.split()[0].strip(",").strip(".") if company_name else "team"
+
+    if first_name:
+        greeting = f"Hi {first_name},"
     else:
-        greeting = random.choice(["Hi there,", "Hello,", "Good day,"])
+        greeting = f"Hi {short_company} team,"
 
-    contact_name_display = lead.get('first_name') or 'Not specified (address the company or team)'
+    product_name = product.get("name", "Home Textiles")
+    product_kw = product.get("short_keyword", "textile")
+    product_desc = product.get("description", "")
+    product_usp = product.get("usp", "")
 
-    return f"""Write a cold outreach email to a potential textile buyer.
+    sample_subjects = [
+        f"quick question re: {product_kw} specs",
+        f"faisalabad mill pricing / {short_company}",
+        f"{product_kw} specs / {short_company}",
+        f"samples for {short_company}",
+        f"quick question, {first_name or short_company}",
+    ]
+
+    return f"""Write an ultra-short, peer-to-peer B2B cold email to a wholesale buyer / importer.
 
 RECIPIENT INFO:
-- Company: {lead.get('company_name', 'their company')}
-- Contact name: {contact_name_display}
+- Company: {company_name}
+- Contact: {first_name or 'Not specified (address ' + short_company + ' team)'}
 - Country: {lead.get('country', '')}
-- Their likely interest: {lead.get('product_interest', product['name'])}
+- Likely product focus: {lead.get('product_interest') or product_name}
 
-PRODUCT TO HIGHLIGHT:
-- Product: {product['name']}
-- Description: {product['description']}
-- Unique selling point: {product['usp']}
+YOUR PRODUCT SPECS (naturally mention 1-2 concrete specs):
+- Product: {product_name}
+- Construction & Specs: {product_desc}
+- Manufacturing Advantage: {product_usp}
 
-EMAIL ANGLE: {angle['theme']}
-OPENING HOOK IDEA: {angle['hook']}
+STRATEGIC ANGLE FOR THIS EMAIL:
+- Angle Theme: {selected_angle['theme']}
+- Hook Guidance: {selected_angle['hook_instruction']}
+- Target Call-to-Action (CTA): {selected_angle['cta']}
 
-START THE EMAIL WITH: {greeting}
+START THE EMAIL WITH EXACTLY: {greeting}
 
-REQUIREMENTS:
-- 80-150 words maximum (excluding signature)
-- One clear, relevant value proposition
-- End with a soft question or low-pressure CTA
-- Generate a compelling subject line (under 60 chars, no spam words, no ALL CAPS)
-- Do NOT use any clichéd openings
+STRICT WRITING RULES:
+1. LENGTH: 65 to 95 words MAXIMUM (excluding signature). Keep it punchy and clear.
+2. PARAGRAPHS: 3 short paragraphs total (1-2 sentences each).
+3. TONE: Peer-to-peer, confident, knowledgeable, direct. No corporate buzzwords, no lecturing.
+4. NO CLICHÉS: NEVER start with "Late deliveries...", "Every shipment goes through...", "We recently fulfilled a 40,000-piece order...", "With cotton prices stabilizing...".
+5. SUBJECT LINE: Must be 2 to 5 words MAXIMUM. Natural casing or lowercase. Must look like a real human email, NOT a marketing pitch.
+   Example subject styles: {', '.join(sample_subjects)}
 
 FORMAT YOUR RESPONSE EXACTLY AS:
-SUBJECT: [your subject line]
+SUBJECT: [2 to 5 words subject line]
 BODY:
-[your email body ending with the exact signature]"""
+[email body ending with the exact signature provided in system prompt]"""
 
 
 def _build_followup_prompt(lead: dict, product: dict,
@@ -200,7 +224,7 @@ BODY:
 
 
 def _parse_ai_response(response_text: str) -> tuple:
-    """Parse Gemini response into subject and body."""
+    """Parse Gemini response into subject and body with high-conversion cleaning."""
     subject = ""
     body = ""
 
@@ -210,24 +234,44 @@ def _parse_ai_response(response_text: str) -> tuple:
     body_lines = []
 
     for line in lines:
-        if line.upper().startswith("SUBJECT:"):
-            subject = line.split(":", 1)[1].strip()
-            # Remove quotes if Gemini wrapped it
-            subject = subject.strip('"').strip("'")
-        elif line.upper().startswith("BODY:"):
+        clean_line = line.strip()
+        if clean_line.upper().startswith("SUBJECT:"):
+            subject = clean_line.split(":", 1)[1].strip()
+            subject = subject.strip('"').strip("'").strip("*").strip()
+        elif clean_line.upper().startswith("BODY:"):
             body_started = True
         elif body_started:
             body_lines.append(line)
 
     body = "\n".join(body_lines).strip()
 
-    # Fallback: if parsing failed, use the whole response
+    # Fallback: if parsing failed, extract first line
     if not subject:
-        # Try to extract first line as subject
         if lines:
-            subject = lines[0][:60]
+            first_line = lines[0].strip()
+            if ":" in first_line:
+                subject = first_line.split(":", 1)[1].strip()
+            else:
+                subject = first_line[:50]
+            subject = subject.strip('"').strip("'").strip("*")
     if not body:
         body = response_text.strip()
+
+    # Clean subject line to guarantee natural peer-to-peer styling
+    marketing_prefixes = [
+        "certified ", "sourcing ", "introducing ", "production for ",
+        "reliable ", "premium ", "high quality ", "re: "
+    ]
+    sub_lower = subject.lower().strip()
+    for pref in marketing_prefixes:
+        if sub_lower.startswith(pref):
+            subject = subject[len(pref):].strip()
+            break
+
+    # Trim to 5 words max if too long
+    words = subject.split()
+    if len(words) > 6:
+        subject = " ".join(words[:5])
 
     return subject, body
 
@@ -243,20 +287,20 @@ def generate_email(lead: dict, email_type: str = "cold_intro",
     client = _get_client()
     product = _pick_product_context(lead.get("product_interest", ""))
 
-    # Build the appropriate prompt
+    # Build the appropriate prompt with account persona awareness
     if email_type == "cold_intro":
-        user_prompt = _build_cold_intro_prompt(lead, product)
+        user_prompt = _build_cold_intro_prompt(lead, product, account=account)
     elif email_type.startswith("followup_"):
         followup_num = int(email_type.split("_")[1])
         user_prompt = _build_followup_prompt(lead, product, followup_num,
                                               previous_subject)
     else:
-        user_prompt = _build_cold_intro_prompt(lead, product)
+        user_prompt = _build_cold_intro_prompt(lead, product, account=account)
 
     system_prompt = _build_system_prompt(account=account)
 
-    # Candidate models to try with automatic fallback
-    models_to_try = [GEMINI_MODEL, "gemini-3.6-flash", "gemini-flash-latest", "gemini-3.5-flash"]
+    # Candidate models to try with automatic fallback (prioritize stable production models)
+    models_to_try = [GEMINI_MODEL, "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.7-flash", "gemini-3.6-flash"]
     candidate_models = []
     for m in models_to_try:
         if m and m not in candidate_models:

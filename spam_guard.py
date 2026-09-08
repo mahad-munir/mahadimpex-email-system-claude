@@ -55,6 +55,28 @@ def check_spam_words(text: str) -> dict:
     }
 
 
+# Allowed business & textile acronyms (not spam shouting)
+TEXTILE_ACRONYMS = {
+    "OEKO-TEX", "GOTS", "ISO", "MOQ", "USA", "UK", "EU", "GSM",
+    "UAE", "B2B", "FOB", "CIF", "AQL", "BSCI", "SEDEX", "TC",
+    "Q1", "Q2", "Q3", "Q4", "Q3/Q4", "Q1/Q2", "Q4/Q1"
+}
+
+
+def _is_legit_textile_term(word: str) -> bool:
+    """Check if uppercase word is a valid textile/commercial term."""
+    clean = word.strip(".,;:!?()[]/\"'")
+    if clean in TEXTILE_ACRONYMS:
+        return True
+    # Check thread count patterns (e.g. 200TC, 300TC, 400TC, 800TC)
+    if clean.endswith("TC") and clean[:-2].isdigit():
+        return True
+    # Check GSM patterns (e.g. 500GSM, 600GSM)
+    if clean.endswith("GSM") and clean[:-3].isdigit():
+        return True
+    return False
+
+
 def check_subject_line(subject: str) -> dict:
     """Validate subject line against spam heuristics."""
     issues = []
@@ -65,13 +87,13 @@ def check_subject_line(subject: str) -> dict:
         issues.append(f"Subject too long ({len(subject)} chars, max {MAX_SUBJECT_LENGTH})")
         score += 5
 
-    if len(subject) < 10:
-        issues.append("Subject too short (under 10 chars)")
+    if len(subject) < 5:
+        issues.append("Subject too short (under 5 chars)")
         score += 5
 
-    # ALL CAPS check
+    # ALL CAPS check (excluding standard trade acronyms)
     words = subject.split()
-    caps_words = [w for w in words if w.isupper() and len(w) > 2]
+    caps_words = [w for w in words if w.isupper() and len(w) > 2 and not _is_legit_textile_term(w)]
     if len(caps_words) > 0:
         issues.append(f"ALL CAPS words in subject: {caps_words}")
         score += 15
@@ -88,12 +110,6 @@ def check_subject_line(subject: str) -> dict:
     if "!!!" in subject or "???" in subject:
         issues.append("Excessive punctuation in subject")
         score += 15
-
-    # Starts with "Re:" or "Fwd:" artificially
-    if subject.lower().startswith(("re:", "fwd:", "fw:")):
-        # This is a common spam trick — but we do use it legitimately for follow-ups
-        # Only flag if it's a cold intro
-        pass
 
     # Spam words in subject
     spam_check = check_spam_words(subject)
@@ -115,7 +131,6 @@ def check_body(body: str) -> dict:
         issues.append(f"High-risk spam words: {spam_check['high_risk'][:5]}")
         score += spam_check["spam_score"]
     if spam_check["medium_risk"]:
-        # Medium risk words are okay in moderation
         if len(spam_check["medium_risk"]) > 3:
             issues.append(f"Many medium-risk words: {spam_check['medium_risk'][:5]}")
             score += 5
@@ -126,11 +141,9 @@ def check_body(body: str) -> dict:
         issues.append(f"Too many exclamation marks ({excl_count})")
         score += excl_count * 3
 
-    # ALL CAPS words (excluding short words and common acronyms)
+    # ALL CAPS words (excluding trade terms and acronyms)
     words = body.split()
-    caps_words = [w for w in words if w.isupper() and len(w) > 3
-                  and w not in ("OEKO-TEX", "GOTS", "ISO", "MOQ", "USA",
-                                "UK", "EU", "GSM", "UAE", "B2B")]
+    caps_words = [w for w in words if w.isupper() and len(w) > 3 and not _is_legit_textile_term(w)]
     if len(caps_words) > 2:
         issues.append(f"Too many ALL CAPS words: {caps_words[:3]}")
         score += len(caps_words) * 5

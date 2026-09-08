@@ -417,3 +417,53 @@
 2026-09-07 22:21:09 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=PK&bi=Nayatel+%28Pvt%29&be=68593f8c0ebdfdefe4cf6914df4e5bbb&bds_t=1788801668T53f707fc3cfdc0e4d79ae23012b9cecdd65294ce2a9937e434f02a0defe9192d&bds_s=39c67a59269e4b359c908570b2f9bf74&t=device&abd=0&qadf=moderate&qsr=en_US&sc=&abe=0&language=english&segment=organic&abp=1&lui=english&query=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email&cat=web&cmd=gen_page 200
 2026-09-07 22:21:12 [INFO] primp: response: https://www.google.com/wml/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
 2026-09-07 22:21:45 [INFO] lead_finder:   ✓ New buyer lead: info@polanitex.com (Polani Textiles, Netherlands) score=75
+2026-09-07 22:22:03 [INFO] lead_finder:   ✓ New buyer lead: info@pinkant.es (Pink Ant, Netherlands) score=75
+2026-09-07 22:22:07 [INFO] lead_finder: Searching: home textiles buying house sourcing Netherlands email
+2026-09-07 22:22:08 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20Netherlands%20email 200
+2026-09-07 22:22:09 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+Netherlands+email&limit=1 502
+2026-09-07 22:22:10 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+Netherlands+email 403
+2026-09-07 22:22:11 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-07 22:22:12 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-07 22:22:13 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
+2026-09-07 22:23:12 [INFO] lead_finder: Searching: Terry Towels & Bath Linen procurement sourcing agent Netherlands email
+2026-09-07 22:23:13 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Netherlands+email&limit=1 200
+2026-09-07 22:23:13 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20procurement%20sourcing%20agent%20Netherlands%20email 200
+2026-09-07 22:23:14 [INFO] primp: response: https://www.google.com/wml/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Netherlands+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:23:39 [INFO] lead_finder: Searching: commercial linen hospitality supplier Netherlands contact email
+2026-09-07 22:23:40 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+Netherlands+contact+email&limit=1 200
+2026-09-07 22:23:40 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20Netherlands%20contact%20email 200
+2026-09-07 22:23:40 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
+2026-09-07 22:23:41 [INFO] primp: response: https://www.google.com/wml/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:23:58 [INFO] lead_finder:   ✓ New buyer lead: sales@kingofcotton.co.uk (King of Cotton, Netherlands) score=80
+2026-09-07 22:24:28 [INFO] lead_finder:   ✓ New buyer lead: contact@smallworldindia.com (Small World India, Netherlands) score=50
+2026-09-07 22:25:04 [INFO] lead_finder:   ✓ New buyer lead: sales@hotemax.com (Hotemax | Trusted Hotel Supplies Supplier & Manufacturer in China for Global Hospitality, Netherlands) score=75
+2026-09-07 22:25:09 [INFO] lead_finder: Searching: institutional textiles distributor Netherlands email
+2026-09-07 22:25:09 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+Netherlands+email&limit=1 200
+2026-09-07 22:25:09 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20Netherlands%20email 200
+2026-09-07 22:25:10 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+Netherlands+email&source=web 429
+2026-09-07 22:25:11 [INFO] primp: response: https://www.google.com/wml/search?q=institutional+textiles+distributor+Netherlands+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-07 22:43:51 [INFO] lead_finder:   Found 5 new leads for Terry Towels & Bath Linen in Netherlands
+2026-09-07 22:43:57 [INFO] lead_finder: 
+Total new leads found: 54
+2026-09-07 22:43:57 [INFO] campaign_manager:   Discovered 54 new leads
+2026-09-07 22:43:57 [INFO] campaign_manager: 
+=======================================================
+2026-09-07 22:43:57 [INFO] campaign_manager:   STEP 3: Sending Cold Intro Emails
+2026-09-07 22:43:57 [INFO] campaign_manager: =======================================================
+2026-09-07 22:43:57 [INFO] campaign_manager:   No sending capacity remaining today
+2026-09-07 22:43:57 [INFO] campaign_manager: 
+=======================================================
+2026-09-07 22:43:57 [INFO] campaign_manager:   STEP 4: Sending Follow-Up Emails
+2026-09-07 22:43:57 [INFO] campaign_manager: =======================================================
+2026-09-07 22:43:57 [INFO] campaign_manager:   No sending capacity remaining today
+2026-09-07 22:43:57 [INFO] campaign_manager: 
+#######################################################
+2026-09-07 22:43:57 [INFO] campaign_manager:   DAILY RUN COMPLETE
+2026-09-07 22:43:57 [INFO] campaign_manager:   Emails sent:     0
+2026-09-07 22:43:57 [INFO] campaign_manager:   Cold intros:     0
+2026-09-07 22:43:57 [INFO] campaign_manager:   Follow-ups:      0
+2026-09-07 22:43:57 [INFO] campaign_manager:   Replies today:   0
+2026-09-07 22:43:57 [INFO] campaign_manager:   Bounces today:   0
+2026-09-07 22:43:57 [INFO] campaign_manager:   Duration:        3595s
+2026-09-07 22:43:57 [INFO] campaign_manager: #######################################################
+
