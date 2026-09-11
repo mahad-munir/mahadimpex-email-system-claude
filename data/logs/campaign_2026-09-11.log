@@ -1,0 +1,738 @@
+2026-09-11 09:52:33 [INFO] campaign_manager: 
+#######################################################
+2026-09-11 09:52:33 [INFO] campaign_manager:   MAHAD IMPEX — MULTI-ACCOUNT DAILY CAMPAIGN
+2026-09-11 09:52:33 [INFO] campaign_manager:   2026-09-11 09:52:33
+2026-09-11 09:52:33 [INFO] campaign_manager: #######################################################
+2026-09-11 09:52:33 [INFO] campaign_manager: 
+  Total Senders:    2
+2026-09-11 09:52:33 [INFO] campaign_manager:   Total Remaining:  45 emails today
+2026-09-11 09:52:33 [INFO] campaign_manager: 
+=======================================================
+2026-09-11 09:52:33 [INFO] campaign_manager:   STEP 1: Checking inbox for replies & bounces
+2026-09-11 09:52:33 [INFO] campaign_manager: =======================================================
+2026-09-11 09:52:37 [INFO] email_sender: Inbox check total: {'replies': 0, 'bounces': 0, 'unsubscribes': 0}
+2026-09-11 09:52:37 [INFO] campaign_manager:   Replies: 0 | Bounces: 0 | Unsubscribes: 0
+2026-09-11 09:52:37 [INFO] campaign_manager: 
+=======================================================
+2026-09-11 09:52:37 [INFO] campaign_manager:   STEP 2: Lead Discovery & Quality Filter
+2026-09-11 09:52:37 [INFO] campaign_manager: =======================================================
+2026-09-11 09:52:37 [INFO] campaign_manager:   Available verified leads: 0
+2026-09-11 09:52:37 [INFO] campaign_manager:   Need ~45 more leads, searching...
+2026-09-11 09:52:37 [INFO] lead_finder: 
+============================================================
+  Searching: Bed Linen & Bed Sets → United States
+============================================================
+2026-09-11 09:52:37 [INFO] lead_finder: Searching: textile importer distributor United States "contact" OR "about" email
+2026-09-11 09:52:37 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20United%20States%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 09:52:37 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email&limit=1 200
+2026-09-11 09:52:37 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email 403
+2026-09-11 09:52:38 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BUnited%2BStates%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGOaej9UGIjDAqW-fNNRrDkjmSwil3YrXduRJ1BLchbCUZNixSKf1euuyMk_b8-VLXzGZTsjiTQkyAnJSWgFD 429
+2026-09-11 09:52:38 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 09:52:39 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789120358T2be9ea8334f36fd5db0ec48e4f16a829bd14c63d8c54f44244847cb57fc3b0bc&bds_s=48526fec46264eb9bb4420e67dc16b8d&abe=0&abd=0&language=english&abp=1&t=device&sc=&lui=english&qadf=moderate&segment=organic&qsr=en_US&query=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 09:52:39 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
+2026-09-11 09:52:40 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email&source=web 200
+2026-09-11 09:53:40 [INFO] lead_finder: Searching: Bed Linen & Bed Sets wholesale distributor United States contact email
+2026-09-11 09:53:41 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+wholesale+distributor+United+States+contact+email&limit=1 200
+2026-09-11 09:53:41 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20wholesale%20distributor%20United%20States%20contact%20email 200
+2026-09-11 09:53:41 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 09:53:41 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 09:53:41 [INFO] primp: response: https://search.yahoo.com/search;_ylt=K4F9pNOA5t4-0A4GHHL67Qbl;_ylu=_ZaXebT1a-p-YcXzO8mDVXuf7YWwOsduu1X8vY_vWQAFAeg?p=Bed+Linen+%26+Bed+Sets+wholesale+distributor+United+States+contact+email 200
+2026-09-11 09:53:46 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+United+States+contact+email&source=web 200
+2026-09-11 09:53:58 [INFO] lead_finder:   ✓ New buyer lead: wholesale@barehome.com (Bare Home, United States) score=60
+2026-09-11 09:54:30 [INFO] lead_finder: Searching: home textiles buying house sourcing United States email
+2026-09-11 09:54:31 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20United%20States%20email 200
+2026-09-11 09:54:31 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+United+States+email&limit=1 200
+2026-09-11 09:54:31 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
+2026-09-11 09:55:24 [INFO] lead_finder: Searching: Bed Linen & Bed Sets procurement sourcing agent United States email
+2026-09-11 09:55:24 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+United+States+email&limit=1 200
+2026-09-11 09:55:24 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20procurement%20sourcing%20agent%20United%20States%20email 200
+2026-09-11 09:55:25 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 09:55:25 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 09:55:26 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+United+States+email&source=web 200
+2026-09-11 09:57:18 [INFO] lead_finder: Searching: commercial linen hospitality supplier United States contact email
+2026-09-11 09:57:18 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+United+States+contact+email&limit=1 200
+2026-09-11 09:57:18 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20United%20States%20contact%20email 200
+2026-09-11 09:57:19 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+United+States+contact+email 403
+2026-09-11 09:57:19 [INFO] primp: response: https://search.yahoo.com/search;_ylt=28C5Ko_hibN1POUYcy2pd6gX;_ylu=Tns3FHWJ1KYrNJ5yDsTsJ50LuihJfDTGJSEYMNP0Lhuvnac?p=commercial+linen+hospitality+supplier+United+States+contact+email 200
+2026-09-11 09:57:20 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+United+States+contact+email&source=web 200
+2026-09-11 09:58:58 [INFO] lead_finder:   ✓ New buyer lead: angel@hotelierlinen.com (Home, United States) score=50
+2026-09-11 09:59:09 [INFO] lead_finder: Searching: institutional textiles distributor United States email
+2026-09-11 09:59:09 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20United%20States%20email 200
+2026-09-11 09:59:09 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+United+States+email&limit=1 502
+2026-09-11 09:59:09 [INFO] primp: response: https://search.yahoo.com/search;_ylt=cc41yTNEX8_LI-ihDq6Yc5I9;_ylu=pPsxJicTmekj1EYwkGDBVN_UpNnEXeg7h9-W5Q1oIaj3cFQ?p=institutional+textiles+distributor+United+States+email 200
+2026-09-11 09:59:10 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dinstitutional%2Btextiles%2Bdistributor%2BUnited%2BStates%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGO6hj9UGIjDTlxuDLnqG7G04StpfF0dFF_a2bW-zb-dipqyo4rsKqeqDo-7A8DZkI_erJlXrLWIyAnJSWgFD 429
+2026-09-11 09:59:11 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+United+States+email&source=web 200
+2026-09-11 09:59:31 [INFO] lead_finder:   ✓ New buyer lead: info@fishertextiles.com (Fisher Textiles, United States) score=55
+2026-09-11 09:59:53 [INFO] lead_finder:   ✓ New buyer lead: info@iinfotanks.com (IInfotanks, United States) score=70
+2026-09-11 09:59:58 [INFO] lead_finder:   Found 4 new leads for Bed Linen & Bed Sets in United States
+2026-09-11 10:00:03 [INFO] lead_finder: 
+============================================================
+  Searching: Terry Towels & Bath Linen → United States
+============================================================
+2026-09-11 10:00:03 [INFO] lead_finder: Searching: textile importer distributor United States "contact" OR "about" email
+2026-09-11 10:00:03 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email&limit=1 502
+2026-09-11 10:00:03 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20United%20States%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 10:00:04 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email 403
+2026-09-11 10:00:04 [INFO] primp: response: https://search.yahoo.com/search;_ylt=ae_HYv-nE4n5_pvjA2VTfb1m;_ylu=ZlhLLX3VOyiGyGfkV3vc_fftgavMZC47HT2VitqcENAI9mo?p=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email 200
+2026-09-11 10:00:05 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:00:05 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789120805T80e90214169d3876894d2cddff28a40fe4012083b6b7ca05122aae1ea879d487&bds_s=7b07bd5542a54043acc730e546bab17b&abp=1&abe=0&qadf=moderate&sc=&abd=0&t=device&language=english&lui=english&qsr=en_US&segment=organic&query=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 10:00:05 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BUnited%2BStates%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGKWij9UGIjBonPvu4cZEGK4yJbiv239V7n8sQ8agaY_ivvyMisEoB0HLvD0cP_xgr86djdHJUiEyAnJSWgFD 429
+2026-09-11 10:00:05 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+United+States+%22contact%22+OR+%22about%22+email&source=web 200
+2026-09-11 10:00:55 [INFO] lead_finder: Searching: Terry Towels & Bath Linen wholesale distributor United States contact email
+2026-09-11 10:00:55 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+States+contact+email&limit=1 502
+2026-09-11 10:00:55 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20wholesale%20distributor%20United%20States%20contact%20email 200
+2026-09-11 10:00:56 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:00:56 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:00:56 [INFO] primp: response: https://search.yahoo.com/search;_ylt=HIwtSx5yn_nwzCgrwLRyMh98;_ylu=4T9x4xQxmm4mi2OGsYxqrAD7q1RCjyQ9dZ-azcIBbXPvhfg?p=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+States+contact+email 200
+2026-09-11 10:00:57 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+States+contact+email&source=web 429
+2026-09-11 10:00:57 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bwholesale%2Bdistributor%2BUnited%2BStates%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGNmij9UGIjD8V9GPoGht1M5D4AgVO4V4BZwgaN5Df_4IdNiakDuZCX92KudiMvxEcFTnNUoqy8UyAnJSWgFD 429
+2026-09-11 10:00:58 [INFO] primp: response: https://html.duckduckgo.com/html/ 200
+2026-09-11 10:00:58 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+States+contact+email 403
+2026-09-11 10:00:58 [WARNING] lead_finder: DuckDuckGo search failed for 'Terry Towels & Bath Linen wholesale distributor United States contact email': No results found.
+2026-09-11 10:01:01 [INFO] lead_finder: Searching: home textiles buying house sourcing United States email
+2026-09-11 10:01:02 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20United%20States%20email 200
+2026-09-11 10:01:02 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+United+States+email&limit=1 502
+2026-09-11 10:01:02 [INFO] ddgs.ddgs: Error in engine google: DDGSException("ConnectError: ConnectError('error sending request for url (https://www.google.com/wml/search?q=home+textiles+buying+house+sourcing+United+States+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS) > Network is unreachable (os error 101)')")
+2026-09-11 10:01:02 [INFO] primp: response: https://search.yahoo.com/search;_ylt=U1-rXhS2Io-mtf1r3qQVitvP;_ylu=B11SH71makkz7ic3mcMKWUl_LiSpo7trkITstQSV_BD65E8?p=home+textiles+buying+house+sourcing+United+States+email 200
+2026-09-11 10:01:03 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:01:04 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:01:04 [INFO] primp: response: https://search.brave.com/search?q=home+textiles+buying+house+sourcing+United+States+email&source=web 429
+2026-09-11 10:01:04 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+United+States+email 403
+2026-09-11 10:01:37 [INFO] lead_finder: Searching: Terry Towels & Bath Linen procurement sourcing agent United States email
+2026-09-11 10:01:37 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+States+email&limit=1 502
+2026-09-11 10:01:37 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20procurement%20sourcing%20agent%20United%20States%20email 200
+2026-09-11 10:01:38 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bprocurement%2Bsourcing%2Bagent%2BUnited%2BStates%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGIGjj9UGIjDSAVjgRQIm2kC2ZILRurd6FvQnbZNzenbV7pHuQuDGE-q7G9uaokkcVB8aB5t61ngyAnJSWgFD 429
+2026-09-11 10:01:38 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:01:38 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:01:38 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+States+email&source=web 429
+2026-09-11 10:01:39 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+States+email 403
+2026-09-11 10:01:39 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:01:39 [INFO] primp: response: https://search.yahoo.com/search;_ylt=GW9aLS2f2f77mBbCKnbfz3Tx;_ylu=NSe50UEH0CRgpL6hHr-ZRAhWEGjM0QGACFi6OdfnDUDNOaQ?p=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+States+email 200
+2026-09-11 10:01:39 [WARNING] lead_finder: DuckDuckGo search failed for 'Terry Towels & Bath Linen procurement sourcing agent United States email': No results found.
+2026-09-11 10:01:42 [INFO] lead_finder: Searching: commercial linen hospitality supplier United States contact email
+2026-09-11 10:01:42 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+United+States+contact+email&limit=1 502
+2026-09-11 10:01:42 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20United%20States%20contact%20email 200
+2026-09-11 10:01:42 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+United+States+contact+email 403
+2026-09-11 10:01:42 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+United+States+contact+email&source=web 429
+2026-09-11 10:01:43 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:01:43 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dcommercial%2Blinen%2Bhospitality%2Bsupplier%2BUnited%2BStates%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGIejj9UGIjDKb6VI0yllL7XYshJqMqlXbgFqw6OFTduAyf9shuk4uCr_UQNUagbhTgACXTJEV7oyAnJSWgFD 429
+2026-09-11 10:01:43 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:01:43 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:01:44 [INFO] primp: response: https://search.yahoo.com/search;_ylt=uBMez3YhPQD3YQT5mhdiQHig;_ylu=_FzuLDxwCjg1gEcYiJFHV73sSHVxPkiO9Rtv7IqbrSTUe3U?p=commercial+linen+hospitality+supplier+United+States+contact+email 200
+2026-09-11 10:01:44 [WARNING] lead_finder: DuckDuckGo search failed for 'commercial linen hospitality supplier United States contact email': No results found.
+2026-09-11 10:01:49 [INFO] lead_finder: Searching: institutional textiles distributor United States email
+2026-09-11 10:01:49 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+United+States+email&limit=1 502
+2026-09-11 10:01:49 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20United%20States%20email 200
+2026-09-11 10:01:49 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+United+States+email&source=web 429
+2026-09-11 10:01:50 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dinstitutional%2Btextiles%2Bdistributor%2BUnited%2BStates%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGI2jj9UGIjCEY8omSSs3eGKOSsjS_TxzFKlRZpQPKJU1RBAaT63P1Tmdvv7OfPmruRStGBK1EkgyAnJSWgFD 429
+2026-09-11 10:01:50 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:01:50 [INFO] primp: response: https://search.yahoo.com/search;_ylt=SnLjpIFD0wDjxcDGv-5WsEhj;_ylu=XuBHlyZdODjOi27uebzUxxVKofqHTZ1wN8_wnSHPM8_Xjok?p=institutional+textiles+distributor+United+States+email 200
+2026-09-11 10:01:51 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:01:51 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:01:51 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+United+States+email 403
+2026-09-11 10:02:27 [INFO] lead_finder:   Found 0 new leads for Terry Towels & Bath Linen in United States
+2026-09-11 10:02:34 [INFO] lead_finder: 
+============================================================
+  Searching: Bed Linen & Bed Sets → United Kingdom
+============================================================
+2026-09-11 10:02:34 [INFO] lead_finder: Searching: textile importer distributor United Kingdom "contact" OR "about" email
+2026-09-11 10:02:34 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email&limit=1 200
+2026-09-11 10:02:34 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20United%20Kingdom%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 10:02:35 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:02:35 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:02:35 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789120955T790ee96b13417708a1cfcfcf84dbac460994cb8937b32c3f16949595142cd59f&bds_s=d2d2c5d9b25d4cef9f27de66c80019b1&abp=1&lui=english&qadf=moderate&qsr=en_US&sc=&segment=organic&language=english&abd=0&t=device&abe=0&query=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 10:02:36 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-11 10:02:36 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BUnited%2BKingdom%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGLyjj9UGIjChxV7SUT0g1sOpm9XzE-AlEhffl5fDZckPl9e5i49pd35G4j9TEr1HOlj-CIK36dMyAnJSWgFD 429
+2026-09-11 10:02:37 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email 403
+2026-09-11 10:02:37 [INFO] primp: response: https://search.yahoo.com/search;_ylt=0MHW7g5wUVXyZBfW86jiCEna;_ylu=UCKZEA1jFDzNqUJKU87G6TpjEeOwq6SGCiKAxVyVkcz53IQ?p=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email 200
+2026-09-11 10:03:18 [INFO] lead_finder:   ✓ New buyer lead: mktg.yarns@sintex.in (Sintex Yarn, United Kingdom) score=80
+2026-09-11 10:03:22 [INFO] lead_finder: Searching: Bed Linen & Bed Sets wholesale distributor United Kingdom contact email
+2026-09-11 10:03:22 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+wholesale+distributor+United+Kingdom+contact+email&limit=1 502
+2026-09-11 10:03:22 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20wholesale%20distributor%20United%20Kingdom%20contact%20email 200
+2026-09-11 10:03:22 [INFO] primp: response: https://search.yahoo.com/search;_ylt=-ibpwml-bYIlWx8iGuTp5OEH;_ylu=0ZO0rXVwIRSx68EnG2LriQRrxq8Z5rCffWJ0Ml7Vgy4Vp48?p=Bed+Linen+%26+Bed+Sets+wholesale+distributor+United+Kingdom+contact+email 200
+2026-09-11 10:03:23 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:03:23 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:03:23 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DBed%2BLinen%2B%2526%2BBed%2BSets%2Bwholesale%2Bdistributor%2BUnited%2BKingdom%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGOujj9UGIjCILpow4VgGnZDNHAZZD-SHUpIgzlfUQI8xzhgZBKWvfoaXcEOAHDpwG4EU_6u-5lIyAnJSWgFD 429
+2026-09-11 10:03:24 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+United+Kingdom+contact+email&source=web 429
+2026-09-11 10:03:24 [INFO] primp: response: https://www.mojeek.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+United+Kingdom+contact+email 403
+2026-09-11 10:03:28 [INFO] lead_finder:   ✓ New buyer lead: info@yorkshirebedding.co.uk (Yorkshire Bedding, United Kingdom) score=75
+2026-09-11 10:03:42 [INFO] lead_finder:   ✓ New buyer lead: info@beddingsdirect.co.uk (Beddings Direct, United Kingdom) score=75
+2026-09-11 10:03:55 [INFO] lead_finder:   ✓ New buyer lead: info@eastasiantextiles.com (East Asian Home Textiles, United Kingdom) score=75
+2026-09-11 10:04:00 [INFO] lead_finder: Searching: home textiles buying house sourcing United Kingdom email
+2026-09-11 10:04:00 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+United+Kingdom+email&limit=1 200
+2026-09-11 10:04:00 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20United%20Kingdom%20email 200
+2026-09-11 10:04:01 [INFO] primp: response: https://search.brave.com/search?q=home+textiles+buying+house+sourcing+United+Kingdom+email&source=web 429
+2026-09-11 10:04:01 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+United+Kingdom+email 403
+2026-09-11 10:04:01 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:04:01 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:04:02 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:04:02 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dhome%2Btextiles%2Bbuying%2Bhouse%2Bsourcing%2BUnited%2BKingdom%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGJKkj9UGIjDtOCl7TS_VScG6wqEVtvoW1AdAOqLeiQpWOCYT4nm-VMxHjUM3q1IsPEIkoQMhkw0yAnJSWgFD 429
+2026-09-11 10:04:03 [INFO] primp: response: https://search.yahoo.com/search;_ylt=eJFAYlAJln6gaoytYZpArlDs;_ylu=XViOKCwlZyIkqoViUvl44xlC3xuvZOaoOJWeoL8Mfgy4KIQ?p=home+textiles+buying+house+sourcing+United+Kingdom+email 200
+2026-09-11 10:04:03 [WARNING] lead_finder: DuckDuckGo search failed for 'home textiles buying house sourcing United Kingdom email': No results found.
+2026-09-11 10:04:08 [INFO] lead_finder: Searching: Bed Linen & Bed Sets procurement sourcing agent United Kingdom email
+2026-09-11 10:04:08 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+United+Kingdom+email&limit=1 502
+2026-09-11 10:04:08 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20procurement%20sourcing%20agent%20United%20Kingdom%20email 200
+2026-09-11 10:04:09 [INFO] primp: response: https://search.yahoo.com/search;_ylt=Gt9QNlPDGZcaJbiq1SUqCABz;_ylu=TPHTtirpm5ufUym17L2RaxnTsfU3lWJ4qesjaqvtfBClSY0?p=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+United+Kingdom+email 200
+2026-09-11 10:04:10 [INFO] primp: response: https://www.mojeek.com/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+United+Kingdom+email 403
+2026-09-11 10:04:11 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DBed%2BLinen%2B%2526%2BBed%2BSets%2Bprocurement%2Bsourcing%2Bagent%2BUnited%2BKingdom%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGJqkj9UGIjBUfpqoudAIoeUaSgxkNbcRuhLWDYn6cTCqD9cnkDxpeTNwS8FGuCtlYSdQplHPF_AyAnJSWgFD 429
+2026-09-11 10:04:11 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+United+Kingdom+email&source=web 429
+2026-09-11 10:04:11 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:04:11 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:04:18 [INFO] lead_finder:   ✓ New buyer lead: sales@amstellinens.com (Amstel Linens, United Kingdom) score=75
+2026-09-11 10:04:44 [INFO] lead_finder: Searching: commercial linen hospitality supplier United Kingdom contact email
+2026-09-11 10:04:44 [INFO] ddgs.ddgs: Error in engine grokipedia: DDGSException("ConnectError: ConnectError('error sending request for url (https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+United+Kingdom+contact+email&limit=1) > Network is unreachable (os error 101)')")
+2026-09-11 10:04:44 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20United%20Kingdom%20contact%20email 200
+2026-09-11 10:04:44 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:04:45 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:04:45 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:04:45 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+United+Kingdom+contact+email&source=web 429
+2026-09-11 10:04:45 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dcommercial%2Blinen%2Bhospitality%2Bsupplier%2BUnited%2BKingdom%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGL2kj9UGIjAoF_UwIrJS7UzCiL3m1n93b6QoG0rNcDAWy-2A7s2hG3mkiJs9GFueqe9FSlZd8tgyAnJSWgFD 429
+2026-09-11 10:04:46 [INFO] primp: response: https://search.yahoo.com/search;_ylt=22Dx0KIX4t1g8RhBjvrdKm3W;_ylu=Sk38UKgTZlxY-WfDLQbG9xbl-Ru_27GJNvAoWp8E1aNE17o?p=commercial+linen+hospitality+supplier+United+Kingdom+contact+email 200
+2026-09-11 10:04:47 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+United+Kingdom+contact+email 403
+2026-09-11 10:05:13 [INFO] lead_finder: Searching: institutional textiles distributor United Kingdom email
+2026-09-11 10:05:13 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+United+Kingdom+email&limit=1 200
+2026-09-11 10:05:13 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20United%20Kingdom%20email 200
+2026-09-11 10:05:13 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+United+Kingdom+email&source=web 429
+2026-09-11 10:05:13 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+United+Kingdom+email 403
+2026-09-11 10:05:14 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:05:14 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:05:14 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:05:14 [INFO] primp: response: https://search.yahoo.com/search;_ylt=1KlIPqPwzrGK1I0QnhnBpO0a;_ylu=Z2-bKqCApg-EGu6nVE66yFctwn13N1-ubRcdJloZ04iNs_w?p=institutional+textiles+distributor+United+Kingdom+email 200
+2026-09-11 10:05:15 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dinstitutional%2Btextiles%2Bdistributor%2BUnited%2BKingdom%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGNukj9UGIjDnXctg9ceqGncsmuQDYDALz0AwsrQFrNHr10AiyeEv1OeL4zXlkHgTaLAIql376B8yAnJSWgFD 429
+2026-09-11 10:05:22 [INFO] lead_finder:   ✓ New buyer lead: info@thearistocrategroup.com (Institutional Textile, United Kingdom) score=75
+2026-09-11 10:05:27 [INFO] lead_finder:   ✓ New buyer lead: kusursuz_kartaal@hotmail.com (AeroLeads, United Kingdom) score=55
+2026-09-11 10:05:31 [INFO] lead_finder:   Found 7 new leads for Bed Linen & Bed Sets in United Kingdom
+2026-09-11 10:05:36 [INFO] lead_finder: 
+============================================================
+  Searching: Terry Towels & Bath Linen → United Kingdom
+============================================================
+2026-09-11 10:05:36 [INFO] lead_finder: Searching: textile importer distributor United Kingdom "contact" OR "about" email
+2026-09-11 10:05:36 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20United%20Kingdom%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 10:05:37 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email&limit=1 502
+2026-09-11 10:05:37 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:05:37 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789121137T463bed6eca2edc7c03d31396f3204afdf745fb8e1c93dc5076260eb679e94fd2&bds_s=608de4d87b424a3d83b73bfa5ac265e4&abd=0&abe=0&sc=&lui=english&t=device&abp=1&qsr=en_US&segment=organic&qadf=moderate&language=english&query=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 10:05:37 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:05:38 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BUnited%2BKingdom%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGPGkj9UGIjByvezp4uqHkXgXJEnfGuHPgFZw6UANUFHdXORpaJdl3GrxRfGr_FC5nEXWzSbW878yAnJSWgFD 429
+2026-09-11 10:05:38 [INFO] primp: response: https://search.yahoo.com/search;_ylt=yMqjDMlmhOVl_JoUfv6pbQXV;_ylu=cLS0gZ0d8chJdq2s3GFnlujtAYJEQVfciI8vQbc29Dkv09A?p=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email 200
+2026-09-11 10:05:39 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-11 10:05:39 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+United+Kingdom+%22contact%22+OR+%22about%22+email 403
+2026-09-11 10:05:39 [WARNING] lead_finder: DuckDuckGo search failed for 'textile importer distributor United Kingdom "contact" OR "about" email': No results found.
+2026-09-11 10:05:42 [INFO] lead_finder: Searching: Terry Towels & Bath Linen wholesale distributor United Kingdom contact email
+2026-09-11 10:05:42 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+Kingdom+contact+email&limit=1 200
+2026-09-11 10:05:42 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20wholesale%20distributor%20United%20Kingdom%20contact%20email 200
+2026-09-11 10:05:43 [INFO] primp: response: https://search.yahoo.com/search;_ylt=Lu8zpVr-vIDq7VLtjA9lV5cp;_ylu=eEG0LlcIz_gz-H5Eil6OrhV9haV4f2p9i4pKz35OiSKmtkA?p=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+Kingdom+contact+email 200
+2026-09-11 10:05:44 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+Kingdom+contact+email 403
+2026-09-11 10:05:44 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bwholesale%2Bdistributor%2BUnited%2BKingdom%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGPikj9UGIjBwQyLQcr4VsdGS7c-GGoWjxBkAak27VDmWYDkameQhWpvyy4v16QpAMx4CQrrb0owyAnJSWgFD 429
+2026-09-11 10:05:45 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:05:45 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:05:45 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+United+Kingdom+contact+email&source=web 429
+2026-09-11 10:06:15 [INFO] lead_finder: Searching: home textiles buying house sourcing United Kingdom email
+2026-09-11 10:06:16 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+United+Kingdom+email&limit=1 502
+2026-09-11 10:06:16 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20United%20Kingdom%20email 200
+2026-09-11 10:06:16 [INFO] primp: response: https://search.brave.com/search?q=home+textiles+buying+house+sourcing+United+Kingdom+email&source=web 429
+2026-09-11 10:06:16 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:06:16 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:06:17 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+United+Kingdom+email 403
+2026-09-11 10:06:17 [INFO] primp: response: https://search.yahoo.com/search;_ylt=1NX-Asnd6EbkXT1c3FyFYoQw;_ylu=JPSyWDZuMgxMIGI76aUPFQUtxLfU_vyVPPARLJDtVh7R0y4?p=home+textiles+buying+house+sourcing+United+Kingdom+email 200
+2026-09-11 10:06:18 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:06:18 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dhome%2Btextiles%2Bbuying%2Bhouse%2Bsourcing%2BUnited%2BKingdom%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGJqlj9UGIjBuvKOH28R5yGqGs_MXspakOChh11w98dcLodwmJ_wI3mqexU9tzAhNIoFYxMBJVUYyAnJSWgFD 429
+2026-09-11 10:06:18 [WARNING] lead_finder: DuckDuckGo search failed for 'home textiles buying house sourcing United Kingdom email': No results found.
+2026-09-11 10:06:22 [INFO] lead_finder: Searching: Terry Towels & Bath Linen procurement sourcing agent United Kingdom email
+2026-09-11 10:06:22 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+Kingdom+email&limit=1 200
+2026-09-11 10:06:22 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20procurement%20sourcing%20agent%20United%20Kingdom%20email 200
+2026-09-11 10:06:23 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:06:23 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:06:23 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bprocurement%2Bsourcing%2Bagent%2BUnited%2BKingdom%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGJ-lj9UGIjCadFCKY73beWdocC34W9NH_VIUSC7fGo7z8SM6eGudaBNAG_B6hhA5QuhQP8NOGcAyAnJSWgFD 429
+2026-09-11 10:06:23 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:06:23 [INFO] primp: response: https://search.yahoo.com/search;_ylt=VoZGSPAvSv8ym6cVIQ-LjKaz;_ylu=ZgJlzb0KGi9kU3r4ZLW0cAeWBiKXr_ahF3UTYbGMmu1J_hw?p=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+Kingdom+email 200
+2026-09-11 10:06:24 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+Kingdom+email&source=web 429
+2026-09-11 10:06:25 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+United+Kingdom+email 403
+2026-09-11 10:06:25 [WARNING] lead_finder: DuckDuckGo search failed for 'Terry Towels & Bath Linen procurement sourcing agent United Kingdom email': No results found.
+2026-09-11 10:06:30 [INFO] lead_finder: Searching: commercial linen hospitality supplier United Kingdom contact email
+2026-09-11 10:06:30 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+United+Kingdom+contact+email&limit=1 200
+2026-09-11 10:06:30 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20United%20Kingdom%20contact%20email 200
+2026-09-11 10:06:30 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:06:30 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:06:30 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:06:31 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dcommercial%2Blinen%2Bhospitality%2Bsupplier%2BUnited%2BKingdom%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGKalj9UGIjCNLEM-y6XE0eDM6l7nZ5iQXBO4vO-9WoVRAx715Xl8FrtDZUMYlp2vHEHGpjmV3j0yAnJSWgFD 429
+2026-09-11 10:06:31 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+United+Kingdom+contact+email 403
+2026-09-11 10:06:32 [INFO] primp: response: https://search.yahoo.com/search;_ylt=oThYoZNUNmZBi36L3aaby9pj;_ylu=H_kHqUWHafI6tRBKvzOAlovx8DDBTUr__Ra0umnU3W1D_3A?p=commercial+linen+hospitality+supplier+United+Kingdom+contact+email 200
+2026-09-11 10:06:32 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+United+Kingdom+contact+email&source=web 429
+2026-09-11 10:07:15 [INFO] lead_finder: Searching: institutional textiles distributor United Kingdom email
+2026-09-11 10:07:15 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20United%20Kingdom%20email 200
+2026-09-11 10:07:15 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+United+Kingdom+email&limit=1 200
+2026-09-11 10:07:16 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+United+Kingdom+email 403
+2026-09-11 10:07:16 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dinstitutional%2Btextiles%2Bdistributor%2BUnited%2BKingdom%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGNSlj9UGIjDYQomnFybqNVTIetXG4S02_qRPJaaVLwvPSXKcRk3bTJ6anC1B-fSL9oeHFFMorh8yAnJSWgFD 429
+2026-09-11 10:07:16 [INFO] primp: response: https://search.yahoo.com/search;_ylt=M7h1-qfMYtvEHo6wa4aIabeI;_ylu=iN8bQtvBXiJ3O1g1MWkTyjJx7GZUgiL1BjYHmjJzIPFCD98?p=institutional+textiles+distributor+United+Kingdom+email 200
+2026-09-11 10:07:17 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+United+Kingdom+email&source=web 429
+2026-09-11 10:07:17 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:07:18 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:07:34 [INFO] lead_finder:   ✓ New buyer lead: aidan@qcd.co.nz (AeroLeads, United Kingdom) score=55
+2026-09-11 10:07:34 [INFO] lead_finder:   ✓ New buyer lead: p1_noy@yahoo.com.cn (AeroLeads, United Kingdom) score=55
+2026-09-11 10:07:53 [INFO] lead_finder:   Found 2 new leads for Terry Towels & Bath Linen in United Kingdom
+2026-09-11 10:07:59 [INFO] lead_finder: 
+============================================================
+  Searching: Bed Linen & Bed Sets → Germany
+============================================================
+2026-09-11 10:07:59 [INFO] lead_finder: Searching: textile importer distributor Germany "contact" OR "about" email
+2026-09-11 10:07:59 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email&limit=1 200
+2026-09-11 10:07:59 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20Germany%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 10:07:59 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email 403
+2026-09-11 10:08:00 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BGermany%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGP-lj9UGIjA4UVHZZ0iFc7EWHLgq7vg-bi8iTNhRhfE6wRojfPqm00kvJRDpiHAubjpD1P74XUkyAnJSWgFD 429
+2026-09-11 10:08:00 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-11 10:08:00 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:08:01 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789121280Tf977c0887e396015bb1735192b6b030f2a4edae4e8c64872ed133a3141694176&bds_s=d4f4fbe58e4445eeb1e192baabb0c212&qsr=en_US&t=device&segment=organic&abd=0&qadf=moderate&abp=1&abe=0&sc=&lui=english&language=english&query=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 10:08:01 [INFO] primp: response: https://search.yahoo.com/search;_ylt=s5Xf1V4UAF0WI62Wdyx8vKUf;_ylu=nNQzpqYEkfb5pdZ7UK8fJuK37Cva3uw9cJ192Qf_hK4X40Y?p=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email 200
+2026-09-11 10:08:26 [INFO] lead_finder:   ✓ New buyer lead: sales@ctok.de (Postskriptum GmbH, Germany) score=75
+2026-09-11 10:08:30 [INFO] lead_finder: Searching: Bed Linen & Bed Sets wholesale distributor Germany contact email
+2026-09-11 10:08:31 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20wholesale%20distributor%20Germany%20contact%20email 200
+2026-09-11 10:08:31 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Germany+contact+email&limit=1 200
+2026-09-11 10:08:31 [INFO] primp: response: https://www.mojeek.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Germany+contact+email 403
+2026-09-11 10:08:31 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DBed%2BLinen%2B%2526%2BBed%2BSets%2Bwholesale%2Bdistributor%2BGermany%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGJ-mj9UGIjAxibS1WsP-rpUyh7Q306ygxkKiA1FWZufElAcetUNlcalz92wuF0K3j-BjR2HUu58yAnJSWgFD 429
+2026-09-11 10:08:32 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:08:32 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:08:32 [INFO] primp: response: https://search.yahoo.com/search;_ylt=otglVdsBm1QYbYee-xe6feRR;_ylu=3pgSLswDFHYgyTPI-WJRwZzTljylgH1op5dPKD5OahGTAsA?p=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Germany+contact+email 200
+2026-09-11 10:08:33 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Germany+contact+email&source=web 429
+2026-09-11 10:09:15 [INFO] lead_finder: Searching: home textiles buying house sourcing Germany email
+2026-09-11 10:09:15 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+Germany+email&limit=1 200
+2026-09-11 10:09:15 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20Germany%20email 200
+2026-09-11 10:09:15 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:09:15 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:09:16 [INFO] primp: response: https://search.yahoo.com/search;_ylt=QUR_5lJMIrvRnLKicjUODGjK;_ylu=c7n89U34F5rYiAwyBt4GAMXRo5-avoLjB9A5be9MRL9wmiU?p=home+textiles+buying+house+sourcing+Germany+email 200
+2026-09-11 10:09:17 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+Germany+email 403
+2026-09-11 10:09:17 [INFO] primp: response: https://search.brave.com/search?q=home+textiles+buying+house+sourcing+Germany+email&source=web 429
+2026-09-11 10:09:17 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dhome%2Btextiles%2Bbuying%2Bhouse%2Bsourcing%2BGermany%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGM2mj9UGIjAHJ3A3heVEv78d9lb-uUVKlqlPUobRX-9tESeNMsD-XNs3At8vBQaGSGQlVZOTlCAyAnJSWgFD 429
+2026-09-11 10:09:17 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:09:17 [WARNING] lead_finder: DuckDuckGo search failed for 'home textiles buying house sourcing Germany email': No results found.
+2026-09-11 10:09:21 [INFO] lead_finder: Searching: Bed Linen & Bed Sets procurement sourcing agent Germany email
+2026-09-11 10:09:21 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Germany+email&limit=1 200
+2026-09-11 10:09:21 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20procurement%20sourcing%20agent%20Germany%20email 200
+2026-09-11 10:09:22 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DBed%2BLinen%2B%2526%2BBed%2BSets%2Bprocurement%2Bsourcing%2Bagent%2BGermany%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGNKmj9UGIjD6L1vkQOGtoCp1aI5h4gYoNBT9dvYjSHx6_posTcvzyfxxeEcXk1R92DjOyus2CFAyAnJSWgFD 429
+2026-09-11 10:09:22 [INFO] primp: response: https://www.mojeek.com/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Germany+email 403
+2026-09-11 10:09:23 [INFO] primp: response: https://search.yahoo.com/search;_ylt=NuZwQx02IbV15azSwYIT29wX;_ylu=h1UbNtRdjo3DLQteD4n4vxwh_G6Z4NGZWqZP8kmmZ3GRZ3c?p=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Germany+email 200
+2026-09-11 10:09:23 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:09:23 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:09:24 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:09:24 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Germany+email&source=web 429
+2026-09-11 10:09:24 [WARNING] lead_finder: DuckDuckGo search failed for 'Bed Linen & Bed Sets procurement sourcing agent Germany email': No results found.
+2026-09-11 10:09:29 [INFO] lead_finder: Searching: commercial linen hospitality supplier Germany contact email
+2026-09-11 10:09:29 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+Germany+contact+email&limit=1 200
+2026-09-11 10:09:29 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20Germany%20contact%20email 200
+2026-09-11 10:09:29 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:09:29 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:09:29 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:09:29 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+Germany+contact+email&source=web 429
+2026-09-11 10:09:30 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dcommercial%2Blinen%2Bhospitality%2Bsupplier%2BGermany%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGNmmj9UGIjA4UZPn8e8frt7KBVuZXcuGvJHjqjaPsHmIDE0yxe3DrOLpwezIemF7xEnntsDmf7wyAnJSWgFD 429
+2026-09-11 10:09:30 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+Germany+contact+email 403
+2026-09-11 10:09:30 [INFO] primp: response: https://search.yahoo.com/search;_ylt=eeix79MFJ3mFBAynYWlHNykj;_ylu=ZwiAc553wAzwPmPo39rVhgGhdh1ObwTxIcrDpoKkUzG04qM?p=commercial+linen+hospitality+supplier+Germany+contact+email 200
+2026-09-11 10:09:31 [WARNING] lead_finder: DuckDuckGo search failed for 'commercial linen hospitality supplier Germany contact email': No results found.
+2026-09-11 10:09:35 [INFO] lead_finder: Searching: institutional textiles distributor Germany email
+2026-09-11 10:09:35 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+Germany+email&limit=1 200
+2026-09-11 10:09:35 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20Germany%20email 200
+2026-09-11 10:09:35 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:09:35 [INFO] primp: response: https://search.yahoo.com/search;_ylt=i4gkPdO8Jn3w8r14CDdaRciN;_ylu=cNH1pD9RVsPBp5QDdnBItEOSRiBY5qi9mK2BKv46ZFvX0ag?p=institutional+textiles+distributor+Germany+email 200
+2026-09-11 10:09:36 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+Germany+email 403
+2026-09-11 10:09:37 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dinstitutional%2Btextiles%2Bdistributor%2BGermany%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGOCmj9UGIjBvyptBqK5gEqnUTIWnQ55SodD_JA0wDdb5otCatj2C7nSr25KlvVG2MauYYgcMDmwyAnJSWgFD 429
+2026-09-11 10:09:37 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+Germany+email&source=web 429
+2026-09-11 10:09:37 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:09:37 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:09:42 [INFO] lead_finder:   ✓ New buyer lead: dominic.dinstl@hk-immoinvest.de (AeroLeads, Germany) score=65
+2026-09-11 10:09:43 [INFO] lead_finder:   ✓ New buyer lead: betty1704@web.de (AeroLeads, Germany) score=45
+2026-09-11 10:09:43 [INFO] lead_finder:   ✓ New buyer lead: klauskerwien@msn.com (AeroLeads, Germany) score=45
+2026-09-11 10:09:44 [INFO] lead_finder:   ✓ New buyer lead: kozzi@o2.pl (AeroLeads, Germany) score=45
+2026-09-11 10:09:46 [INFO] lead_finder:   ✓ New buyer lead: bluebeestudio@tiscali.it (AeroLeads, Germany) score=45
+2026-09-11 10:09:47 [INFO] lead_finder:   ✓ New buyer lead: art-floral@gmx.de (AeroLeads, Germany) score=45
+2026-09-11 10:09:50 [INFO] lead_finder:   Found 7 new leads for Bed Linen & Bed Sets in Germany
+2026-09-11 10:09:56 [INFO] lead_finder: 
+============================================================
+  Searching: Terry Towels & Bath Linen → Germany
+============================================================
+2026-09-11 10:09:56 [INFO] lead_finder: Searching: textile importer distributor Germany "contact" OR "about" email
+2026-09-11 10:09:56 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20Germany%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 10:09:56 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email&limit=1 200
+2026-09-11 10:09:56 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BGermany%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGPSmj9UGIjB2KaUqpteXMxnKGkhjKH29t08MhKDTXXAaJl4iCw9pk4DhV4HCJsajkhIe3-LpPlIyAnJSWgFD 429
+2026-09-11 10:09:56 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-11 10:09:56 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:09:57 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email 403
+2026-09-11 10:09:57 [INFO] primp: response: https://search.yahoo.com/search;_ylt=b3WEf_XwqwOmtuzge5jYAUxG;_ylu=eKsN7BoIHaaiPqx0E-TgAwUkXa7T6VnWGNCL626rbCWy8Xk?p=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email 200
+2026-09-11 10:09:58 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:09:58 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789121398Tc28e110a92b66cb170db8f46172b2c0d97c8cebce6dc61163de6ccd546ab4053&bds_s=92113542497c40ab95ed5573d6a81811&abe=0&qadf=moderate&qsr=en_US&sc=&t=device&segment=organic&abd=0&language=english&lui=english&abp=1&query=textile+importer+distributor+Germany+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 10:10:22 [INFO] lead_finder: Searching: Terry Towels & Bath Linen wholesale distributor Germany contact email
+2026-09-11 10:10:22 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Germany+contact+email&limit=1 200
+2026-09-11 10:10:22 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20wholesale%20distributor%20Germany%20contact%20email 200
+2026-09-11 10:10:23 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Germany+contact+email 403
+2026-09-11 10:10:23 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bwholesale%2Bdistributor%2BGermany%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGI-nj9UGIjBxIFRHAhsJisMirjWyh_UMEaB6LnqmcpI0ONVIHPIf-UK7_ed_WrR6yJnQfWYGt6EyAnJSWgFD 429
+2026-09-11 10:10:23 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:10:24 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:10:24 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:10:24 [INFO] primp: response: https://search.yahoo.com/search;_ylt=XiCvSLRRQ2coQ6vSDFEjVlz1;_ylu=M8AAf9dyhgBAb9DboN09Ix8Z1YxsSVpNg9yRYASfZu0QqWQ?p=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Germany+contact+email 200
+2026-09-11 10:10:25 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Germany+contact+email&source=web 429
+2026-09-11 10:10:49 [INFO] lead_finder: Searching: home textiles buying house sourcing Germany email
+2026-09-11 10:10:49 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20Germany%20email 200
+2026-09-11 10:10:49 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+Germany+email&limit=1 200
+2026-09-11 10:10:50 [INFO] primp: response: https://search.yahoo.com/search;_ylt=0QEAbNr5MJrq6jaLZjd-dOUV;_ylu=d6WK0Gh1JL6ORdgENR0aYdpBO-GMo7qlA2qHCIx9bF52HSw?p=home+textiles+buying+house+sourcing+Germany+email 200
+2026-09-11 10:10:50 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:10:51 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:10:51 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:10:51 [INFO] primp: response: https://search.brave.com/search?q=home+textiles+buying+house+sourcing+Germany+email&source=web 429
+2026-09-11 10:10:51 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dhome%2Btextiles%2Bbuying%2Bhouse%2Bsourcing%2BGermany%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGKunj9UGIjC_8zkWRvVXpRRTvCKZnbslGbB3Z4wir_Pj6O-z58o2SxwEKAaNL2gp-HPf76MnFFAyAnJSWgFD 429
+2026-09-11 10:10:52 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+Germany+email 403
+2026-09-11 10:10:52 [WARNING] lead_finder: DuckDuckGo search failed for 'home textiles buying house sourcing Germany email': No results found.
+2026-09-11 10:10:55 [INFO] lead_finder: Searching: Terry Towels & Bath Linen procurement sourcing agent Germany email
+2026-09-11 10:10:55 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Germany+email&limit=1 200
+2026-09-11 10:10:55 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20procurement%20sourcing%20agent%20Germany%20email 200
+2026-09-11 10:10:55 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Germany+email&source=web 429
+2026-09-11 10:10:56 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:10:56 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:10:56 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bprocurement%2Bsourcing%2Bagent%2BGermany%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGLCnj9UGIjDCSusCHu-cqSzkTBky7NDf_BPrzDUc5JNp4Wd8d3KMvt4T-_W7fTC-biNHICCZeGQyAnJSWgFD 429
+2026-09-11 10:10:57 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Germany+email 403
+2026-09-11 10:10:57 [INFO] primp: response: https://search.yahoo.com/search;_ylt=JsRIjaL_MJlyXkMfDNZ0m5qU;_ylu=xbdMAJ-hrkxnl4gOU3Dr5mq0ONl9K-DO9mXi1Ro9BNFYR9w?p=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Germany+email 200
+2026-09-11 10:11:18 [INFO] lead_finder: Searching: commercial linen hospitality supplier Germany contact email
+2026-09-11 10:11:18 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20Germany%20contact%20email 200
+2026-09-11 10:11:18 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+Germany+contact+email&limit=1 200
+2026-09-11 10:11:18 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dcommercial%2Blinen%2Bhospitality%2Bsupplier%2BGermany%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGManj9UGIjDzCy8NnklSGPGkQm2rDn8vdRuU7itHyLU2zF4v3Fcylc-BfIE9lv0OByuNyQ6wAMoyAnJSWgFD 429
+2026-09-11 10:11:19 [INFO] primp: response: https://search.yahoo.com/search;_ylt=a_X4q0K6ogdfqOQUChno8_gs;_ylu=vuaGJjEvqqmU1HaV_5LhFGb8W6-fidoXw1mAi2izEloCeHE?p=commercial+linen+hospitality+supplier+Germany+contact+email 200
+2026-09-11 10:11:19 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:11:19 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:11:19 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+Germany+contact+email&source=web 429
+2026-09-11 10:11:20 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+Germany+contact+email 403
+2026-09-11 10:11:20 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:11:20 [WARNING] lead_finder: DuckDuckGo search failed for 'commercial linen hospitality supplier Germany contact email': No results found.
+2026-09-11 10:11:24 [INFO] lead_finder: Searching: institutional textiles distributor Germany email
+2026-09-11 10:11:24 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+Germany+email&limit=1 200
+2026-09-11 10:11:24 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20Germany%20email 200
+2026-09-11 10:11:24 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:11:24 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:11:25 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+Germany+email 403
+2026-09-11 10:11:25 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dinstitutional%2Btextiles%2Bdistributor%2BGermany%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGM2nj9UGIjC2MvfSJp4iSLyMBnq6DZNns97eKqTvKwGzTYK2hrhbZEczcYZJB_Vbht5M2aKOn-4yAnJSWgFD 429
+2026-09-11 10:11:26 [INFO] primp: response: https://search.yahoo.com/search;_ylt=SCHVq47IBT2OBDx7afK9r33f;_ylu=-YpR39SXVRKHAUxVKe8QA79cNIEkFO7q0ix2SbMN0RlL1U8?p=institutional+textiles+distributor+Germany+email 200
+2026-09-11 10:11:26 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+Germany+email&source=web 429
+2026-09-11 10:11:32 [INFO] lead_finder:   ✓ New buyer lead: rtitus@romatex.co.za (AeroLeads, Germany) score=45
+2026-09-11 10:11:45 [INFO] lead_finder:   ✓ New buyer lead: mac@macaulay-ganson-gmbh.de (Agentur-Ganson, Germany) score=50
+2026-09-11 10:11:52 [INFO] lead_finder:   ✓ New buyer lead: info@ads-textil.de (ADS Textil Handel GmbH, Germany) score=75
+2026-09-11 10:12:02 [INFO] lead_finder:   Found 3 new leads for Terry Towels & Bath Linen in Germany
+2026-09-11 10:12:10 [INFO] lead_finder: 
+============================================================
+  Searching: Bed Linen & Bed Sets → Netherlands
+============================================================
+2026-09-11 10:12:10 [INFO] lead_finder: Searching: textile importer distributor Netherlands "contact" OR "about" email
+2026-09-11 10:12:10 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&limit=1 200
+2026-09-11 10:12:10 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20Netherlands%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 10:12:10 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:12:10 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email 403
+2026-09-11 10:12:11 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-11 10:12:11 [INFO] primp: response: https://search.yahoo.com/search;_ylt=A7qnfvbn7TcjhCNg7r187lbZ;_ylu=Ku_vnNEFuXGJx580ix2y43K85VIfMEcd8J9UChhZoroIi6E?p=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email 200
+2026-09-11 10:12:12 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:12:12 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789121532Tc0df3d462f5cf11f5c869467437063f8332b8c9ec746927f1649f29e5244b24b&bds_s=f6599afed9a343c2a9051f67fc8ea6f8&qadf=moderate&language=english&lui=english&sc=&abd=0&abp=1&abe=0&segment=organic&t=device&qsr=en_US&query=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 10:12:13 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BNetherlands%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGPynj9UGIjAiVBVW7vkFcztMlVnV-oBdnSOd4wkSSK1STCXHz7wmZ_k_hCBq17QMXp9ESJgmEXEyAnJSWgFD 429
+2026-09-11 10:12:13 [WARNING] lead_finder: DuckDuckGo search failed for 'textile importer distributor Netherlands "contact" OR "about" email': No results found.
+2026-09-11 10:12:17 [INFO] lead_finder: Searching: Bed Linen & Bed Sets wholesale distributor Netherlands contact email
+2026-09-11 10:12:17 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email&limit=1 502
+2026-09-11 10:12:17 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20wholesale%20distributor%20Netherlands%20contact%20email 200
+2026-09-11 10:12:18 [INFO] primp: response: https://search.yahoo.com/search;_ylt=jEI9We0ExFMvYftFFlNH4KOh;_ylu=fX8nmv9ueueVi8tH0XPIXII9i4Wpg2OtExhU1hGFevBenHA?p=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email 200
+2026-09-11 10:12:19 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DBed%2BLinen%2B%2526%2BBed%2BSets%2Bwholesale%2Bdistributor%2BNetherlands%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGIKoj9UGIjBqfQaOxgCbG9AyAiOW4fQSdfpC0I6o4v_wC__r3GjnWM9_U1WGINe6jHzM44f2Ab8yAnJSWgFD 429
+2026-09-11 10:12:19 [INFO] primp: response: https://www.mojeek.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email 403
+2026-09-11 10:12:20 [INFO] primp: response: https://search.brave.com/search?q=Bed+Linen+%26+Bed+Sets+wholesale+distributor+Netherlands+contact+email&source=web 429
+2026-09-11 10:12:20 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:12:20 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:12:56 [INFO] lead_finder: Searching: home textiles buying house sourcing Netherlands email
+2026-09-11 10:12:56 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+Netherlands+email&limit=1 502
+2026-09-11 10:12:57 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20Netherlands%20email 200
+2026-09-11 10:12:57 [INFO] primp: response: https://search.yahoo.com/search;_ylt=sWzHK_dulYVjxRNm-AdY9wsp;_ylu=jYyKkCmDyDCkN-CVVgbdK9ocPA5Pmr1xqgv-pMF21IM-6bs?p=home+textiles+buying+house+sourcing+Netherlands+email 200
+2026-09-11 10:12:58 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:12:58 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dhome%2Btextiles%2Bbuying%2Bhouse%2Bsourcing%2BNetherlands%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGKqoj9UGIjDIoA32aPuR6t815DgJFM5b0BBLy8v2InKNbnJyi5x2bdnD8nlZ1GBqkwCHOPjuEvoyAnJSWgFD 429
+2026-09-11 10:12:58 [INFO] primp: response: https://search.brave.com/search?q=home+textiles+buying+house+sourcing+Netherlands+email&source=web 429
+2026-09-11 10:12:58 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:12:58 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:12:59 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+Netherlands+email 403
+2026-09-11 10:12:59 [WARNING] lead_finder: DuckDuckGo search failed for 'home textiles buying house sourcing Netherlands email': No results found.
+2026-09-11 10:13:01 [INFO] lead_finder: Searching: Bed Linen & Bed Sets procurement sourcing agent Netherlands email
+2026-09-11 10:13:01 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Netherlands+email&limit=1 502
+2026-09-11 10:13:01 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Bed%20Linen%20%26%20Bed%20Sets%20procurement%20sourcing%20agent%20Netherlands%20email 200
+2026-09-11 10:13:02 [INFO] primp: response: https://www.mojeek.com/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Netherlands+email 403
+2026-09-11 10:13:02 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:13:02 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:13:03 [INFO] primp: response: https://search.yahoo.com/search;_ylt=DsFgCx2T0dOBmgzU79mcu-_J;_ylu=7-21Udy8zDBV1fyRcScbiWgxqWWafzrXVetA7d4mZavUCFs?p=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Netherlands+email 200
+2026-09-11 10:13:03 [INFO] primp: response: https://www.google.com/wml/search?q=Bed+Linen+%26+Bed+Sets+procurement+sourcing+agent+Netherlands+email&sca_esv=1&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+2026-09-11 10:14:03 [INFO] lead_finder: Searching: commercial linen hospitality supplier Netherlands contact email
+2026-09-11 10:14:03 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+Netherlands+contact+email&limit=1 502
+2026-09-11 10:14:03 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20Netherlands%20contact%20email 200
+2026-09-11 10:14:04 [INFO] primp: response: https://search.yahoo.com/search;_ylt=a8fHJsYLctCxGuHEFtW0pvv8;_ylu=dSi9HoklxLv4h2nlAttSLboszCyze8vfdlCUhbLLuP78tZY?p=commercial+linen+hospitality+supplier+Netherlands+contact+email 200
+2026-09-11 10:14:04 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email&source=web 429
+2026-09-11 10:14:05 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dcommercial%2Blinen%2Bhospitality%2Bsupplier%2BNetherlands%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGOyoj9UGIjAriHHN2x4ARORexcFx287GTRpqMr55hjxQeU23pw5c_IXfvT5w6zaQMb1B0AEFN7gyAnJSWgFD 429
+2026-09-11 10:14:05 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:14:05 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:14:05 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:14:06 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email 403
+2026-09-11 10:14:06 [WARNING] lead_finder: DuckDuckGo search failed for 'commercial linen hospitality supplier Netherlands contact email': No results found.
+2026-09-11 10:14:09 [INFO] lead_finder: Searching: institutional textiles distributor Netherlands email
+2026-09-11 10:14:09 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+Netherlands+email&limit=1 200
+2026-09-11 10:14:09 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20Netherlands%20email 200
+2026-09-11 10:14:09 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:14:09 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:14:09 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:14:10 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dinstitutional%2Btextiles%2Bdistributor%2BNetherlands%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGPGoj9UGIjDDefTtLabpsNCi5BwJ3nH1pPigo__vEkgVapJQ0ELXMimVW6g8bnNKXWPOuR8cCwsyAnJSWgFD 429
+2026-09-11 10:14:10 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+Netherlands+email 403
+2026-09-11 10:14:11 [INFO] primp: response: https://search.yahoo.com/search;_ylt=l9SNZ40NBsZHGnh0PYoM2yM-;_ylu=gUA1CFSbSewGK2W6KeQRoA7mluyVj-KXjuG9hShaCCXvJOU?p=institutional+textiles+distributor+Netherlands+email 200
+2026-09-11 10:14:11 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+Netherlands+email&source=web 429
+2026-09-11 10:14:11 [WARNING] lead_finder: DuckDuckGo search failed for 'institutional textiles distributor Netherlands email': No results found.
+2026-09-11 10:14:15 [INFO] lead_finder:   Found 0 new leads for Bed Linen & Bed Sets in Netherlands
+2026-09-11 10:14:21 [INFO] lead_finder: 
+============================================================
+  Searching: Terry Towels & Bath Linen → Netherlands
+============================================================
+2026-09-11 10:14:21 [INFO] lead_finder: Searching: textile importer distributor Netherlands "contact" OR "about" email
+2026-09-11 10:14:21 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=textile%20importer%20distributor%20Netherlands%20%22contact%22%20OR%20%22about%22%20email 200
+2026-09-11 10:14:21 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&limit=1 502
+2026-09-11 10:14:22 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtextile%2Bimporter%2Bdistributor%2BNetherlands%2B%2522contact%2522%2BOR%2B%2522about%2522%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGP2oj9UGIjCYWUVhZJ2v1gZDLt6-RiQYxzodqHq69LBjF0mxnYgmRTgSWIasw4HyZ4dJ2W5GMDEyAnJSWgFD 429
+2026-09-11 10:14:22 [INFO] primp: response: https://search.brave.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&source=web 429
+2026-09-11 10:14:22 [INFO] primp: response: https://search.yahoo.com/search;_ylt=L6-oN6vj0IfbITwZ7ReXfAUd;_ylu=0ugdG6dFSete3_qe_Hc0FUGdMfK92Fk_90ASpoEYe8Ev-w0?p=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email 200
+2026-09-11 10:14:23 [INFO] primp: response: https://www.mojeek.com/search?q=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email 403
+2026-09-11 10:14:23 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:14:23 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:14:24 [INFO] primp: response: https://www.startpage.com/sp/captcha-block?bc=US&bi=Microsoft+Azure&be=ff3f5cc7635f156140e97d043adab435&bds_t=1789121663T7b2f9bf30a1f4c12dd64ada53239b3f51b76093e17b5cec240783adf007eaff1&bds_s=6a9581e3ae744815a2a7292e56dac7d6&abp=1&lui=english&qadf=moderate&qsr=en_US&sc=&segment=organic&language=english&abd=0&t=device&abe=0&query=textile+importer+distributor+Netherlands+%22contact%22+OR+%22about%22+email&cat=web&cmd=gen_page 200
+2026-09-11 10:14:24 [WARNING] lead_finder: DuckDuckGo search failed for 'textile importer distributor Netherlands "contact" OR "about" email': No results found.
+2026-09-11 10:14:28 [INFO] lead_finder: Searching: Terry Towels & Bath Linen wholesale distributor Netherlands contact email
+2026-09-11 10:14:28 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email&limit=1 502
+2026-09-11 10:14:28 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20wholesale%20distributor%20Netherlands%20contact%20email 200
+2026-09-11 10:14:29 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:14:29 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:14:31 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email&source=web 429
+2026-09-11 10:14:31 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:14:31 [INFO] primp: response: https://search.yahoo.com/search;_ylt=pKRGBz-35_hFkTIDaYoi33sC;_ylu=g3kItVa89ZuKtV0u1tsOLD2Q7e1EhFJrgD_4JyvNsKKkimw?p=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email 200
+2026-09-11 10:14:32 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+wholesale+distributor+Netherlands+contact+email 403
+2026-09-11 10:14:33 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bwholesale%2Bdistributor%2BNetherlands%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGIipj9UGIjCbpcquAYo2qHP8F6C8WXVy17ZLDWMD3WlwfRpXpb0jnpGd205oZzHDqm4S3BxuUWUyAnJSWgFD 429
+2026-09-11 10:15:21 [INFO] lead_finder: Searching: home textiles buying house sourcing Netherlands email
+2026-09-11 10:15:21 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=home%20textiles%20buying%20house%20sourcing%20Netherlands%20email 200
+2026-09-11 10:15:21 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=home+textiles+buying+house+sourcing+Netherlands+email&limit=1 200
+2026-09-11 10:15:21 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dhome%2Btextiles%2Bbuying%2Bhouse%2Bsourcing%2BNetherlands%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGLmpj9UGIjAhPCMiSYsVv2AGX9jzofuO7ipOcKXdKsMRZvVrM4Z-lekboT4wO7imlSYZh6FmYVcyAnJSWgFD 429
+2026-09-11 10:15:22 [INFO] primp: response: https://search.yahoo.com/search;_ylt=3sJ8gnJ2WrkgeVQ8uiDF94sk;_ylu=mu5PdcZM1UgE-Yeqe19OuYynkzKNJwUzz68-2U-IJ6jpL1c?p=home+textiles+buying+house+sourcing+Netherlands+email 200
+2026-09-11 10:15:22 [INFO] primp: response: https://search.brave.com/search?q=home+textiles+buying+house+sourcing+Netherlands+email&source=web 429
+2026-09-11 10:15:23 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:15:23 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:15:23 [INFO] primp: response: https://www.mojeek.com/search?q=home+textiles+buying+house+sourcing+Netherlands+email 403
+2026-09-11 10:15:50 [INFO] lead_finder: Searching: Terry Towels & Bath Linen procurement sourcing agent Netherlands email
+2026-09-11 10:15:50 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Netherlands+email&limit=1 502
+2026-09-11 10:15:50 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Terry%20Towels%20%26%20Bath%20Linen%20procurement%20sourcing%20agent%20Netherlands%20email 200
+2026-09-11 10:15:50 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:15:50 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:15:50 [INFO] primp: response: https://search.brave.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Netherlands+email&source=web 429
+2026-09-11 10:15:51 [INFO] primp: response: https://search.yahoo.com/search;_ylt=714EwpsMcda-KvYWs_XHx_hv;_ylu=5Awb4oxhzJwBfdYyZIkVTSdYwuyTuAV8B6tROsvzA65P2OI?p=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Netherlands+email 200
+2026-09-11 10:15:52 [INFO] primp: response: https://www.mojeek.com/search?q=Terry+Towels+%26+Bath+Linen+procurement+sourcing+agent+Netherlands+email 403
+2026-09-11 10:15:52 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTerry%2BTowels%2B%2526%2BBath%2BLinen%2Bprocurement%2Bsourcing%2Bagent%2BNetherlands%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGNipj9UGIjBDl7dZOTsP-Pw4hOglbfDQxoV8d5wBapFws-PWnj6NAk8kPxqVMi5b8cc9PomBUvEyAnJSWgFD 429
+2026-09-11 10:15:52 [INFO] primp: response: https://html.duckduckgo.com/html/ 202
+2026-09-11 10:15:52 [WARNING] lead_finder: DuckDuckGo search failed for 'Terry Towels & Bath Linen procurement sourcing agent Netherlands email': No results found.
+2026-09-11 10:15:54 [INFO] lead_finder: Searching: commercial linen hospitality supplier Netherlands contact email
+2026-09-11 10:15:54 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=commercial+linen+hospitality+supplier+Netherlands+contact+email&limit=1 502
+2026-09-11 10:15:54 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=commercial%20linen%20hospitality%20supplier%20Netherlands%20contact%20email 200
+2026-09-11 10:15:55 [INFO] primp: response: https://www.mojeek.com/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email 403
+2026-09-11 10:15:55 [INFO] primp: response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dcommercial%2Blinen%2Bhospitality%2Bsupplier%2BNetherlands%2Bcontact%2Bemail%26sca_esv%3D1%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EgQUahbnGNupj9UGIjDgt2BHgnbpybaeqwOKDAFcjcuw-VoaSjmiBCUTZzYS2ujK54fexuHMdCH69lIVvhoyAnJSWgFD 429
+2026-09-11 10:15:56 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:15:56 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:15:56 [INFO] primp: response: https://search.brave.com/search?q=commercial+linen+hospitality+supplier+Netherlands+contact+email&source=web 429
+2026-09-11 10:15:56 [INFO] primp: response: https://search.yahoo.com/search;_ylt=JIyeZQywsmjew77LVXMseDJx;_ylu=_Y-NJjAN1ceLW_OHUff8dlLanXV8nmNn96JMRQYCAzO9ysE?p=commercial+linen+hospitality+supplier+Netherlands+contact+email 200
+2026-09-11 10:17:31 [INFO] lead_finder:   ✓ New buyer lead: info@hebovandijk.nl (HeboVanDijk, Netherlands) score=75
+2026-09-11 10:17:36 [INFO] lead_finder: Searching: institutional textiles distributor Netherlands email
+2026-09-11 10:17:36 [INFO] primp: response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=institutional%20textiles%20distributor%20Netherlands%20email 200
+2026-09-11 10:17:36 [INFO] primp: response: https://grokipedia.com/api/typeahead?query=institutional+textiles+distributor+Netherlands+email&limit=1 200
+2026-09-11 10:17:36 [INFO] primp: response: https://www.startpage.com/ 200
+2026-09-11 10:17:36 [INFO] primp: response: https://www.startpage.com/sp/search 200
+2026-09-11 10:17:36 [INFO] primp: response: https://www.mojeek.com/search?q=institutional+textiles+distributor+Netherlands+email 403
+2026-09-11 10:17:37 [INFO] primp: response: https://search.brave.com/search?q=institutional+textiles+distributor+Netherlands+email&source=web 200
+2026-09-11 10:18:09 [INFO] lead_finder:   ✓ New buyer lead: rclaret@castelltort.com (International Distributors, Art Gallery Fabrics, Netherlands) score=55
+2026-09-11 10:18:10 [INFO] lead_finder:   ✓ New buyer lead: info@adlico.dk (International Distributors, Art Gallery Fabrics, Netherlands) score=70
+2026-09-11 10:18:10 [INFO] lead_finder:   ✓ New buyer lead: sales@hantex.co.uk (International Distributors, Art Gallery Fabrics, Netherlands) score=70
+2026-09-11 10:18:11 [INFO] lead_finder:   ✓ New buyer lead: mraz@latky.cz (International Distributors, Art Gallery Fabrics, Netherlands) score=55
+2026-09-11 10:18:11 [INFO] lead_finder:   ✓ New buyer lead: info@artgalleryfabrics.co.jp (International Distributors, Art Gallery Fabrics, Netherlands) score=70
+2026-09-11 10:18:11 [INFO] lead_finder:   ✓ New buyer lead: mharper@jnharper.com (International Distributors, Art Gallery Fabrics, Netherlands) score=55
+2026-09-11 10:18:15 [INFO] lead_finder:   Found 7 new leads for Terry Towels & Bath Linen in Netherlands
+2026-09-11 10:18:24 [INFO] lead_finder: 
+Total new leads found: 30
+2026-09-11 10:18:24 [INFO] campaign_manager:   Discovered 30 new leads
+2026-09-11 10:18:24 [INFO] campaign_manager: 
+>>> Starting outreach for: Muhammad Munir <munir@mahadimpex.com>
+2026-09-11 10:18:24 [INFO] campaign_manager: 
+=======================================================
+2026-09-11 10:18:24 [INFO] campaign_manager:   STEP 3: Sending Cold Intros for Muhammad Munir <munir@mahadimpex.com>
+2026-09-11 10:18:24 [INFO] campaign_manager: =======================================================
+2026-09-11 10:18:24 [INFO] campaign_manager:   Generating & sending 30 cold intros as Muhammad Munir...
+2026-09-11 10:18:24 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:18:24 [WARNING] google_genai.models: Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+2026-09-11 10:18:40 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:18:41 [INFO] email_sender: Connected to SMTP server mail.mahadimpex.com:465 as munir@mahadimpex.com
+2026-09-11 10:18:44 [INFO] email_sender: ✓ Sent to mktg.yarns@sintex.in | Subject: bed linen FOB pricing / Sintex...
+2026-09-11 10:18:44 [INFO] campaign_manager:   Pausing 58s...
+2026-09-11 10:19:42 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:19:59 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:20:02 [INFO] email_sender: ✓ Sent to info@yorkshirebedding.co.uk | Subject: Yorkshire / Faisalabad mill pricing...
+2026-09-11 10:20:02 [INFO] campaign_manager:   Pausing 86s...
+2026-09-11 10:21:28 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:21:46 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:21:48 [INFO] email_sender: ✓ Sent to info@beddingsdirect.co.uk | Subject: bed linen mill rates / Beddings...
+2026-09-11 10:21:48 [INFO] campaign_manager:   Pausing 70s...
+2026-09-11 10:22:58 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:23:12 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:23:15 [INFO] email_sender: ✓ Sent to info@eastasiantextiles.com | Subject: bed linen FOB specs / East...
+2026-09-11 10:23:15 [INFO] campaign_manager:   Pausing 52s...
+2026-09-11 10:24:06 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:24:22 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:24:24 [INFO] email_sender: ✓ Sent to sales@amstellinens.com | Subject: bed linen programs / Amstel...
+2026-09-11 10:24:24 [INFO] campaign_manager:   Pausing 69s...
+2026-09-11 10:25:34 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:25:52 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:25:54 [INFO] email_sender: ✓ Sent to info@thearistocrategroup.com | Subject: cotton pricing / Institutional...
+2026-09-11 10:25:54 [INFO] campaign_manager:   Pausing 88s...
+2026-09-11 10:27:23 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:27:38 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:27:40 [INFO] email_sender: ✓ Sent to sales@ctok.de | Subject: faisalabad mill pricing / Postskriptum...
+2026-09-11 10:27:40 [INFO] campaign_manager:   Pausing 48s...
+2026-09-11 10:28:28 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:28:45 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:28:47 [INFO] email_sender: ✓ Sent to info@ads-textil.de | Subject: towel margins / ADS...
+2026-09-11 10:28:47 [INFO] campaign_manager:   Pausing 63s...
+2026-09-11 10:29:50 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:30:06 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:30:09 [INFO] email_sender: ✓ Sent to info@hebovandijk.nl | Subject: towel specs / HeboVanDijk...
+2026-09-11 10:30:09 [INFO] campaign_manager:   Pausing 71s...
+2026-09-11 10:31:20 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:31:36 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:31:38 [INFO] email_sender: ✓ Sent to info@iinfotanks.com | Subject: mill pricing / IInfotanks...
+2026-09-11 10:31:38 [INFO] campaign_manager:   Pausing 71s...
+2026-09-11 10:32:49 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:33:08 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:33:10 [INFO] email_sender: ✓ Sent to info@adlico.dk | Subject: faisalabad mill pricing / International...
+2026-09-11 10:33:10 [INFO] campaign_manager:   Pausing 71s...
+2026-09-11 10:34:21 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:34:38 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:34:40 [INFO] email_sender: Connected to SMTP server mail.mahadimpex.com:465 as munir@mahadimpex.com
+2026-09-11 10:34:42 [INFO] email_sender: ✓ Sent to sales@hantex.co.uk | Subject: faisalabad mill pricing / International...
+2026-09-11 10:34:42 [INFO] campaign_manager:   Pausing 75s...
+2026-09-11 10:35:57 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:36:16 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:36:19 [INFO] email_sender: ✓ Sent to info@artgalleryfabrics.co.jp | Subject: container programs / International...
+2026-09-11 10:36:19 [INFO] campaign_manager:   Pausing 53s...
+2026-09-11 10:37:12 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:37:27 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:37:30 [INFO] email_sender: ✓ Sent to dominic.dinstl@hk-immoinvest.de | Subject: bed linen specs / AeroLeads...
+2026-09-11 10:37:30 [INFO] campaign_manager:   Pausing 80s...
+2026-09-11 10:38:49 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:39:05 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:39:07 [INFO] email_sender: ✓ Sent to wholesale@barehome.com | Subject: bed linen pricing / Bare...
+2026-09-11 10:39:07 [INFO] campaign_manager:   Pausing 54s...
+2026-09-11 10:40:01 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:40:17 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:40:20 [INFO] email_sender: ✓ Sent to info@fishertextiles.com | Subject: fob bedding pricing / Fisher...
+2026-09-11 10:40:20 [INFO] campaign_manager:   Pausing 63s...
+2026-09-11 10:41:23 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:41:37 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:41:39 [INFO] email_sender: ✓ Sent to kusursuz_kartaal@hotmail.com | Subject: bed linen specs / AeroLeads...
+2026-09-11 10:41:39 [INFO] campaign_manager:   Pausing 50s...
+2026-09-11 10:42:29 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:42:45 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:42:48 [INFO] email_sender: ✓ Sent to aidan@qcd.co.nz | Subject: towel sourcing / AeroLeads...
+2026-09-11 10:42:48 [INFO] campaign_manager:   Pausing 56s...
+2026-09-11 10:43:44 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:44:18 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-09-11 10:44:18 [ERROR] email_generator: Gemini API error (attempt 1): 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-09-11 10:44:18 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:44:23 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:44:24 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:44:25 [WARNING] email_sender: Recipient refused: p1_noy@yahoo.com.cn
+2026-09-11 10:44:25 [INFO] campaign_manager:   Pausing 77s...
+2026-09-11 10:45:41 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:45:42 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-09-11 10:45:42 [ERROR] email_generator: Gemini API error (attempt 1): 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-09-11 10:45:42 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:45:47 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:45:49 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:45:51 [INFO] email_sender: ✓ Sent to rclaret@castelltort.com | Subject: terry towel mill allocation...
+2026-09-11 10:45:51 [INFO] campaign_manager:   Pausing 75s...
+2026-09-11 10:47:07 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:47:07 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-09-11 10:47:07 [ERROR] email_generator: Gemini API error (attempt 1): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 52.533981734s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '52s'}]}}
+2026-09-11 10:47:07 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:47:12 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:47:13 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:47:16 [INFO] email_sender: ✓ Sent to mraz@latky.cz | Subject: towel supply lines netherlands...
+2026-09-11 10:47:16 [INFO] campaign_manager:   Pausing 67s...
+2026-09-11 10:48:23 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:48:37 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:48:39 [INFO] email_sender: ✓ Sent to mharper@jnharper.com | Subject: faisalabad mill pricing / International...
+2026-09-11 10:48:39 [INFO] campaign_manager:   Pausing 80s...
+2026-09-11 10:50:00 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:50:00 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-09-11 10:50:00 [ERROR] email_generator: Gemini API error (attempt 1): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 59.723107836s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}
+2026-09-11 10:50:00 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:50:05 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:50:31 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:50:32 [INFO] email_sender: Connected to SMTP server mail.mahadimpex.com:465 as munir@mahadimpex.com
+2026-09-11 10:50:35 [INFO] email_sender: ✓ Sent to angel@hotelierlinen.com | Subject: bed linen specs / Home...
+2026-09-11 10:50:35 [INFO] campaign_manager:   Pausing 85s...
+2026-09-11 10:51:59 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:52:00 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-09-11 10:52:00 [ERROR] email_generator: Gemini API error (attempt 1): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 59.842116612s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}
+2026-09-11 10:52:00 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:52:05 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:52:06 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:52:08 [INFO] email_sender: ✓ Sent to mac@macaulay-ganson-gmbh.de | Subject: towel pricing / Agentur-Ganson...
+2026-09-11 10:52:08 [INFO] campaign_manager:   Pausing 65s...
+2026-09-11 10:53:13 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:53:28 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:53:31 [INFO] email_sender: ✓ Sent to betty1704@web.de | Subject: bed linen specs / AeroLeads...
+2026-09-11 10:53:31 [INFO] campaign_manager:   Pausing 76s...
+2026-09-11 10:54:47 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:54:47 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-09-11 10:54:47 [ERROR] email_generator: Gemini API error (attempt 1): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 12.569574715s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '12s'}]}}
+2026-09-11 10:54:47 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:54:52 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:55:01 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:55:03 [INFO] email_sender: ✓ Sent to klauskerwien@msn.com | Subject: bed linen specs / AeroLeads...
+2026-09-11 10:55:03 [INFO] campaign_manager:   Pausing 46s...
+2026-09-11 10:55:49 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:56:16 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:56:18 [INFO] email_sender: ✓ Sent to kozzi@o2.pl | Subject: bed linen pricing / AeroLeads...
+2026-09-11 10:56:18 [INFO] campaign_manager:   Pausing 56s...
+2026-09-11 10:57:14 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:57:14 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-09-11 10:57:14 [ERROR] email_generator: Gemini API error (attempt 1): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 45.58189847s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '45s'}]}}
+2026-09-11 10:57:14 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:57:19 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:58:00 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:58:02 [INFO] email_sender: ✓ Sent to bluebeestudio@tiscali.it | Subject: bed linen specs / AeroLeads...
+2026-09-11 10:58:02 [INFO] campaign_manager:   Pausing 46s...
+2026-09-11 10:58:48 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:58:48 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-09-11 10:58:48 [ERROR] email_generator: Gemini API error (attempt 1): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 11.540936918s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}
+2026-09-11 10:58:48 [INFO] email_generator: Retrying in 5s...
+2026-09-11 10:58:53 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 10:58:54 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 10:58:56 [INFO] email_sender: ✓ Sent to art-floral@gmx.de | Subject: faisalabad mill pricing / AeroLeads...
+2026-09-11 10:58:56 [INFO] campaign_manager:   Pausing 67s...
+2026-09-11 11:00:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 11:00:03 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-09-11 11:00:03 [ERROR] email_generator: Gemini API error (attempt 1): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 56.164597452s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+2026-09-11 11:00:03 [INFO] email_generator: Retrying in 5s...
+2026-09-11 11:00:08 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-09-11 11:00:10 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-09-11 11:00:13 [INFO] email_sender: ✓ Sent to rtitus@romatex.co.za | Subject: towel container replenishment / AeroLead...
+2026-09-11 11:00:13 [INFO] campaign_manager:   Pausing 51s...
+2026-09-11 11:01:04 [INFO] campaign_manager:   Cold intros sent for Muhammad Munir: 29, bounces: 1
+2026-09-11 11:01:04 [INFO] email_sender: SMTP connection closed
+2026-09-11 11:01:04 [INFO] campaign_manager: 
+>>> Starting outreach for: Aliyan Munir <aliyanmunir@mahadimpex.com>
+2026-09-11 11:01:04 [INFO] campaign_manager: 
+=======================================================
+2026-09-11 11:01:04 [INFO] campaign_manager:   STEP 3: Sending Cold Intros for Aliyan Munir <aliyanmunir@mahadimpex.com>
+2026-09-11 11:01:04 [INFO] campaign_manager: =======================================================
+2026-09-11 11:01:04 [INFO] campaign_manager:   No new leads to email
+2026-09-11 11:01:04 [INFO] campaign_manager: 
+#######################################################
+2026-09-11 11:01:04 [INFO] campaign_manager:   DAILY RUN COMPLETE
+2026-09-11 11:01:04 [INFO] campaign_manager:   Total emails sent: 29
+2026-09-11 11:01:04 [INFO] campaign_manager:   Cold intros:       29
+2026-09-11 11:01:04 [INFO] campaign_manager:   Follow-ups:        0
+2026-09-11 11:01:04 [INFO] campaign_manager:   Replies today:     0
+2026-09-11 11:01:04 [INFO] campaign_manager:   Bounces today:     0
+2026-09-11 11:01:04 [INFO] campaign_manager:   Duration:          4111s
+2026-09-11 11:01:04 [INFO] campaign_manager: #######################################################
+
